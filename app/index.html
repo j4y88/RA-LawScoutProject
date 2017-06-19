@@ -6,6 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
 </head>
 <body id='body'>
   <header id="header">
@@ -20,9 +26,50 @@
   <main>
     <div class=logo></div>
       <!-- Flickity Goes Here -->
-  </main>
 
 
+
+  <section>
+    <form id="form1" action="/" method="get">
+
+  <div class="main-carousel flex flex-col" id="carousel-here" >
+
+    <div class="carousel-cell">
+      First name:<br>
+      <input type="text" name="firstname">
+    </div>
+    <div class="carousel-cell">
+      Last name:<br>
+      <input type="text" name="lastname">
+    </div>
+    <div class="carousel-cell">
+      address:<br>
+      <input type="text" name="address">
+    </div>
+    <div class="carousel-cell">
+
+      <input id=submitbutton type="button" name="submit" action="submit">
+    </div>
+
+
+
+  </div>
+
+  <!--  paste this inside Jason's flickity div content -->
+  <div class="button-row flex flex-col flex-align-items-center">
+    <button class="button button--next" >Next</button>
+    <a href="" class="button--previous" style="padding: 20px;">Go back</a>
+  </div>
+
+  </form>
+  </section>
+
+
+  <div id="demo" class="">
+
+  </div>
+
+</main>
 </body>
 
 <script src="./index.min.js"></script>

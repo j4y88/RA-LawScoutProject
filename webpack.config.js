@@ -63,7 +63,7 @@ module.exports = {
     },
     output: {
         filename: 'index.min.js',
-        path: resolve(__dirname,'dist'),
+        path: resolve(PATHS.build),
         publicPath: "/dist/"
 
     },
@@ -97,7 +97,7 @@ module.exports = {
             },
             {test: /\.(jpe?g|png|gif|svg)$/i,
             include: PATHS.images,
-            loader: "file-loader?name=/public/images/[name].[ext]"},
+            loader: "file-loader?name=public/images/[name].[ext]"},
             {
             test: /\.(eot|svg|ttf|woff|woff2)$/,
             include : PATHS.fonts,
