@@ -63,7 +63,7 @@ module.exports = {
     },
     output: {
         filename: 'index.min.js',
-        path: resolve(__dirname,'dist'),
+        path: resolve(PATHS.build),
         publicPath: "/dist/"
 
     },
