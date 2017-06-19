@@ -1,10 +1,11 @@
-main{
+main {
   width: 60%;
   margin: auto;
   background-color: white;
   z-index: 1;
   position: absolute;
-  height: 150vh;
+  min-height: 100vh;
+  height: auto;
   top: 65%;
   left: 20%;
 }

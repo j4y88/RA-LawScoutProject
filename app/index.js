@@ -32,7 +32,9 @@ require('./main.scss');
 let indexer = require('file-loader?name=../dist/index.html!./index.html');
 
 console.log("copied index.html");
-import main from './js/main.js'
+import main from './js/main.js';
+//import ui from './jquery-ui.js';
+//import radio from './zInput.js';
 import App from './App';
 
 let app = new App();
@@ -59,5 +61,45 @@ nextButton.addEventListener( 'click', function(event) {
   flkty.next();
 });
 
+ $("#slider1").slider({
+      value: 1500,
+        min: 500,
+        max: 10000,
+        range: "min",
+        slide: function(event, ui) {
+            update();
+        }
+    });
+    $("#slider2").slider({
+      value: 1500,
+        min: 500,
+        max: 10000,
+        range: "min",
+        slide: function(event, ui) {
+            update();
+        }
+    });
+    $("#slider3").slider({
+      value: 1500,
+        min: 500,
+        max: 10000,
+        range: "min",
+        slide: function(event, ui) {
+            update();
+        }
+    });
+    update();
   // main();
 });
+
+  function update() {
+       let $amount1 = $("#slider1").slider("values", 0);
+       let $amount2 = $("#slider2").slider("values", 0);
+       let $amount3 = $("#slider3").slider("values", 0);
+       let $amount4 = $amount1 + $amount2 + $amount3;
+       $("#amount1").val($amount1);
+       $("#amount2").val($amount2);
+       $("#amount3").val($amount3);
+       $("#amount4").val($amount4);
+       $("#amount5").val($amount4);
+  }

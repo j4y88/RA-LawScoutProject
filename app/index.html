@@ -11,6 +11,54 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( document ).ready(function() {
+    $("#slider1").slider({
+      value: 1500,
+        min: 500,
+        max: 10000,
+        range: "min",
+        slide: function(event, ui) {
+            update();
+        }
+    });
+    $("#slider2").slider({
+      value: 1500,
+        min: 500,
+        max: 10000,
+        range: "min",
+        slide: function(event, ui) {
+            update();
+        }
+    });
+    $("#slider3").slider({
+      value: 1500,
+        min: 500,
+        max: 10000,
+        range: "min",
+        slide: function(event, ui) {
+            update();
+        }
+    });
+    update();
+  // main();
+});
+
+  function update() {
+       let $amount1 = $("#slider1").slider("values", 0);
+       let $amount2 = $("#slider2").slider("values", 0);
+       let $amount3 = $("#slider3").slider("values", 0);
+       let $amount4 = $amount1 + $amount2 + $amount3;
+       $("#amount1").val($amount1);
+       $("#amount2").val($amount2);
+       $("#amount3").val($amount3);
+       $("#amount4").val($amount4);
+       $("#amount5").val($amount4);
+  }
+</script>
 
 </head>
 <body id='body'>
@@ -35,8 +83,58 @@
   <div class="main-carousel flex flex-col" id="carousel-here" >
 
     <div class="carousel-cell">
-      First name:<br>
-      <input type="text" name="firstname">
+      <div class="flex flex-center-j">
+        <section class="flex flex-col width60">
+          <div>
+            <h2>Spend two minutes to discover your potential tax savings.</h1>
+            <p>One of the biggest benefits of incorporating your small business is a lower corporate tax rate. Adjust the three sliders below to reveal your savings</p>
+          </div>
+
+          <div class="margin25">
+            <div class="padding25b">
+              <h4>What’s the total annual revenue for your business?</h4>
+              <div class="flex line-hor flex-space-between flex-center-a padding15 padding25b">
+                <div id="slider1" class="width100"></div>
+                <input id="amount1" type="text" readonly class="slider-num" />
+              </div>
+            </div>
+            <div class="padding25b">
+              <h4>What are your estimated annual business expenses?</h4>
+              <div class="flex line-hor flex-space-between flex-center-a padding15 padding25b">
+                <div id="slider2" class="width100"></div>
+                <input id="amount2" type="text" readonly class="slider-num" />
+              </div>
+            </div>
+            <div class="padding25b">
+              <h4>What are your estimated monthly living expenses?</h4>
+              <div class="flex line-hor flex-space-between flex-center-a padding15 padding25b">
+                <div id="slider3" class="width100"></div>
+                <input id="amount3" type="text" readonly class="slider-num" />
+              </div>
+            </div>
+          </div>
+
+          <div class="flex line-hor flex-center-j flex-space-between padding25b">
+            <div class="flex flex-col flex-center-a width33">
+              <img src="./public/images/propicon.png" class="circle-icons">
+              <h5 class="text-center margin15">Proprietorship taxes</h5>
+              <input id="amount4" type="text" readonly class="slider-total-num"/>
+            </div>
+            <div class="flex flex-col flex-center-a flex-center-j">
+              <p class="vs-circle">vs</p>
+            </div>
+            <div class="flex flex-col flex-center-a width33">
+              <img src="./public/images/incicon.png" class="circle-icons">
+              <h5 class="text-center margin15">Incorporation taxes</h5>
+              <input id="amount5" type="text" readonly class="slider-total-num"/>
+            </div>
+          </div>
+
+          <!-- <div class="flex flex-center-j margin25">
+            <input type="submit" class="next-button margin25" value="NEXT STEP">
+          <div> -->
+        </section>
+      </div>
     </div>
     <div class="carousel-cell">
       Last name:<br>
@@ -50,8 +148,6 @@
 
       <input id=submitbutton type="button" name="submit" action="submit">
     </div>
-
-
 
   </div>
 
