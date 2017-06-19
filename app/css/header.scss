@@ -1,5 +1,29 @@
 header{
-  background: url('./images/BGimage.png');
+  background: url('./images/BGimage.png') no-repeat;
+  background-size: cover;
   height: 100vh;
   width: 100%;
+  color: white;
+  h1{
+    font-size: 3em;
+    padding-top: 10%;
+    text-align: left;
+    letter-spacing: 5px;
+    width: 50%;
+    margin: auto;
+  }
+
+  h3{
+    color: white;
+    width: 50%;
+    letter-spacing: 2px;
+    padding-top: 2%;
+    margin: auto;
+  }
+  p{
+    width: 50%;
+    margin: auto;
+    text-align: left;
+    padding-top: 2%;
+  }
 }
