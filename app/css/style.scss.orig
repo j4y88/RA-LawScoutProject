@@ -22,8 +22,13 @@ h5 {
   color: $teal;
   letter-spacing: 0.17px;
 }
+<<<<<<< HEAD
+p {
+  color: #264154;
+=======
 p { 
   color: $black;
+>>>>>>> d0c95596549aa4eb4e321b5989308532d708de75
   letter-spacing: 0;
   line-height: 30px;
  }
