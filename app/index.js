@@ -10,31 +10,37 @@
 
 // strange, this is how webpack currently works with sass to import stylesheets
 require('./main.scss');
-// function main(){
-//
-//   console.log("in main");
-//
-//   function onSubmitClicked(){
-//     var x = document.getElementById("form1");
-//
-//     var txt = "";
-//     for (var i = 0; i < x.length; i++) {
-//       txt = txt + x.elements[i].value + "<br>";
-//
-//      }
-//      document.getElementById('demo').innerHTML = txt;
-//   }
-//   document.getElementById("submitbutton").addEventListener('click', onSubmitClicked, false);
-//
-// }
+function submitButton(){
+  console.log("clicked submit");
+  // ValidateEmail();
+  // this.flkty.next();
+
+// document.getElementById('form1').style.display="none";
+// document.getElementById('success-page').style.display="block";
+
+  // function onSubmitClicked(e){
+  //   e.preventDefault();
+  //
+  //   console.log("submitting form!");
+  //
+  //   var x = document.getElementById("form1");
+  //
+  //   var txt = "";
+  //   for (var i = 0; i < x.length; i++) {
+  //     txt = txt + x.elements[i].value + "<br>";
+  //
+  //    }
+  //    document.getElementById('demo').innerHTML = txt;
+  // }
+  // document.getElementById("submitButton").addEventListener('click', onSubmitClicked(), false);
+
+}
 
 // this ensures that index.html is updated with webpack
 let indexer = require('file-loader?name=../dist/index.html!./index.html');
 
 console.log("copied index.html");
 import main from './js/main.js';
-//import ui from './jquery-ui.js';
-//import radio from './zInput.js';
 import App from './App';
 
 let app = new App();
@@ -45,12 +51,18 @@ $( document ).ready(function() {
 let carousel = document.querySelector('.main-carousel');
 let flkty = new Flickity( carousel, {
   prevNextButtons: false,
-  pageDots: false
+  pageDots: false,
+  draggable: false
 });
 
 // previous
-let previousButton = document.querySelector('.button--previous');
-previousButton.addEventListener( 'click', function(event) {
+let previousButton1 = document.querySelector('.back1');
+previousButton1.addEventListener( 'click', function(event) {
+  event.preventDefault();
+  flkty.previous();
+});
+let previousButton2 = document.querySelector('.back2');
+previousButton2.addEventListener( 'click', function(event) {
   event.preventDefault();
   flkty.previous();
 });
@@ -59,6 +71,18 @@ let nextButton = document.querySelector('.button--next');
 nextButton.addEventListener( 'click', function(event) {
   event.preventDefault();
   flkty.next();
+});
+let getReportButton = document.querySelector('.button--report');
+getReportButton.addEventListener( 'click', function(event) {
+  event.preventDefault();
+  flkty.next();
+});
+let doneButton = document.querySelector('.button--done');
+doneButton.addEventListener( 'click', function(event) {
+  event.preventDefault();
+  flkty.next();
+  // submitButton();
+
 });
 
  $("#slider1").slider({
@@ -89,7 +113,7 @@ nextButton.addEventListener( 'click', function(event) {
         }
     });
     update();
-  // main();
+
 });
 
   function update() {
