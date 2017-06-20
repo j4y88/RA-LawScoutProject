@@ -22,7 +22,7 @@ h5 {
   color: $teal;
   letter-spacing: 0.17px;
 }
-p { 
+p {
   color: $black;
   letter-spacing: 0;
   line-height: 30px;
@@ -79,6 +79,9 @@ p {
 .width75 {
   width: 75%;
 }
+.width80{
+  width:  80%;
+}
 .width90 {
   width: 90%;
 }
@@ -116,11 +119,34 @@ p {
   border: none;
   border-radius: 50px;
   padding: 15px 10px;
-  width: 10%;
+  width: 20%;
+  text-transform: uppercase;
+}
+.button--report{
+  background-color: #5762d7;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 15px 10px;
+  width: 20%;
+  text-transform: uppercase;
+}
+.button--done{
+  background-color: #5762d7;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 15px 10px;
+  width: 20%;
   text-transform: uppercase;
 }
 .button--previous{
   color: $teal;
+}
+.main-carousel{
+  width: 100%;
+}
+#success-page{
 }
 
 /* ---- button-row ---- */
@@ -198,3 +224,22 @@ p {
     color: white;
     background-color:$teal;
   }
+
+  /* ---- page 3 ----- */
+
+.email-form{
+  border: solid 1px $teal;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    header{
+      height: 100vh;
+    }
+    main{
+      top: 100vh;
+    }
+}
