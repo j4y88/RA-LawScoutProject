@@ -1,53 +1,20 @@
-import App from "./App";
-import CarouselView from "../view/CarouselView";
+import CarouselView from '../view/carouselView';
 
 export default class Carousel{
-  constructor(app){
+  constructor(){
     console.log('creating Carousel controller');
-    this.app = app;
-    // this.carouselView = carouselView;
-    // this.createCarousel()
+    this.cv = new CarouselView();
+    this.createCarousel();
   }
-
-  createCarousel() {
-    console.log("creating carousel");
-    let utils = window.fizzyUIUtils;
+  createCarousel(){
+    console.log("createcarousel function");
     let carousel = document.querySelector('.main-carousel');
     let flkty = new Flickity( carousel, {
       prevNextButtons: false,
-      contain: true,
       pageDots: false,
       draggable: false
     });
+    this.cv.getButtons(flkty);
 
-    this.getButtons(flkty);
-  }
-
-  getButtons(flkty){
-    let nextButton = document.querySelector('.button--next');
-    nextButton.addEventListener( 'click', function(event) {
-      event.preventDefault();
-      flkty.next();
-    });
-    let previousButton1 = document.querySelector('.back1');
-    previousButton1.addEventListener( 'click', function(event) {
-      event.preventDefault();
-      flkty.previous();
-    });
-    let getReportButton = document.querySelector('.button--report');
-    getReportButton.addEventListener( 'click', function(event) {
-      event.preventDefault();
-      flkty.next();
-    });
-    let previousButton2 = document.querySelector('.back2');
-    previousButton2.addEventListener( 'click', function(event) {
-      event.preventDefault();
-      flkty.previous();
-    });
-    let doneButton = document.querySelector('.button--done');
-    doneButton.addEventListener( 'click', function(event) {
-      event.preventDefault();
-      flkty.next();
-    });
   }
 }
