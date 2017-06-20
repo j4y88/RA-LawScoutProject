@@ -1,8 +1,4 @@
-import CarouselCellView1 from '../view/CarouselCellView1';
-import CarouselCellView2 from '../view/CarouselCellView2';
-import CarouselCellView3 from '../view/CarouselCellView3';
-import CarouselCellView4 from '../view/CarouselCellView4';
-import CarouselView from '../view/CarouselView';
+
 import Carousel from './Carousel';
 import FormModel from '../model/formmodel';
 
