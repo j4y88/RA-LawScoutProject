@@ -234,3 +234,12 @@ p {
   margin: 10px 0;
   width: 100%;
 }
+
+@media only screen and (max-width: 600px) {
+    header{
+      height: 100vh;
+    }
+    main{
+      top: 100vh;
+    }
+}

@@ -50,4 +50,10 @@ getReportButton.addEventListener( 'click', function(event) {
   event.preventDefault();
   flkty.next();
 });
+
+let doneButton = document.querySelector('.button--done');
+doneButton.addEventListener( 'click', function(event) {
+  event.preventDefault();
+  flkty.next();
+});
 });
