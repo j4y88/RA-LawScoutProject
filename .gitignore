@@ -57,3 +57,7 @@ typings/
 
 # dotenv environment variables file
 .env
+
+#sublime project file
+*.sublime-project
+*.sublime-workspace
