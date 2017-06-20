@@ -36,7 +36,7 @@ build/Release
 node_modules/
 jspm_packages/
 dist/
-
+.DS_Store
 # Typescript v1 declaration files
 typings/
 
@@ -57,3 +57,7 @@ typings/
 
 # dotenv environment variables file
 .env
+
+#sublime project file
+*.sublime-project
+*.sublime-workspace

@@ -1,14 +1,3 @@
-/**
- * Created by Edward_J_Apostol on 2017-04-28.
- */
-
-//import 'font-awesome/scss/font-awesome.scss';
-//import './font-awesome.config';
-
-// font-awesome test implementation
-//require("./css/font-awesome.min.css");
-
-// strange, this is how webpack currently works with sass to import stylesheets
 require('./main.scss');
 function submitButton(){
   console.log("clicked submit");
@@ -34,16 +23,16 @@ function submitButton(){
   // }
   // document.getElementById("submitButton").addEventListener('click', onSubmitClicked(), false);
 
-}
-
-// this ensures that index.html is updated with webpack
 let indexer = require('file-loader?name=../dist/index.html!./index.html');
 
-console.log("copied index.html");
 import main from './js/main.js';
+import Slider from './js/slider-ui.js';
+//import radio from './zInput.js';
 import App from './App';
 
 let app = new App();
+let slider = new Slider();
+
 $( document ).ready(function() {
 
   let utils = window.fizzyUIUtils;
@@ -77,53 +66,3 @@ getReportButton.addEventListener( 'click', function(event) {
   event.preventDefault();
   flkty.next();
 });
-let doneButton = document.querySelector('.button--done');
-doneButton.addEventListener( 'click', function(event) {
-  event.preventDefault();
-  flkty.next();
-  // submitButton();
-
-});
-
- $("#slider1").slider({
-      value: 1500,
-        min: 500,
-        max: 10000,
-        range: "min",
-        slide: function(event, ui) {
-            update();
-        }
-    });
-    $("#slider2").slider({
-      value: 1500,
-        min: 500,
-        max: 10000,
-        range: "min",
-        slide: function(event, ui) {
-            update();
-        }
-    });
-    $("#slider3").slider({
-      value: 1500,
-        min: 500,
-        max: 10000,
-        range: "min",
-        slide: function(event, ui) {
-            update();
-        }
-    });
-    update();
-
-});
-
-  function update() {
-       let $amount1 = $("#slider1").slider("values", 0);
-       let $amount2 = $("#slider2").slider("values", 0);
-       let $amount3 = $("#slider3").slider("values", 0);
-       let $amount4 = $amount1 + $amount2 + $amount3;
-       $("#amount1").val($amount1);
-       $("#amount2").val($amount2);
-       $("#amount3").val($amount3);
-       $("#amount4").val($amount4);
-       $("#amount5").val($amount4);
-  }

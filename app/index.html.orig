@@ -21,9 +21,10 @@
   </header>
 
   <main>
-    <div class="logo"></div>
+<<<<<<< HEAD
+    <div class=logo></div>
+      <!-- Flickity Goes Here -->
 
-  <section>
     <form id="form1" action="/" method="get">
   <div class="main-carousel flex flex-col" id="carousel-here" >
 <!--  first page -->
@@ -130,6 +131,79 @@
       </div>
     </div>
 
+  </div>
+  </form>
+
+=======
+    <div class="logo"></div>
+
+  <section>
+    <form id="form1" action="/" method="get">
+  	<div class="main-carousel flex flex-col" id="carousel-here" >
+	    <div class="carousel-cell">
+	      <div class="flex flex-center-j">
+	        <section class="flex flex-col width75">
+	          <div>
+	            <h2>Spend two minutes to discover your potential tax savings.</h1>
+	            <p>One of the biggest benefits of incorporating your small business is a lower corporate tax rate. Adjust the three sliders below to reveal your savings</p>
+	          </div>
+	          <div class="margin25">
+	            <div class="padding25b">
+	              <h4>What’s the total annual revenue for your business?</h4>
+	              <div class="flex line-hor flex-space-between flex-center-a padding15 padding25b">
+	                <div id="slider1" class="width100"></div>
+	                <input id="amount1" type="text" readonly class="slider-num width30" />
+	              </div>
+	            </div>
+	            <div class="padding25b">
+	              <h4>What are your estimated annual business expenses?</h4>
+	              <div class="flex line-hor flex-space-between flex-center-a padding15 padding25b">
+	                <div id="slider2" class="width100"></div>
+	                <input id="amount2" type="text" readonly class="slider-num width30" />
+	              </div>
+	            </div>
+	            <div class="padding25b">
+	              <h4>What are your estimated monthly living expenses?</h4>
+	              <div class="flex line-hor flex-space-between flex-center-a padding15 padding25b">
+	                <div id="slider3" class="width100"></div>
+	                <input id="amount3" type="text" readonly class="slider-num width30" />
+	              </div>
+	            </div>
+	          </div>
+	          <div class="flex line-hor flex-center-j flex-space-between padding25b">
+	            <div class="flex flex-col flex-center-a width40">
+	              <img src="./public/images/propicon.png" class="circle-icons">
+	              <h5 class="text-center margin15">Proprietorship taxes</h5>
+	              <input id="amount4" type="text" readonly class="slider-total-num"/>
+	            </div>
+	            <div class="flex flex-col flex-center-a flex-center-j">
+	              <p class="vs-circle">vs</p>
+	            </div>
+	            <div class="flex flex-col flex-center-a width40">
+	              <img src="./public/images/incicon.png" class="circle-icons">
+	              <h5 class="text-center margin15">Incorporation taxes</h5>
+	              <input id="amount5" type="text" readonly class="slider-total-num"/>
+	            </div>
+	          </div>
+	          <!-- <div class="flex flex-center-j margin25">
+	            <input type="submit" class="next-button margin25" value="NEXT STEP">
+	          <div> -->
+	        </section>
+	      </div>
+	    </div>
+	    <div class="carousel-cell">
+	      Last name:<br>
+	      <input type="text" name="lastname">
+	    </div>
+	    <div class="carousel-cell">
+	      address:<br>
+	      <input type="text" name="address">
+	    </div>
+	    <div class="carousel-cell">
+	      <input id=submitbutton type="button" name="submit" action="submit">
+	    </div>
+	  </div>
+
 	  <!--  paste this inside Jason's flickity div content -->
 	  <div class="button-row flex flex-col flex-align-items-center">
 	    <button class="button button--next" >Next</button>
@@ -140,6 +214,7 @@
 
   <div id="demo" class="">
   </div>
+>>>>>>> d0c95596549aa4eb4e321b5989308532d708de75
 
 </main>
 <div id="demo"></div>
