@@ -1,35 +1,37 @@
 /* ---- text or fonts ---- */
 body {
-  background-color: $background-color;
   font-family: 'Open Sans', sans-serif;
-  font-size: 20px;
+  font-size: 16px;
 }
 h2 {
   font-size: 250%;
   font-weight: bold;
   margin: 40px 0px;
-  color: #23B3B8;
+  color: $teal;
 }
 h4 {
   font-weight: bold;
   font-size: 110%;
-  color: #264154;
+  color: $black;
   letter-spacing: -0.01px;
   line-height: 40.44px;
 }
 h5 {
   font-weight: bold;
   font-size: 20px;
-  color: #23B3B8;
+  color: $teal;
   letter-spacing: 0.17px;
 }
 p {
-  color: #264154;
+  color: $black;
   letter-spacing: 0;
   line-height: 30px;
  }
 .text-center {
   text-align: center;
+}
+.white {
+  color: white;
 }
 
 /* ---- button-row ---- */
@@ -46,7 +48,7 @@ p {
   flex-flow: column;
 }
 .flex-row {
-  flex-flow: row wrap;
+  flex-flow: row;
 }
 .flex-center-a {
   align-items: center;
@@ -60,19 +62,25 @@ p {
 .flex-space-between {
   justify-content: space-between;
 }
+.flex-space-around {
+  justify-content: space-around;
+}
 
 /* ---- padding and margins ---- */
-.width33 {
-  width: 33%;
+.width25 {
+  width: 25%;
+}
+.width30 {
+  width: 30%;
 }
 .width40 {
   width: 40%;
 }
-.width60 {
-  width: 60%;
+.width75 {
+  width: 75%;
 }
-.width80 {
-  width: 80%;
+.width80{
+  width:  80%;
 }
 .width90 {
   width: 90%;
@@ -106,7 +114,7 @@ p {
   padding: 30px;
 }
 .button--next{
-  background-color: #5762d7;
+  background-color: $blue;
   color: white;
   border: none;
   border-radius: 50px;
@@ -133,7 +141,7 @@ p {
   text-transform: uppercase;
 }
 .button--previous{
-  color: #23B3B8;
+  color: $teal;
 }
 .main-carousel{
   width: 100%;
@@ -149,7 +157,7 @@ p {
 /* ---- page 1 ----- */
 .slider-num {
   font-size: 140%;
-  color: #23B3B8;
+  color: $teal;
   letter-spacing: 0.24px;
   border: 0px;
   text-align: right;
@@ -159,21 +167,21 @@ p {
   border: 0px;
   font-weight: bold;
   font-size: 200%;
-  color: #23B3B8;
+  color: $teal;
   letter-spacing: 0.59px;
 }
 .vs-circle {
   height: 50px;
   width: 50px;
-  background-color: #23B3B8;
+  background-color: $teal;
   text-align: center;
   text-transform: uppercase;
   color: #ffffff;
-  line-height: 2.5;
+  line-height: 3.2;
   border-radius: 50px;
 }
 .line-hor {
-  border-bottom: 1px solid #23B3B8;
+  border-bottom: 1px solid $teal;
 }
 .circle-icons {
   height: 150px;
@@ -183,12 +191,14 @@ p {
   height: 80px;
   width: 250px;
   font-size: 130%;
-  background: #5762D7;
-  border-color: #5762D7;
+  background: $blue;
+  border-color: $blue;
   border-radius: 71.11px;
   color: white;
   letter-spacing: 0.14px;
 }
+
+/* ---- page 2 ----- */
 .zInput{
     display:inline-block;
     width: 35px;
@@ -198,8 +208,8 @@ p {
     padding: 12px;
     text-align:center;
     cursor:default;
-    color: #264154;
-    border: #23B3B8 1px solid;
+    color: $black;
+    border: $teal 1px solid;
     border-radius:10px;
     font-size: 18px;
     overflow:hidden;
@@ -212,7 +222,7 @@ p {
   }
   .zSelected{
     color: white;
-    background-color:#23B3B8;
+    background-color:$teal;
   }
 
   /* ---- page 3 ----- */
@@ -223,4 +233,13 @@ p {
   padding: 10px;
   margin: 10px 0;
   width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    header{
+      height: 100vh;
+    }
+    main{
+      top: 100vh;
+    }
 }

@@ -1,6 +1,5 @@
 export default class FormModel{
     constructor(revenue, businessExpense, livingExpense, industry, holdsProperty, holdsInformation, operatesProperty, hasSubcontractors, hasEmployees, consumerProducts){
-
         this.revenue = revenue,
         this.businessExpense = businessExpense,
         this.livingExpense = livingExpense,
