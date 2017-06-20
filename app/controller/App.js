@@ -11,14 +11,13 @@ export default class App {
     constructor()
     {
         console.log("Creating the App");
-        // this.CarouselCellView1 = new CarouselCellView1(this);
-        // this.CarouselCellView2 = new CarouselCellView2(this);
-        // this.CarouselCellView3 = new CarouselCellView3(this);
-        // this.CarouselCellView4 = new CarouselCellView4(this);
-        // this.CarouselView = new CarouselView(this.CarouselCellView1, this.CarouselCellView2, this.CarouselCellView3, this.CarouselCellView4);
+        this.CarouselCellView1 = new CarouselCellView1();
+        this.CarouselCellView2 = new CarouselCellView2();
+        this.CarouselCellView3 = new CarouselCellView3();
+        this.CarouselCellView4 = new CarouselCellView4();
+        this.CarouselView = new CarouselView(this.CarouselCellView1, this.CarouselCellView2, this.CarouselCellView3, this.CarouselCellView4);
         this.Carousel = new Carousel(this, this.CarouselView);
         this.FormModel = new FormModel();
-
     }
 
     init(){

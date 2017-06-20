@@ -3,7 +3,7 @@ export default class CarouselCellView2 {
         console.log("CarouselCellView2");
     }
 
-  buttons(){
+  buttons(flkty){
     let previousButton1 = document.querySelector('.back1');
     previousButton1.addEventListener( 'click', function(event) {
       event.preventDefault();

@@ -12,17 +12,19 @@ export default class CarouselView {
     console.log('creating Carousel View');
   }
 
-  getButtons(){
-          let nextButton = document.querySelector('.button--next');
-          nextButton.addEventListener( 'click', function(event) {
-            event.preventDefault();
-            this.app.Carousel.flkty.next();
-          });
 
-    // this.ccv1.buttons();
-    // this.ccv2.buttons();
-    // this.ccv3.buttons();
-    // this.ccv4.buttons();
-  }
+    getButtons(flkty){
+      this.ccv1.buttons(flkty);
+      this.ccv2.buttons(flkty);
+      this.ccv3.buttons(flkty);
+      this.ccv4.buttons(flkty);
+
+
+
+
+    }
+
+
+
 
 }

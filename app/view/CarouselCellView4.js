@@ -3,7 +3,7 @@ export default class CarouselCellView4 {
     {
         console.log("CarouselCellView4");
     }
-    buttons(){
+    buttons(flkty){
 
       }
 }
