@@ -32,7 +32,7 @@ function submitButton(){
   //    }
   //    document.getElementById('demo').innerHTML = txt;
   // }
-  // document.getElementById("submitButton").addEventListener('click', onSubmitClicked(), false);
+
 
 }
 
@@ -77,10 +77,7 @@ getReportButton.addEventListener( 'click', function(event) {
   event.preventDefault();
   flkty.next();
 });
-let doneButton = document.querySelector('.button--done');
-doneButton.addEventListener( 'click', function(event) {
-  event.preventDefault();
-  flkty.next();
+
   // submitButton();
 
 });
