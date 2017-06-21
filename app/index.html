@@ -92,7 +92,7 @@
           <p class="margin5">Incorporating limits the exposure to personal liability of the owners. Without incorporating, business owners can be personally responsible for business liabilities, including debts and legal judgments.</p>
           <div class="demo vertical-line margin5v padding5v">
             <fieldset>
-              <label for="industry">What's your industry?</label>
+              <label for="industry"><h3>What's your industry?</h3></label>
               <select name="industry" id="industry" class="padding5v">
                 <option selected="selected" disabled="disabled">Select one</option>
                 <option>Arts and Entertainment</option>
@@ -141,16 +141,7 @@
               <input type="radio" name="q6" title="NO" value="no" checked="checked" required/>
             </div>
             <a href='#' id='check_var'>Check values</a>
-          </div>
-        </div>
-       </div>
-        <div class="button-row flex flex-col flex-align-items-center margin25v">
-          <button class="button button--report" >Get Report</button>
-          <a class="button--previous back1" style="padding: 20px;">Go back</a>
-        </div>
-     
-    </div>
-    <script>
+            <script>
     $('a#check_var').click(function() {
     alert($("input:radio[name='q1']:checked").val() + ' ' + $("input:radio[name='q2']:checked").val() + ' ' + $("input:radio[name='q3']:checked").val() + ' ' + $("input:radio[name='q4']:checked").val() + ' ' + $("input:radio[name='q5']:checked").val() + ' ' + $("input:radio[name='q6']:checked").val());
     });
@@ -158,7 +149,15 @@
     $( function() {
         $( "#industry" ).selectmenu();
     } );
-  </script>
+    </script>
+          </div>
+        </div>
+      </div>
+      <div class="button-row flex flex-col flex-align-items-center margin25v">
+        <button class="button button--report" >Get Report</button>
+        <a class="button--previous back1" style="padding: 20px;">Go back</a>
+      </div>
+    </div>
 <!--  third page -->
     <div class="carousel-cell">
       <div class="flex flex-center-j">
