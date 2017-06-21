@@ -80,7 +80,7 @@ p {
   width: 75%;
 }
 .width80{
-  width:  80%;
+  width: 80%;
 }
 .width90 {
   width: 90%;
@@ -88,19 +88,25 @@ p {
 .width100 {
   width: 100%;
 }
-.padding15 {
+.padding5v {
+  padding: 5px 0px;
+}
+.padding15v {
   padding: 15px 0px;
 }
-.padding25 {
+.padding25v {
   padding: 25px 0px;
 }
 .padding25b {
   padding-bottom: 25px;
 }
-.margin15 {
+.margin5v {
+    margin: 5px 0px;
+}
+.margin15v {
   margin: 15px 0px;
 }
-.margin25 {
+.margin25v {
   margin: 25px 0px;
 }
 
@@ -224,7 +230,16 @@ p {
     color: white;
     background-color:$teal;
   }
-
+  fieldset {
+    border: 0;
+  }
+  label {
+    display: block;
+    margin: 30px 0 0 0;
+  }
+  .overflow {
+    height: 200px;
+  }
   /* ---- page 3 ----- */
 
 .email-form{
