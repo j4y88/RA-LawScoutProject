@@ -9,5 +9,6 @@ export default class FormModel{
         this.operatesProperty = operatesProperty,
         this.hasSubcontractors = hasSubcontractors,
         this.hasEmployees = hasEmployees,
-        this.consumerProducts = consumerProducts,
+        this.consumerProducts = consumerProducts
+      }
 }
