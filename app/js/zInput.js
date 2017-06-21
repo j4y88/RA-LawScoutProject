@@ -20,9 +20,9 @@ export default function zinput() {
 		}
 		if (elementType == "checkbox")
 		{
-			$element.wrap(function(){ return '<div class="zInput zCheckbox"><span style="display:table;width: 100%;height: 100%;"><span style="display: table-cell;vertical-align:middle;">' + $(this).attr("title") + '</span></span></div>'});	
+			$element.wrap(function(){ return '<div class="zInput zCheckbox"><span style="display:table;width: 100%;height: 100%;"><span style="display: table-cell;vertical-align:middle;">' + $(this).attr("title") + '</span></span></div>'});
 		}
-		
+
 		});
 
 
@@ -30,13 +30,13 @@ export default function zinput() {
 	var $zCheckbox	= $(".zCheckbox");
 
 	$zRadio.click(function(){
-		debugger;
+		//debugger;
 		$theClickedButton = $(this);
 
 		//move up the DOM to the .zRadioWrapper and then select children. Remove .zSelected from all .zRadio
 		$theClickedButton.parent().children().removeClass("zSelected");
 		$theClickedButton.addClass("zSelected");
-		$theClickedButton.find(":radio").prop("checked", true).change();	
+		$theClickedButton.find(":radio").prop("checked", true).change();
 		});
 
 	$zCheckbox.click(function(){
@@ -45,17 +45,17 @@ export default function zinput() {
 		//move up the DOM to the .zRadioWrapper and then select children. Remove .zSelected from all .zRadio
 		$theClickedButton.toggleClass("zSelected");
 		$theClickedButton.find(':checkbox').each(function () { this.checked = !this.checked; $(this).change()});
-		});	
-		
-	  
+		});
+
+
 	  $.each($inputs,function(k,v){
 	    if($(v).attr('checked')){
-	      
+
 	      $(v).parent().click();
-	      
+
 	    }
-	    
+
 	  });
-	  
+
 	}
 }
