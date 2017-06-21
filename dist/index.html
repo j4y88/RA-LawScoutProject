@@ -22,38 +22,35 @@
   </header>
 
   <main>
-    <div id="logo-animate" class="logo-base flex padding15">
-      <svg id="logo" class="logo" width="69" height="84" viewBox="0 0 457 558" xmlns="http://www.w3.org/2000/svg"><path class="path" d="M114 145h249c80 0 78-111 0-111H204c-42 0-60 28-60 52-.5 25 0 105 0 123.5.5 22.5 23.5 48.5 61 48.5h65c77 0 77 109 0 110h-60.5c-26 0-65.5 6.5-65.5 60v38c0 77-110 77-110 0V209.5C34 171 56.5 145 91 145z" stroke="#ffffff" stroke-width="60" fill="none"></path></svg>
-      <img id="foundedby" class="founded-active" src="public/images/ic_Founded_active.png">
-    </div>
-
+    <div class="logo"></div>
     <form id="form1" action="/" method="get">
   <div class="main-carousel flex flex-col" id="carousel-here" >
 <!--  first page -->
     <div class="carousel-cell">
       <div class="flex flex-center-j">
-        <section class="flex flex-col flex-center-j width80">
+        <section class="flex flex-col flex-center-j width80
+        ">
           <div>
             <h2>Spend two minutes to discover your potential tax savings.</h1>
             <p>One of the biggest benefits of incorporating your small business is a lower corporate tax rate. Adjust the three sliders below to reveal your savings</p>
           </div>
 
-          <div class="margin25">
-            <div class="padding25b">
+          <div class="margin25v">
+            <div class="padding25vb">
               <h4>What’s the total annual revenue for your business?</h4>
               <div class="flex line-hor flex-space-between flex-center-a padding15v padding25vb">
                 <div id="slider1" class="width100"></div>
                 <input id="amount1" type="text" readonly class="slider-num" />
               </div>
             </div>
-            <div class="padding25b">
+            <div class="padding25vb">
               <h4>What are your estimated annual business expenses?</h4>
               <div class="flex line-hor flex-space-between flex-center-a padding15v padding25vb">
                 <div id="slider2" class="width100"></div>
                 <input id="amount2" type="text" readonly class="slider-num" />
               </div>
             </div>
-            <div class="padding25b">
+            <div class="padding25vb">
               <h4>What are your estimated monthly living expenses?</h4>
               <div class="flex line-hor flex-space-between flex-center-a padding15v padding25vb">
                 <div id="slider3" class="width100"></div>
@@ -77,9 +74,13 @@
               <input id="amount5" type="text" readonly class="slider-total-num"/>
             </div>
           </div>
-          <div class="button-row flex flex-col flex-align-items-center margin25">
+          <!--  paste this inside Jason's flickity div content -->
+          <div class="button-row flex flex-col flex-align-items-center margin25v">
             <button class="button button--next" >Next</button>
           </div>
+          <!-- <div class="flex flex-center-j margin25v">
+            <input type="submit" class="next-button margin25v" value="NEXT STEP">
+          <div> -->
         </section>
       </div>
     </div>
@@ -167,7 +168,7 @@
             <div class="padding25vb">
               <h2>Where should we send your report?</h2>
               <p>In addition to your liability rating and a closer look at your post-incorporation tax-savings, you'll receive tips on successfully navigating the incorporation process and advice on how to get started.</p>
-              <input class="email-form" type="text" id="email-name" name="email-name" placeholder="Name">
+              <input class="email-form" type="text" name="email-name" placeholder="Name">
               <input class="email-form" type="text" id="email-address" name="email-address" placeholder="Email">
             </div>
           </div>
@@ -195,6 +196,11 @@
       </div>
     </div>
 
+	  <!--  paste this inside Jason's flickity div content -->
+	  <div class="button-row flex flex-col flex-align-items-center">
+	    <button class="button button--next" >Next</button>
+	    <a href="" class="button--previous" style="padding: 20px;">Go back</a>
+	  </div>
 		</form>
 
   <div id="demo" class="">
