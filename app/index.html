@@ -90,7 +90,7 @@
           <h2 class="margin5">A few more questions to calculate your liablity rating</h2>
           <p class="margin5">Incorporating limits the exposure to personal liability of the owners. Without incorporating, business owners can be personally responsible for business liabilities, including debts and legal judgments.</p>
           <div class="demo vertical-line margin5v padding5v">
-            <fieldset>
+            <!-- <fieldset> -->
               <label for="industry">What's your industry?</label>
               <select name="industry" id="industry" class="padding5v">
                 <option selected="selected" disabled="disabled">Select one</option>
@@ -106,38 +106,38 @@
                 <option>Retail</option>
                 <option>Technology</option>
               </select>
-            </fieldset>
+            <!-- </fieldset> -->
           </div>
           <div id="demo">
             <div class="flex flex-center-a flex-space-between line-hor padding5v">
               <h3 class="flex width80">Do you hold onto your client's property?</h3>
-              <input type="radio" name="q1" title="YES" value="yes" required/>
+              <input id="holdsProperyYes" type="radio" name="q1" title="YES" value="yes" required/>
               <input type="radio" name="q1" title="NO" value="no" checked="checked" required/>
             </div>
             <div class="flex flex-center-a flex-space-between line-hor padding5v">
               <h3 class="flex width80">Do you hold sensitive client information?</h3>
-              <input type="radio" name="q2" title="YES" value="yes" required/>
-              <input type="radio" name="q2" title="NO" value="no" checked="checked" required/>
+              <input id="holdsInformationYes" type="radio" name="q2" title="YES" value="yes" required/>
+              <input  type="radio" name="q2" title="NO" value="no" checked="checked" required/>
             </div>
             <div class="flex flex-center-a flex-space-between line-hor padding5v">
               <h3 class="flex width80">Do you operate on the property of others?</h3>
-              <input type="radio" name="q3" title="YES" value="yes" required/>
-              <input type="radio" name="q3" title="NO" value="no" checked="checked" required/>
+              <input id="operatesPropertyYes" type="radio" name="q3" title="YES" value="yes" required/>
+              <input  type="radio" name="q3" title="NO" value="no" checked="checked" required/>
             </div>
             <div class="flex flex-center-a flex-space-between line-hor padding5v">
               <h3 class="flex width80">Do you rely on sub-contractors?</h3>
-              <input type="radio" name="q4" title="YES" value="yes" required/>
-              <input type="radio" name="q4" title="NO" value="no" checked="checked" required/>
+              <input id="hasSubcontractorsYes"  type="radio" name="q4" title="YES" value="yes" required/>
+              <input  type="radio" name="q4" title="NO" value="no" checked="checked" required/>
             </div>
             <div class="flex flex-center-a flex-space-between line-hor padding5v">
               <h3 class="flex width80">Do you have employees?</h3>
-              <input type="radio" name="q5" title="YES" value="yes" required/>
-              <input type="radio" name="q5" title="NO" value="no" checked="checked" equired/>
+              <input id="hasEmployeesYes" type="radio" name="q5" title="YES" value="yes" required/>
+              <input  type="radio" name="q5" title="NO" value="no" checked="checked" equired/>
             </div>
             <div class="flex flex-center-a flex-space-between padding5v">
               <h3 class="flex width80">Do you manufacture products that are used or consumed by others?</h3>
-              <input type="radio" name="q6" title="YES" value="yes" required/>
-              <input type="radio" name="q6" title="NO" value="no" checked="checked" required/>
+              <input id="consumerProductsYes" type="radio" name="q6" title="YES" value="yes" required/>
+              <input  type="radio" name="q6" title="NO" value="no" checked="checked" required/>
             </div>
             <a href='#' id='check_var'>Check values</a>
             <script>
@@ -196,12 +196,10 @@
     </div>
 
 		</form>
-
-  <div id="demo" class="">
   </div>
 
 </main>
-<div id="demo"></div>
+
 </body>
 
 <script src="./index.min.js"></script>
