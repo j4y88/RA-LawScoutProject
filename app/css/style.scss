@@ -7,6 +7,8 @@ h2 {
   font-size: 250%;
   font-weight: bold;
   margin: 40px 0px;
+  letter-spacing: 1px;
+  line-height: 1.2;
   color: $teal;
 }
 h4 {
@@ -25,7 +27,7 @@ h5 {
 p {
   color: $black;
   letter-spacing: 0;
-  line-height: 30px;
+  line-height: 26px;
  }
 .text-center {
   text-align: center;
@@ -33,7 +35,9 @@ p {
 .white {
   color: white;
 }
-
+.underline {
+    text-decoration: underline;
+}
 /* ---- button-row ---- */
 
 .button-row {
@@ -49,6 +53,9 @@ p {
 }
 .flex-row {
   flex-flow: row;
+}
+.flex-grow {
+  flex-grow: 1;
 }
 .flex-center-a {
   align-items: center;
@@ -76,6 +83,9 @@ p {
 .width40 {
   width: 40%;
 }
+.width65 {
+  width: 65%;
+}
 .width75 {
   width: 75%;
 }
@@ -88,6 +98,9 @@ p {
 .width100 {
   width: 100%;
 }
+.width-radio {
+  width: 140px;
+}
 .padding5v {
   padding: 5px 0px;
 }
@@ -99,6 +112,9 @@ p {
 }
 .padding25b {
   padding-bottom: 25px;
+}
+.padding-slider {
+  padding-bottom: 30px;
 }
 .margin5v {
     margin: 5px 0px;
@@ -124,21 +140,23 @@ p {
   color: white;
   border: none;
   border-radius: 50px;
-  padding: 15px 10px;
-  width: 20%;
+  padding: 20px;
+  font-size: 130%;
+  width: 35%;
   text-transform: uppercase;
 }
 .button--report{
-  background-color: #5762d7;
+  background-color: $blue;
   color: white;
   border: none;
   border-radius: 50px;
-  padding: 15px 10px;
-  width: 20%;
+  padding: 20px;
+  font-size: 130%;
+  width: 28%;
   text-transform: uppercase;
 }
 .button--done{
-  background-color: #5762d7;
+  background-color: $blue;
   color: white;
   border: none;
   border-radius: 50px;
@@ -163,6 +181,7 @@ p {
 /* ---- page 1 ----- */
 .slider-num {
   font-size: 140%;
+  width: 40%;
   color: $teal;
   letter-spacing: 0.24px;
   border: 0px;
@@ -191,8 +210,8 @@ p {
   border-bottom: 1px solid $teal;
 }
 .circle-icons {
-  height: 150px;
-  width: 150px;
+  height: 140px;
+  width: 140px;
 }
 .next-button{
   height: 80px;
