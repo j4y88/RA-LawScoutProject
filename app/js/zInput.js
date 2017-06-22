@@ -25,12 +25,10 @@ export default function zinput() {
 		
 		});
 
-
 	var $zRadio = $(".zInput").not(".zCheckbox");
 	var $zCheckbox	= $(".zCheckbox");
 
 	$zRadio.click(function(){
-		debugger;
 		$theClickedButton = $(this);
 
 		//move up the DOM to the .zRadioWrapper and then select children. Remove .zSelected from all .zRadio
@@ -47,15 +45,10 @@ export default function zinput() {
 		$theClickedButton.find(':checkbox').each(function () { this.checked = !this.checked; $(this).change()});
 		});	
 		
-	  
 	  $.each($inputs,function(k,v){
 	    if($(v).attr('checked')){
-	      
 	      $(v).parent().click();
-	      
 	    }
-	    
 	  });
-	  
 	}
 }
