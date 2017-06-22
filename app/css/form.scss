@@ -26,7 +26,7 @@ main {
 #logo-animate{
   overflow: hidden;
   margin-left: 11%;
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
   background: #5763d8;
 }
 #powered{
@@ -34,6 +34,8 @@ main {
 }
 #foundedby{
   display: none;
+  margin: 0 20px;
+
   height:84px;
 }
 .logo {
