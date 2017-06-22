@@ -1,8 +1,6 @@
 import Carousel from "./carousel";
 import Storage from "../model/storage";
 
-
-
 export default class App {
     constructor()
     {
@@ -10,7 +8,6 @@ export default class App {
         this.Carousel = new Carousel();
         this.Storage = new Storage(this);
     }
-
     init(){
       console.log("in app init");
     }

@@ -1,13 +1,12 @@
 main {
-  width: 75%;
+  width: 68%;
   margin: auto;
   background-color: white;
   z-index: 1;
-  position: absolute;
-  min-height: 100vh;
+  position: relative;
+  min-height: 50vh;
   height: auto;
-  top: 80vh;
-  left: 12.5%;
+  top: 80px;
 }
 
 // .logo{
@@ -25,8 +24,8 @@ main {
 }
 #logo-animate{
   overflow: hidden;
-  margin-left: 11%;
-  // margin-bottom: 10px;
+  margin-left: 9%;
+  margin-bottom: 10px;
   background: #5763d8;
 }
 #powered{

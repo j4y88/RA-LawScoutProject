@@ -1,29 +1,37 @@
-header{
+#body {
   background: url('./images/BGimage.png') no-repeat;
   background-size: cover;
-  height: 100vh;
+  height: 65vh;
   width: 100%;
+  background-color: rgba(35,179,184,.1);
+}
+
+header{
   color: white;
-  h1{
-    font-size: 3em;
-    padding-top: 10%;
+  h1 {
+    font-size: 4em;
+    padding-top: 11%;
+    line-height: 1.25;
     text-align: left;
-    letter-spacing: 5px;
-    width: 50%;
-    margin: auto;
-  }
-  h3{
-    color: white;
-    width: 50%;
     letter-spacing: 2px;
-    padding-top: 2%;
+    width: 55%;
     margin: auto;
   }
-  p{
-    width: 50%;
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: white;
+    width: 55%;
+    letter-spacing: 2px;
+    padding-top: 3.25%;
+    margin: auto;
+  }
+  p {
+    width: 55%;
     font-weight: 300;
+    letter-spacing: 1px;
     margin: auto;
     text-align: left;
-    padding-top: 2%;
+    padding-top: 1.5%;
   }
 }
