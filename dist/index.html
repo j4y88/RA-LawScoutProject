@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Law Scout Incorperate Calculator</title>
+
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
@@ -29,40 +30,41 @@
 
     <form id="form1" action="/" method="get">
   <div class="main-carousel flex flex-col" id="carousel-here" >
+  
 <!--  first page -->
     <div class="carousel-cell">
       <div class="flex flex-center-j">
-        <section class="flex flex-col flex-center-j width80">
+        <section class="flex flex-col flex-center-j width65">
           <div>
             <h2>Spend two minutes to discover your potential tax savings.</h1>
             <p>One of the biggest benefits of incorporating your small business is a lower corporate tax rate. Adjust the three sliders below to reveal your savings</p>
           </div>
 
-          <div class="margin25">
+          <div class="margin25v">
             <div class="padding25b">
               <h4>What’s the total annual revenue for your business?</h4>
-              <div class="flex line-hor flex-space-between flex-center-a padding15v padding25vb">
+              <div class="flex line-hor flex-space-between flex-center-a padding15v padding-slider">
                 <div id="slider1" class="width100"></div>
                 <input id="amount1" type="text" readonly class="slider-num" />
               </div>
             </div>
             <div class="padding25b">
               <h4>What are your estimated annual business expenses?</h4>
-              <div class="flex line-hor flex-space-between flex-center-a padding15v padding25vb">
+              <div class="flex line-hor flex-space-between flex-center-a padding15v padding-slider">
                 <div id="slider2" class="width100"></div>
                 <input id="amount2" type="text" readonly class="slider-num" />
               </div>
             </div>
             <div class="padding25b">
               <h4>What are your estimated monthly living expenses?</h4>
-              <div class="flex line-hor flex-space-between flex-center-a padding15v padding25vb">
+              <div class="flex line-hor flex-space-between flex-center-a padding15v padding-slider">
                 <div id="slider3" class="width100"></div>
                 <input id="amount3" type="text" readonly class="slider-num" />
               </div>
             </div>
           </div>
 
-          <div class="flex line-hor flex-center-j flex-space-between padding25vb">
+          <div class="flex line-hor flex-center-j flex-space-between padding25b">
             <div class="flex flex-col flex-center-a width40">
               <img src="./public/images/propicon.png" class="circle-icons">
               <h5 class="text-center margin15v">Proprietorship taxes</h5>
@@ -77,21 +79,23 @@
               <input id="amount5" type="text" readonly class="slider-total-num"/>
             </div>
           </div>
-          <div class="button-row flex flex-col flex-align-items-center margin25">
-            <button class="button button--next" >Next</button>
+          <!--  paste this inside Jason's flickity div content -->
+          <div class="button-row flex flex-col flex-align-items-center margin25v">
+            <button class="button button--next" >Next Step</button>
           </div>
         </section>
       </div>
     </div>
+
 <!--  second page -->
     <div class="carousel-cell">
       <div class="flex flex-col flex-center-a">
-        <div class="flex flex-col width80">
+        <div class="flex flex-col width65">
           <h2 class="margin5">A few more questions to calculate your liablity rating</h2>
           <p class="margin5">Incorporating limits the exposure to personal liability of the owners. Without incorporating, business owners can be personally responsible for business liabilities, including debts and legal judgments.</p>
           <div class="demo vertical-line margin5v padding5v">
             <fieldset>
-              <label for="industry">What's your industry?</label>
+              <label for="industry"><h3>What's your industry?</h3></label>
               <select name="industry" id="industry" class="padding5v">
                 <option selected="selected" disabled="disabled">Select one</option>
                 <option>Arts and Entertainment</option>
@@ -110,61 +114,72 @@
           </div>
           <div id="demo">
             <div class="flex flex-center-a flex-space-between line-hor padding5v">
-              <h3 class="flex width80">Do you hold onto your client's property?</h3>
-              <input type="radio" name="q1" title="YES" value="yes" required/>
-              <input type="radio" name="q1" title="NO" value="no" checked="checked" required/>
+              <h3 class="flex-grow">Do you hold onto your client's property?</h3>
+              <div class="flex">
+                <input type="radio" name="q1" title="YES" value="yes" required/>
+                <input type="radio" name="q1" title="NO" value="no" checked="checked" required/>
+              </div>
             </div>
             <div class="flex flex-center-a flex-space-between line-hor padding5v">
-              <h3 class="flex width80">Do you hold sensitive client information?</h3>
-              <input type="radio" name="q2" title="YES" value="yes" required/>
-              <input type="radio" name="q2" title="NO" value="no" checked="checked" required/>
+              <h3  class="flex-grow">Do you hold sensitive client information?</h3>
+              <div class="flex">
+                <input type="radio" name="q2" title="YES" value="yes" required/>
+                <input type="radio" name="q2" title="NO" value="no" checked="checked" required/>
+              </div>
             </div>
             <div class="flex flex-center-a flex-space-between line-hor padding5v">
-              <h3 class="flex width80">Do you operate on the property of others?</h3>
-              <input type="radio" name="q3" title="YES" value="yes" required/>
-              <input type="radio" name="q3" title="NO" value="no" checked="checked" required/>
+              <h3  class="flex-grow">Do you operate on the property of others?</h3>
+              <div class="flex">
+                <input type="radio" name="q3" title="YES" value="yes" required/>
+                <input type="radio" name="q3" title="NO" value="no" checked="checked" required/>
+              </div>
             </div>
             <div class="flex flex-center-a flex-space-between line-hor padding5v">
-              <h3 class="flex width80">Do you rely on sub-contractors?</h3>
-              <input type="radio" name="q4" title="YES" value="yes" required/>
-              <input type="radio" name="q4" title="NO" value="no" checked="checked" required/>
+              <h3  class="flex-grow">Do you rely on sub-contractors?</h3>
+                <div class="flex">
+                <input type="radio" name="q4" title="YES" value="yes" required/>
+                <input type="radio" name="q4" title="NO" value="no" checked="checked" required/>
+              </div>
             </div>
             <div class="flex flex-center-a flex-space-between line-hor padding5v">
-              <h3 class="flex width80">Do you have employees?</h3>
-              <input type="radio" name="q5" title="YES" value="yes" required/>
-              <input type="radio" name="q5" title="NO" value="no" checked="checked" equired/>
+              <h3  class="flex-grow">Do you have employees?</h3>
+              <div class="flex">
+                <input type="radio" name="q5" title="YES" value="yes" required/>
+                <input type="radio" name="q5" title="NO" value="no" checked="checked" required/>
+              </div>
             </div>
-            <div class="flex flex-center-a flex-space-between padding5v">
-              <h3 class="flex width80">Do you manufacture products that are used or consumed by others?</h3>
-              <input type="radio" name="q6" title="YES" value="yes" required/>
-              <input type="radio" name="q6" title="NO" value="no" checked="checked" required/>
+            <div class="flex flex-center-a flex-space-between padding5v width100">
+              <h3  class="flex-grow">Do you manufacture products that are used or consumed by others?</h3>
+              <div class="flex width25">
+                <input type="radio" name="q6" title="YES" value="yes" required/>
+                <input type="radio" name="q6" title="NO" value="no" checked="checked" required/>
+              </div>
             </div>
             <a href='#' id='check_var'>Check values</a>
             <script>
-            $('a#check_var').click(function() {
-            alert($("input:radio[name='q1']:checked").val() + ' ' + $("input:radio[name='q2']:checked").val() + ' ' + $("input:radio[name='q3']:checked").val() + ' ' + $("input:radio[name='q4']:checked").val() + ' ' + $("input:radio[name='q5']:checked").val() + ' ' + $("input:radio[name='q6']:checked").val());
-            });
-            $("#demo").zInput();
-            $( function() {
-                $( "#industry" ).selectmenu();
-            } );
-          </script>
+              $('a#check_var').click(function() {
+              alert($("input:radio[name='q1']:checked").val() + ' ' + $("input:radio[name='q2']:checked").val() + ' ' + $("input:radio[name='q3']:checked").val() + ' ' + $("input:radio[name='q4']:checked").val() + ' ' + $("input:radio[name='q5']:checked").val() + ' ' + $("input:radio[name='q6']:checked").val());
+              });
+              $("#demo").zInput();
+              $( function() {
+                  $( "#industry" ).selectmenu();
+              } );
+            </script>
           </div>
         </div>
-       </div>
-        <div class="button-row flex flex-col flex-align-items-center margin25v">
-          <button class="button button--report" >Get Report</button>
-          <a class="button--previous back1" style="padding: 20px;">Go back</a>
-        </div>
-
+      </div>
+      <div class="button-row flex flex-col flex-align-items-center margin25v">
+        <button class="button button--report" >Get Report</button>
+        <a class="button--previous back1 underline" style="padding: 20px;">Go back</a>
+      </div>
     </div>
 
 <!--  third page -->
     <div class="carousel-cell">
       <div class="flex flex-center-j">
-        <section class="flex flex-col flex-center-j width80">
+        <section class="flex flex-col flex-center-j width65">
           <div class="margin25v">
-            <div class="padding25vb">
+            <div class="padding25b">
               <h2>Where should we send your report?</h2>
               <p>In addition to your liability rating and a closer look at your post-incorporation tax-savings, you'll receive tips on successfully navigating the incorporation process and advice on how to get started.</p>
               <input class="email-form" type="text" id="email-name" name="email-name" placeholder="Name">
@@ -173,7 +188,7 @@
           </div>
           <div class="button-row flex flex-col flex-align-items-center margin25v">
             <button class="button button--done" id="submitButton">Done!</button>
-            <a class="button--previous back2" style="padding: 20px;">Go back</a>
+            <a class="button--previous back2 underline" style="padding: 20px;">Go back</a>
           </div>
         </section>
       </div>
@@ -182,9 +197,9 @@
 <!--  fourth page on sucess -->
     <div class="carousel-cell" id="success-page">
       <div class="flex flex-center-j">
-        <section class="flex flex-col flex-center-j width80">
+        <section class="flex flex-col flex-center-j width65">
           <div class="margin25v">
-            <div class="padding25vb">
+            <div class="padding25b">
               <h2 class="text-center">Thank you!</h2>
               <p class="margin15v">Your incorporation assessment has been sent to your mailbox.</p>
               <p class="margin15v">Show your entrepreneurial spirit! Share this tool with fellow small business owners.</p>
@@ -196,12 +211,10 @@
     </div>
 
 		</form>
-
-  <div id="demo" class="">
   </div>
 
 </main>
-<div id="demo"></div>
+
 </body>
 
 <script src="./index.min.js"></script>
