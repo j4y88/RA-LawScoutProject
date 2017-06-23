@@ -1,33 +1,71 @@
+/* Global CSS */
+#body {
+  background: url('./images/BGimage.png') no-repeat;
+  background-size: cover;
+  height: 40vmax;
+  padding-bottom: 15px;
+  min-height: 325px;
+  background-color: $body-bg-color;
+}
+main {
+  width: 95%;
+  background-color: white;
+  z-index: 1;
+  position: relative;
+  height: auto;
+  top: 6%;
+}
 /* ---- text or fonts ---- */
-body {
+header{
+  margin: 10% 11.5% 0% 11.5%;
+  color: white;
+  h1 {
+    font-size: 320%;
+    line-height: 1.25;
+    letter-spacing: 2px;
+  }
+  h3 {
+    font-size: 125%;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    padding-top: 3.25%;
+  }
+  p {
+    font-weight: 300;
+    letter-spacing: 1px;
+    padding-top: 1.5%;
+  }
+}
+
+html {
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  font-size: 10px;
 }
 h2 {
   font-size: 250%;
   font-weight: bold;
-  margin: 40px 0px;
   letter-spacing: 1px;
   line-height: 1.2;
+  padding-bottom: 1.25rem;
   color: $teal;
 }
 h4 {
   font-weight: bold;
   font-size: 110%;
   color: $black;
-  letter-spacing: -0.01px;
-  line-height: 40.44px;
+  line-height: 1.2;
 }
 h5 {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 100%;
   color: $teal;
   letter-spacing: 0.17px;
 }
 p {
   color: $black;
   letter-spacing: 0;
-  line-height: 26px;
+  line-height: 1.5;
  }
 .text-center {
   text-align: center;
@@ -103,6 +141,9 @@ p {
 .width90 {
   width: 90%;
 }
+.width95 {
+  width: 95%;
+}
 .width100 {
   width: 100%;
 }
@@ -112,6 +153,9 @@ p {
 .padding5v {
   padding: 5px 0px;
 }
+.padding10v {
+  padding: 10px 0px;
+}
 .padding15v {
   padding: 15px 0px;
 }
@@ -120,6 +164,9 @@ p {
 }
 .padding25b {
   padding-bottom: 25px;
+}
+.padding50b {
+  padding-bottom: 50px;
 }
 .padding-slider {
   padding-bottom: 30px;
@@ -142,12 +189,56 @@ p {
 
 
 /* ---- carousel ---- */
+.cell-width{
+  width:100%;
+}
+.logo-base{
+  width: 10%;
+}
+.logo-clicked{
+  width: 40%;
+  background: $blue;
+}
+#logo-animate{
+  overflow: hidden;
+  margin-left: 9%;
+  margin-bottom: 10px;
+  background: #5763d8;
+}
+#powered{
+  display: none;
+}
+#foundedby{
+  display: none;
+  height:84px;
+}
+.logo {
+  margin: 0 20px;
+  // margin-left: 11%;
+  /*margin-left: 12px;*/
+  // margin-bottom: 10px;
+  background: #5763d8;
+}
+.path {
+  stroke-linecap: round;
+    stroke-dasharray: 1890;
+    stroke-dashoffset: 0;
+    animation: dash 1.0s ease-out;
+}
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1890;
+  }
+  to {
+    stroke-dashoffset: 3780;
+  }
+}
 .carousel-cell {
   width: 100%; /* full width */
   height: auto; /* height of carousel */
   margin: 10px;
   background-color: white;
-  padding: 30px;
+  padding: 0px 30px;
 }
 .button--next{
   background-color: $blue;
@@ -192,24 +283,25 @@ p {
 
 /* ---- page 1 ----- */
 .slider-num {
-  font-size: 140%;
-  width: 40%;
-  color: $teal;
-  letter-spacing: 0.24px;
-  border: 0px;
+  width: 5.25rem;
+  font-size: 110%;
   text-align: right;
+  border: 0px;
+  color: $teal;
 }
 .slider-total-num{
+  width: 100%;
+  font-size: 150%;
+  font-weight: bold;
   text-align: center;
   border: 0px;
-  font-weight: bold;
-  font-size: 200%;
   color: $teal;
-  letter-spacing: 0.59px;
 }
 .vs-circle {
-  height: 50px;
-  width: 50px;
+  min-height: 30px;
+  min-width: 30px;
+  height: 3rem;
+  width: 3rem;
   background-color: $teal;
   text-align: center;
   text-transform: uppercase;
@@ -221,8 +313,8 @@ p {
   border-bottom: 1px solid $teal;
 }
 .circle-icons {
-  height: 140px;
-  width: 140px;
+  height: 9rem;
+  width: 9rem;
 }
 .next-button{
   height: 80px;
@@ -230,19 +322,16 @@ p {
   font-size: 130%;
   background: $blue;
   border-color: $blue;
-  border-radius: 71.11px;
+  border-radius: 50px;
   color: white;
-  letter-spacing: 0.14px;
 }
 
 /* ---- page 2 ----- */
 .zInput{
     display:inline-block;
-    width: 35px;
-    height: 20px;
     background-color: white;
-    margin:4px;
-    padding: 12px;
+    margin:0.25rem;
+    padding: 0.75rem;
     text-align:center;
     cursor:default;
     color: $black;
@@ -303,18 +392,4 @@ p {
   padding: 10px;
   margin: 10px 0;
   width: 100%;
-}
-
-
-
-
-
-
-@media only screen and (max-width: 600px) {
-    header{
-      height: 100vh;
-    }
-    main{
-      top: 100vh;
-    }
 }
