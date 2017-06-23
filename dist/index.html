@@ -11,10 +11,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script src="./zinput.js"></script>
+  <script src="zinput.js"></script>
 </head>
 
-<body id='body'>
+<body id='body' class="flex flex-col flex-center-a">
   <header id="header">
     <h1>Thinking about<br>incorporating?</h1>
     <h3>We'll help you decide if incorporation is right for you.</h3>
@@ -28,13 +28,13 @@
       <img id="foundedby" class="founded-active" src="public/images/ic_Founded_active.png">
     </div>
 
-    <form id="form1" action="/" method="get">
+  <form id="form1" action="/" method="get">
   <div class="main-carousel flex flex-col" id="carousel-here" >
   
 <!--  first page -->
     <div class="carousel-cell">
       <div class="flex flex-center-j">
-        <section class="flex flex-col flex-center-j width65">
+        <section class="flex flex-col flex-center-j cell-width">
           <div>
             <h2>Spend two minutes to discover your potential tax savings.</h1>
             <p>One of the biggest benefits of incorporating your small business is a lower corporate tax rate. Adjust the three sliders below to reveal your savings</p>
@@ -64,14 +64,16 @@
             </div>
           </div>
 
-          <div class="flex line-hor flex-center-j flex-space-between padding25b">
+          <div class="flex line-hor flex-center-j flex-space-between padding50b">
             <div class="flex flex-col flex-center-a width40">
               <img src="./public/images/propicon.png" class="circle-icons">
               <h5 class="text-center margin15v">Proprietorship taxes</h5>
               <input id="amount4" type="text" readonly class="slider-total-num"/>
             </div>
             <div class="flex flex-col flex-center-a flex-center-j">
-              <p class="vs-circle">vs</p>
+              <div class="flex flex-center-a flex-center-j vs-circle">
+                <p class="white">vs</p>
+              </div>
             </div>
             <div class="flex flex-col flex-center-a width40">
               <img src="./public/images/incicon.png" class="circle-icons">
@@ -90,11 +92,10 @@
 <!--  second page -->
     <div class="carousel-cell">
       <div class="flex flex-col flex-center-a">
-        <div class="flex flex-col width65">
+        <div class="flex flex-col cell-width">
           <h2 class="margin5">A few more questions to calculate your liablity rating</h2>
           <p class="margin5">Incorporating limits the exposure to personal liability of the owners. Without incorporating, business owners can be personally responsible for business liabilities, including debts and legal judgments.</p>
           <div class="demo vertical-line margin5v padding5v">
-            <fieldset>
               <label for="industry"><h3>What's your industry?</h3></label>
               <select name="industry" id="industry" class="padding5v">
                 <option selected="selected" disabled="disabled">Select one</option>
@@ -110,47 +111,46 @@
                 <option>Retail</option>
                 <option>Technology</option>
               </select>
-            </fieldset>
           </div>
           <div id="demo">
-            <div class="flex flex-center-a flex-space-between line-hor padding5v">
-              <h3 class="flex-grow">Do you hold onto your client's property?</h3>
+            <div class="flex flex-center-a flex-space-between line-hor padding15v">
+              <h3 class="">Do you hold onto your client's property?</h3>
               <div class="flex">
                 <input type="radio" name="q1" title="YES" value="yes" required/>
                 <input type="radio" name="q1" title="NO" value="no" checked="checked" required/>
               </div>
             </div>
-            <div class="flex flex-center-a flex-space-between line-hor padding5v">
+            <div class="flex flex-center-a flex-space-between line-hor padding15v">
               <h3  class="flex-grow">Do you hold sensitive client information?</h3>
               <div class="flex">
                 <input type="radio" name="q2" title="YES" value="yes" required/>
                 <input type="radio" name="q2" title="NO" value="no" checked="checked" required/>
               </div>
             </div>
-            <div class="flex flex-center-a flex-space-between line-hor padding5v">
+            <div class="flex flex-center-a flex-space-between line-hor padding15v">
               <h3  class="flex-grow">Do you operate on the property of others?</h3>
               <div class="flex">
                 <input type="radio" name="q3" title="YES" value="yes" required/>
                 <input type="radio" name="q3" title="NO" value="no" checked="checked" required/>
               </div>
             </div>
-            <div class="flex flex-center-a flex-space-between line-hor padding5v">
+            <div class="flex flex-center-a flex-space-between line-hor padding15v">
               <h3  class="flex-grow">Do you rely on sub-contractors?</h3>
                 <div class="flex">
                 <input type="radio" name="q4" title="YES" value="yes" required/>
                 <input type="radio" name="q4" title="NO" value="no" checked="checked" required/>
               </div>
             </div>
-            <div class="flex flex-center-a flex-space-between line-hor padding5v">
+            <div class="flex flex-center-a flex-space-between line-hor padding15v">
               <h3  class="flex-grow">Do you have employees?</h3>
               <div class="flex">
                 <input type="radio" name="q5" title="YES" value="yes" required/>
                 <input type="radio" name="q5" title="NO" value="no" checked="checked" required/>
               </div>
             </div>
-            <div class="flex flex-center-a flex-space-between padding5v width100">
-              <h3  class="flex-grow">Do you manufacture products that are used or consumed by others?</h3>
-              <div class="flex width25">
+            <div class="flex flex-center-a flex-space-between padding15v">
+              <h3  class="">Do you manufacture products that are used or consumed by others?</h3>
+              <div class="flex">
                 <input type="radio" name="q6" title="YES" value="yes" required/>
                 <input type="radio" name="q6" title="NO" value="no" checked="checked" required/>
               </div>
@@ -177,9 +177,9 @@
 <!--  third page -->
     <div class="carousel-cell">
       <div class="flex flex-center-j">
-        <section class="flex flex-col flex-center-j width65">
+        <section class="flex flex-col flex-center-j cell-width">
           <div class="margin25v">
-            <div class="padding25b">
+            <div class="">
               <h2>Where should we send your report?</h2>
               <p>In addition to your liability rating and a closer look at your post-incorporation tax-savings, you'll receive tips on successfully navigating the incorporation process and advice on how to get started.</p>
               <input class="email-form" type="text" id="email-name" name="email-name" placeholder="Name">
@@ -197,9 +197,9 @@
 <!--  fourth page on sucess -->
     <div class="carousel-cell" id="success-page">
       <div class="flex flex-center-j">
-        <section class="flex flex-col flex-center-j width65">
+        <section class="flex flex-col flex-center-j cell-width">
           <div class="margin25v">
-            <div class="padding25b">
+            <div class="">
               <h2 class="text-center">Thank you!</h2>
               <p class="margin15v">Your incorporation assessment has been sent to your mailbox.</p>
               <p class="margin15v">Show your entrepreneurial spirit! Share this tool with fellow small business owners.</p>
@@ -217,5 +217,5 @@
 
 </body>
 
-<script src="./index.min.js"></script>
+<script src="index.min.js"></script>
 </html>
