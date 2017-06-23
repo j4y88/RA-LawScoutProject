@@ -272,7 +272,40 @@ p {
   width: 100%;
 }
 
+.disp-inline{
+  display: inline;
+}
 
+.margin-10lr{
+  margin: 0 10px;
+}
+.margin-5lr{
+  margin: 0 5px;
+}
+
+.info{
+  color: $teal;
+  font-size: 0.8em;
+  margin: 10px;
+  width: 80%;
+  line-height: 0.9em;
+  height: auto;
+  // background-color: gray;
+}
+.info-img{
+  height: 2vh;
+  min-height: 20px;
+}
+.hideInfo{
+display: none;
+}
+.showInfo{
+display: block;
+}
+
+#info-hold-property-show, #info-sensitive-show, #info-operate-property-show, #info-subcontractors-show{
+  display: none;
+}
 
 
 @media only screen and (max-width: 600px) {

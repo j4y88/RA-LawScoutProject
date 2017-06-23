@@ -24,13 +24,15 @@
 
   <main>
     <div id="logo-animate" class="logo-base flex padding15">
-      <svg id="logo" class="logo" width="69" height="84" viewBox="0 0 457 558" xmlns="http://www.w3.org/2000/svg"><path class="path" d="M114 145h249c80 0 78-111 0-111H204c-42 0-60 28-60 52-.5 25 0 105 0 123.5.5 22.5 23.5 48.5 61 48.5h65c77 0 77 109 0 110h-60.5c-26 0-65.5 6.5-65.5 60v38c0 77-110 77-110 0V209.5C34 171 56.5 145 91 145z" stroke="#ffffff" stroke-width="60" fill="none"></path></svg>
-      <img id="foundedby" class="founded-active" src="public/images/ic_Founded_active.png">
+      <img id="logo-start" class="" src="public/images/White-logo.png">
+
+      <!-- <svg id="logo" class="logo" width="69" height="84" viewBox="0 0 457 558" xmlns="http://www.w3.org/2000/svg"><path class="path" d="M114 145h249c80 0 78-111 0-111H204c-42 0-60 28-60 52-.5 25 0 105 0 123.5.5 22.5 23.5 48.5 61 48.5h65c77 0 77 109 0 110h-60.5c-26 0-65.5 6.5-65.5 60v38c0 77-110 77-110 0V209.5C34 171 56.5 145 91 145z" stroke="#ffffff" stroke-width="60" fill="none"></path></svg>
+      <img id="foundedby" class="founded-active" src="public/images/ic_Founded_active.png"> -->
     </div>
 
     <form id="form1" action="/" method="get">
   <div class="main-carousel flex flex-col" id="carousel-here" >
-  
+
 <!--  first page -->
     <div class="carousel-cell">
       <div class="flex flex-center-j">
@@ -94,7 +96,6 @@
           <h2 class="margin5">A few more questions to calculate your liablity rating</h2>
           <p class="margin5">Incorporating limits the exposure to personal liability of the owners. Without incorporating, business owners can be personally responsible for business liabilities, including debts and legal judgments.</p>
           <div class="demo vertical-line margin5v padding5v">
-            <fieldset>
               <label for="industry"><h3>What's your industry?</h3></label>
               <select name="industry" id="industry" class="padding5v">
                 <option selected="selected" disabled="disabled">Select one</option>
@@ -110,11 +111,10 @@
                 <option>Retail</option>
                 <option>Technology</option>
               </select>
-            </fieldset>
           </div>
           <div id="demo">
             <div class="flex flex-center-a flex-space-between line-hor padding5v">
-              <h3 class="flex-grow">Do you hold onto your client's property?</h3>
+              <h3 class="">Do you hold onto your client's property?</h3>
               <div class="flex">
                 <input type="radio" name="q1" title="YES" value="yes" required/>
                 <input type="radio" name="q1" title="NO" value="no" checked="checked" required/>
@@ -148,9 +148,9 @@
                 <input type="radio" name="q5" title="NO" value="no" checked="checked" required/>
               </div>
             </div>
-            <div class="flex flex-center-a flex-space-between padding5v width100">
-              <h3  class="flex-grow">Do you manufacture products that are used or consumed by others?</h3>
-              <div class="flex width25">
+            <div class="flex flex-center-a flex-space-between line-hor padding5v">
+              <h3  class="">Do you manufacture products that are used or consumed by others?</h3>
+              <div class="flex">
                 <input type="radio" name="q6" title="YES" value="yes" required/>
                 <input type="radio" name="q6" title="NO" value="no" checked="checked" required/>
               </div>
@@ -177,7 +177,7 @@
 <!--  third page -->
     <div class="carousel-cell">
       <div class="flex flex-center-j">
-        <section class="flex flex-col flex-center-j width65">
+        <section class="flex flex-col flex-center-j width50">
           <div class="margin25v">
             <div class="padding25b">
               <h2>Where should we send your report?</h2>
