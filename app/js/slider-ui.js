@@ -48,7 +48,7 @@ $( document ).ready(function() {
 	 let $amount1 = $("#slider1").slider("values", 0);
 	 let $amount2 = $("#slider2").slider("values", 0);
 	 let $amount3 = $("#slider3").slider("values", 0);
-	 let $amount4 = calculateProprietorshipTax($amount1, $amount2).toFixed(2);
+	 let $amount4 = '$' + calculateProprietorshipTax($amount1, $amount2).toFixed(2);
 
 	 $("#amount1").val("$"+$amount1);
 	 $("#amount2").val("$"+$amount2);
