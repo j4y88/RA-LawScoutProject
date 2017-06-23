@@ -194,37 +194,39 @@ p {
 }
 .logo-base{
   width: 10%;
+  min-width: 84px;
 }
 .logo-clicked{
-  width: 40%;
+  width: 397px;
   background: $blue;
 }
 #logo-animate{
   overflow: hidden;
   margin-left: 9%;
+  height: 84px;
   margin-bottom: 10px;
   background: #5763d8;
 }
-#powered{
+
+#poweredBy{
   display: none;
-}
-#foundedby{
-  display: none;
+  margin: 0 0;
   height:84px;
+  width: 397px;
 }
 .logo {
   margin: 0 20px;
-  // margin-left: 11%;
-  /*margin-left: 12px;*/
-  // margin-bottom: 10px;
+  display: none;
   background: #5763d8;
 }
+
 .path {
   stroke-linecap: round;
     stroke-dasharray: 1890;
     stroke-dashoffset: 0;
     animation: dash 1.0s ease-out;
 }
+
 @keyframes dash {
   from {
     stroke-dashoffset: 1890;
@@ -233,6 +235,7 @@ p {
     stroke-dashoffset: 3780;
   }
 }
+
 .carousel-cell {
   width: 100%; /* full width */
   height: auto; /* height of carousel */
@@ -360,7 +363,9 @@ p {
   .overflow {
     height: 200px;
   }
-  .ui-icon-triangle-1-s { background-position: -65px -16px; }
+  .ui-icon-triangle-1-s { 
+    background-position: -65px -16px; 
+  }
   .info{
     color: $teal;
     font-size: 0.8em;
