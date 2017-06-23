@@ -75,7 +75,6 @@ $( document ).ready(function() {
       cPP = 5128.20;
     }
 
-
       let taxableIncome = aIncome - (cPP/2);
 
 
@@ -112,4 +111,15 @@ $( document ).ready(function() {
     console.log("aIncome: "+ aIncome + " cPP: "+ cPP +" taxableIncome:"+ taxableIncome +" payableTaxes: "+payableTaxes);
     return payableTaxes;
   }
+
+    function calculateIncorporationTax(monthlyExpense){
+      let afterTaxSalary = monthlyExpense * 12;
+      let preTaxSalary = 0;
+
+      if (afterTaxSalary < 11636) {
+        preTaxSalary = afterTaxSalary;
+      }
+
+
+    }
 };
