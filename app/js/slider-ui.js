@@ -50,11 +50,11 @@ $( document ).ready(function() {
 	 let $amount3 = $("#slider3").slider("values", 0);
 	 let $amount4 = calculateProprietorshipTax($amount1, $amount2).toFixed(2);
 
-	 $("#amount1").val($amount1);
-	 $("#amount2").val($amount2);
-	 $("#amount3").val($amount3);
-	 $("#amount4").val($amount4);
-	 $("#amount5").val($amount4);
+	 $("#amount1").val("$"+$amount1);
+	 $("#amount2").val("$"+$amount2);
+	 $("#amount3").val("$"+$amount3);
+	 $("#amount4").val("$"+$amount4);
+	 $("#amount5").val("$"+$amount4);
 
    calculateProprietorshipTax($amount1, $amount2);
 	}
