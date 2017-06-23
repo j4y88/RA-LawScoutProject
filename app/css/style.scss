@@ -187,84 +187,10 @@ p {
   margin: 0 5px;
 }
 
-
 /* ---- carousel ---- */
 .cell-width{
   width:100%;
 }
-.logo-base{
-  height:100px;
-  width:100px;
-  min-width: 100px;
-}
-.logo-clicked{
-  height:100px;
-  width: 397px;
-  background-image: url('./images/ic_Founded_active.png');
-  // background-position: center;
-  background-repeat: no-repeat;
-  background-size: 300px;
-
-  min-width: 397px;
-  // max-width:100%;
-  // background: $blue;
-}
-#logo-animate{
-  // overflow: hidden;
-  margin-left: 9%;
-  width: 100px;
-  height: 100px;
-  // height: 84px;
-  margin-bottom: 10px;
-  background-color: #5763d8;
-  background-position: center;
-
-
-}
-.showFirstLogo{
-  background-color: #5763d8;
-  background-image: url('./images/White_logo.png');
-  // background-position: center;
-  background-repeat: no-repeat;
-  background-size: 177px;
-}
-.hideFirstLogo{
-}
-
-#poweredBy{
-  display: none;
-  margin: 0 0;
-  height:100px;
-  width: 397px;
-  // max-width: 100%;
-}
-.logo {
-  // margin: 0 20px;
-  display: none;
-  width: 100px;
-  height: 100px;
-  background: #5763d8;
-}
-
-.path {
-	stroke-linecap: round;
-  	stroke-dasharray: 1890;
-  	stroke-dashoffset: 0;
-  	animation: dash 1.0s ease-out;
-}
-.margin-auto{
-  margin:auto;
-}
-
-@keyframes dash {
-	from {
-		stroke-dashoffset: 1890;
-	}
-	to {
-		stroke-dashoffset: 3780;
-	}
-}
-
 .carousel-cell {
   width: 100%; /* full width */
   height: auto; /* height of carousel */
@@ -392,7 +318,9 @@ p {
   .overflow {
     height: 200px;
   }
-  .ui-icon-triangle-1-s { background-position: -65px -16px; }
+  .ui-icon-triangle-1-s { 
+    background-position: -65px -16px; 
+  }
   .info{
     color: $teal;
     font-size: 0.8em;
