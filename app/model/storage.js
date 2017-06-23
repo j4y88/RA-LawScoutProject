@@ -14,6 +14,9 @@ export default class Storage {
         console.log("inside storage creation");
         let elements = document.querySelectorAll("#form1 input");
         let dropDown = document.querySelectorAll("#form1 select");
+        // let radioButtons = document.querySelectorAll("");
+        // console.log(radioButtons);
+
         //VT: not sure how to query select to radio button inputs
         //so that their changed values are set to SS,
         //we are using element IDs as SS keys,
@@ -25,16 +28,26 @@ export default class Storage {
         }
 
         for (let i = 0, element; element = elements[i++];) {
-          this.ss.setItem(element.id, element.value);
-          element.addEventListener("change", this.updateStorageValue(element.id, element.value));
+
+            this.ss.setItem(element.id, element.value);
+            element.addEventListener("change", this.updateStorageValue(element.id, element.value));
         }
       }
 
       updateStorageValue(key ,value){
         console.log("changed storage value");
-        this.ss.setItem(key, value);
-        //VT: It looks as if I have a blank key is SS with a value of "no",
-        //I'm not sure where that is coming from.
+        if (document.getElementById(key).type == 'radio'){
+          console.log("CHANGING RADIO");
+          // if (document.getElementById(key).checked == 'checked'){
+          //   this.ss.setItem(key, "selected");
+          }
+          // else{
+          //   this.ss.setItem(key, "not selected");
+          // }
+        // }
+        else{
+          this.ss.setItem(key, value);
+        }
+        console.log(this.ss);
       }
-
 }
