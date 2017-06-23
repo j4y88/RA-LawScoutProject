@@ -24,7 +24,6 @@ export default class Storage {
           element.addEventListener("change", this.updateStorageValue(element.id, element.value));
         }
 
-
         for (let i = 0, element; element = elements[i++];) {
           this.ss.setItem(element.id, element.value);
           element.addEventListener("change", this.updateStorageValue(element.id, element.value));
@@ -35,7 +34,7 @@ export default class Storage {
         console.log("changed storage value");
         this.ss.setItem(key, value);
         //VT: It looks as if I have a blank key is SS with a value of "no",
-        //I'm not sure where that is coming from.  
+        //I'm not sure where that is coming from.
       }
 
 }
