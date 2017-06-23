@@ -12,7 +12,8 @@ export default class Carousel{
     let flkty = new Flickity( carousel, {
       prevNextButtons: false,
       pageDots: false,
-      draggable: false
+      draggable: false,
+      adaptiveHeight: true
     });
     this.cv.getButtons(flkty);
 

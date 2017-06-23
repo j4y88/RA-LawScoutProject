@@ -12,26 +12,32 @@ export default class CarouselView{
   }
 
   logoAnimate(){
-    let logo = document.querySelector('#logo-start');
-    logo.addEventListener( 'click', function() {
-      $('#logo-start').fadeOut("fast", function(){
+    let logo = document.querySelector('#logo-animate');
+    logo.addEventListener( 'click', this.addClickToExpandLogo, false);
+  }
+
+  addClickToExpandLogo(){
+      $('#logo-animate').removeClass("showFirstLogo", function(){
         $('#logo').fadeIn( function (){
           $('#logo-animate').switchClass("logo-base", "logo-clicked", 2000, "linear", function(){
-            $('#logo').fadeOut( function (){
-              document.getElementById('poweredBy').style.display="block";
-              let poweredBy = document.querySelector('#logo-animate');
-              //VT: crazy things happen when I try to shrink the logo back to start-state:
-              // poweredBy.addEventListener('click', function(){
-              //   $('#logo-animate').switchClass("logo-clicked", "logo-base", 2000, "linear")
-              //     $('#poweredBy').fadeOut();
-              //     $('#logo-start').fadeIn();
-              //   });
+             $('#logo').fadeOut( function (){
+               console.log("remove listener");
+               let logo = document.querySelector('#logo-animate');
+               //this remove listener isn't working. On click, animation path logo shows
+               logo.removeEventListener( 'click', this.addClickToExpandLogo);
+              //  logo.addEventListener( 'click', this.addClickToShrinkLogo, false);
             });
           });
         });
       });
-    });
+    }
+
+
+  addClickToShrinkLogo(){
+    console.log("shrinking");
+    //reverse the addClickToExpandLogo steps to return logo to initial views
   }
+
   getButtons(flkty){
     console.log("getting buttons");
     let previousButton1 = document.querySelector('.back1');
