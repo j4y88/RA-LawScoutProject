@@ -1,0 +1,59 @@
+@media only screen and (min-width: 500px) {
+	html{
+		font-size: 12px;
+	}
+	header{
+  		margin: 10% 20% 0% 20%;
+  	}
+	main {
+	  	width: 80%;
+	  	background-color: white;
+	  	z-index: 1;
+	  	position: relative;
+	  	height: auto;
+	  	top: 10%;
+	}
+	.cell-width{
+	  width:70%;
+	}
+}
+
+@media only screen and (min-width: 800px) {
+	html{
+		font-size: 14px;
+	}
+	header{
+  		margin: 10% 19.5% 0% 19.5%;
+  	}
+	main {
+	  	width: 75%;
+	  	background-color: white;
+	  	z-index: 1;
+	  	position: relative;
+	  	height: auto;
+	  	top: 10%;
+	}
+	.cell-width{
+	  width:70%;
+	}
+}
+
+@media only screen and (min-width: 1000px) {
+	html{
+		font-size: 16px;
+	}
+	header{
+  		margin: 10% 23.25% 0% 23.25%;
+  	}
+	main {
+	  	width: 65%;
+	  	background-color: white;
+	  	z-index: 1;
+	  	position: relative;
+	  	height: auto;
+	  	top: 10%;
+	}
+	.cell-width{
+	  width:70%;
+	}
+}

@@ -1,7 +1,8 @@
-/*Fonts and general Setup*/
+/*CSS import order*/
 @import 'css/cssreset';
 @import 'css/variables';
-@import 'css/header';
 @import 'css/jquery-ui';
+@import 'css/header';
 @import 'css/form';
 @import 'css/style';
+@import 'css/media';
