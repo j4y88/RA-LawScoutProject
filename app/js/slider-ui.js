@@ -4,6 +4,7 @@ $( document ).ready(function() {
       value: 0,
         min: 0,
         max: 1000000,
+        step: 5000,
         range: "min",
         slide: function(event, ui) {
             update();
@@ -13,6 +14,7 @@ $( document ).ready(function() {
       value: 0,
         min: 0,
         max: 1000000,
+        step: 5000,
         range: "min",
         slide: function(event, ui) {
             update();
@@ -22,6 +24,7 @@ $( document ).ready(function() {
       value: 0,
         min: 0,
         max: 500000,
+        step: 1000,
         range: "min",
         slide: function(event, ui) {
             update();
