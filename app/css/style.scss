@@ -76,6 +76,11 @@ p {
 .underline {
     text-decoration: underline;
 }
+.disp-inline{
+  display: inline;
+}
+
+
 /* ---- button-row ---- */
 
 .button-row {
@@ -174,6 +179,12 @@ p {
 }
 .margin25v {
   margin: 25px 0px;
+}
+.margin-10lr{
+  margin: 0 10px;
+}
+.margin-5lr{
+  margin: 0 5px;
 }
 
 
@@ -348,6 +359,29 @@ p {
   }
   .overflow {
     height: 200px;
+  }
+  .ui-icon-triangle-1-s { background-position: -65px -16px; }
+  .info{
+    color: $teal;
+    font-size: 0.8em;
+    margin: 10px;
+    width: 80%;
+    line-height: 0.9em;
+    height: auto;
+  }
+  .info-img{
+    height: 2vh;
+    min-height: 20px;
+  }
+  .hideInfo{
+  display: none;
+  }
+  .showInfo{
+  display: block;
+  }
+
+  #info-hold-property-show, #info-sensitive-show, #info-operate-property-show, #info-subcontractors-show{
+    display: none;
   }
 
   /* ---- page 3 ----- */
