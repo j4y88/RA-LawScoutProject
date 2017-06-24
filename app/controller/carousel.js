@@ -13,7 +13,7 @@ export default class Carousel{
       prevNextButtons: false,
       pageDots: false,
       draggable: false,
-      adaptiveHeight: true
+      // adaptiveHeight: true
     });
     this.cv.getButtons(flkty);
 
