@@ -111,21 +111,23 @@ export default class CarouselView{
       event.preventDefault();
       var isValid = true;
       var emailValidateRegEx = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
-      var sName = $('#email-name').val();
+      var emailValidateName = /^[A-Za-z\s]+$/;
+      var sName = $('#emailName').val();
+      var sEmail = $('#emailAddress').val();
         if ($.trim(sName).length == 0) {
           $("#email-name-required").show();
           isValid = false;
-        }  else if ($.trim(sName).length <= 2) {
+        }  else if ($.trim(sName).length <= 3) {
           $("#EmailNameError").show();
           isValid = false;
-        }  else if ( sName.match('^[a-zA-Z]{3,16}$') ) {
+        } else if (!emailValidateName.test(sName)) {
           $("#EmailNameError").show();
           isValid = false;
         }
-        if ($("#email-address").val() == "") {
+        if (sEmail == "") {
           $("#EmailAddressRequired").show();
           isValid = false;
-        } else if (!emailValidateRegEx.test($("#email-address").val())) {
+        } else if (!emailValidateRegEx.test(sEmail)) {
         $("#EmailAddressError").show();
         isValid = false;
       }
