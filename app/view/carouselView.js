@@ -1,6 +1,10 @@
+
 export default class CarouselView{
-  constructor(){
+  constructor(app, storage, service){
     console.log("carousel view constructor");
+    this.app = app;
+    this.storage = storage;
+    this.service = service;
     this.logoAnimate();
     this.infoHovers();
   }
@@ -38,7 +42,7 @@ export default class CarouselView{
     //reverse the addClickToExpandLogo steps to return logo to initial views
   }
 
-  getButtons(flkty){
+  getButtons(flkty, storage, service){
     console.log("getting buttons");
     let previousButton1 = document.querySelector('.back1');
     previousButton1.addEventListener( 'click', function(event) {
@@ -82,12 +86,15 @@ export default class CarouselView{
     let doneButton = document.querySelector('.button--done');
     doneButton.addEventListener( 'click', function(event) {
       event.preventDefault();
+      //input validation
+      //then collate form info, make AJAX, then either go to final success page,
+      //or show error
       flkty.next();
       $('html, body').animate({
           scrollTop: $("#success-page").offset().top
       }, 400);
-
-    });
+      service.compileData(storage);
+   });
   }
 
 }

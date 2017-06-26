@@ -8,46 +8,105 @@ export default class Storage {
         this.createDefaultStorage();
       }
 //check if session storage is available
-//on clicking of button on bottom of each page, set session values to keys?
 
       createDefaultStorage(){
+
         console.log("inside storage creation");
-        let elements = document.querySelectorAll("#form1 input");
-        let dropDown = document.querySelectorAll("#form1 select");
-        // let radioButtons = document.querySelectorAll("");
-        // console.log(radioButtons);
-
-        //VT: not sure how to query select to radio button inputs
-        //so that their changed values are set to SS,
-        //we are using element IDs as SS keys,
-        //should we make IDs such as "RadioQ1Yes" and "RadioQ1No" and say
-        //"if .type is 'radio' then set value to SS key as "selected"?
-
-        for (let i = 0, element; element = dropDown[i++];) {
-          element.addEventListener("change", this.updateStorageValue(element.id, element.value));
+        //for prop and incorp numbers:
+        let taxes = document.querySelectorAll(".slider-total-num");
+        for (let i = 0, tax; tax= taxes[i++];) {
+          this.ss.setItem(tax.id, 0);
+          tax.addEventListener("change", this.updateStorageValueTaxSlider(tax.id, tax.value));
         }
-
+        //for sliders:
+        let elements = document.querySelectorAll("#form1 .slider-num");
         for (let i = 0, element; element = elements[i++];) {
-
-            this.ss.setItem(element.id, element.value);
-            element.addEventListener("change", this.updateStorageValue(element.id, element.value));
+          // if(this.ss.length <= 0){
+          this.ss.setItem(element.id, 0);
+          console.log(element);
+        // }
+          element.addEventListener("change", this.updateStorageValueSlider(element.id, element.value));
         }
+
+        //for radio buttons:
+        let radioButtons = document.querySelectorAll("[type='radio']");
+        for (let i = 0, element; element = radioButtons[i++];) {
+          let ss = this.ss;
+          let id = element.id;
+          let parentDiv = $('#'+id+'').closest('div').click({ss: this.ss, id:id}, this.updateStorageValueRadio);
+            console.log(element);
+            if ($('#'+id+'').parents().hasClass('zSelected')) {
+              ss.setItem(id, "selected");
+            }else{
+              ss.setItem(id, "not selected");
+            }
+        }
+
+
+        //for dropdown industry list:
+        let dropDown = document.querySelectorAll("#form1 select");
+        for (let i = 0, element; element = dropDown[i++];) {
+          element.addEventListener("change", this.updateStorageValueSelect(element.id, element.value));
+          if(this.ss.length <= 0){
+          }
+        }
+
+        //for email stuff:
+        let emailInfo = document.querySelectorAll("#emailName, #emailAddress");
+        for (let i = 0, field; field = emailInfo[i++];) {
+          field.addEventListener("change", this.updateStorageValueEmail(field.id, field.value));
+          if(this.ss.length <= 0){
+            this.ss.setItem(field.id, "");
+          }
+        }
+
+
       }
 
-      updateStorageValue(key ,value){
-        console.log("changed storage value");
-        if (document.getElementById(key).type == 'radio'){
-          console.log("CHANGING RADIO");
-          // if (document.getElementById(key).checked == 'checked'){
-          //   this.ss.setItem(key, "selected");
-          }
-          // else{
-          //   this.ss.setItem(key, "not selected");
-          // }
-        // }
-        else{
-          this.ss.setItem(key, value);
-        }
+      updateStorageValueTaxSlider(key, value){
+        //on page load check session storage and apply ".checked" class
+        //to whichever switches were last selected in the session
+        //function should be called from view file where value is determined
+        this.ss.setItem(key, value);
+      }
+      updateStorageValueSlider(key, value){
+        //on page load check session storage and apply ".checked" class
+        //to whichever switches were last selected in the session
+        //function should be called from view file where value is determined
+        this.ss.setItem(key, value);
+      }
+
+      updateStorageValueSelect(key, value){
+        this.ss.setItem(key, value);
         console.log(this.ss);
       }
+
+      updateStorageValueRadio(e){
+        let ss = e.data.ss;
+        let id = e.data.id;
+        // console.log(ss);
+        if ($('#'+id+'').parents().hasClass('zSelected')) {
+          ss.setItem(id, "selected");
+          console.log(id);
+          console.log(id.length);
+          if(id.length == 8){
+            let idRoot = id.substring(0,6);
+            let idToggle = idRoot.concat("Yes");
+            ss.setItem(idToggle, "");
+            console.log(ss);
+          }
+          else if(id.length == 9){
+            let idRoot = id.substring(0,6);
+            console.log(idRoot);
+            let idToggle = idRoot.concat("No");
+            console.log(idToggle);
+            ss.setItem(idToggle, "");
+            console.log(ss);
+          }
+        }
+      }
+      updateStorageValueEmail(key, value){
+        this.ss.setItem(key, value);
+      }
+
 }
