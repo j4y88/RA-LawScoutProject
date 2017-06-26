@@ -117,7 +117,7 @@ export default class CarouselView{
         if ($.trim(sName).length == 0) {
           $("#email-name-required").show();
           isValid = false;
-        }  else if ($.trim(sName).length <= 3) {
+        }  else if ($.trim(sName).length <= 2) {
           $("#EmailNameError").show();
           isValid = false;
         } else if (!emailValidateName.test(sName)) {

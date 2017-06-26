@@ -52,7 +52,7 @@ function update() {
  let $amount2 = $("#slider2").slider("values", 0);
  let $amount3 = $("#slider3").slider("values", 0);
  let $amount4 = calculateProprietorshipTax($amount1, $amount2).toFixed(2);
- let $amount5 = calculateIncorporationTax($amount1, $amount2, $amount3);
+ let $amount5 = calculateIncorporationTax($amount1, $amount2, $amount3).toFixed(2);
 
 
  $("#amount1").val("$"+$amount1);
