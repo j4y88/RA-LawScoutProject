@@ -53,6 +53,7 @@ function update() {
  let $amount3 = $("#slider3").slider("values", 0);
  let $amount4 = calculateProprietorshipTax($amount1, $amount2).toFixed(2);
  let $amount5 = calculateIncorporationTax($amount1, $amount2, $amount3).toFixed(2);
+ let $amount6 = ($amount4 - $amount5).toFixed(0);
 
 
  $("#amount1").val("$"+$amount1);
@@ -60,6 +61,48 @@ function update() {
  $("#amount3").val("$"+$amount3);
  $("#amount4").val("$"+$amount4);
  $("#amount5").val("$"+$amount5);
+
+ if ($amount6.toString().length <= 2){
+   $("#savings1").val("");
+   $("#savings2").val("");
+   $("#savings3").val("");
+   $("#savings4").val("");
+   $("#savings5").val("");
+   $("#savings6").val("");
+ }
+ if ($amount6.toString().length === 3){
+   $("#savings1").val("$");
+   $("#savings2").val("");
+   $("#savings3").val("");
+   $("#savings4").val($amount6.toString().substr(0,1));
+   $("#savings5").val($amount6.toString().substr(1,1));
+   $("#savings6").val($amount6.toString().substr(2,1));
+ }
+ if ($amount6.toString().length === 4){
+   $("#savings1").val("$");
+   $("#savings2").val("");
+   $("#savings3").val($amount6.toString().substr(0,1));
+   $("#savings4").val($amount6.toString().substr(1,1));
+   $("#savings5").val($amount6.toString().substr(2,1));
+   $("#savings6").val($amount6.toString().substr(3,1));
+ }
+ if ($amount6.toString().length === 5){
+   $("#savings1").val("$");
+   $("#savings2").val($amount6.toString().substr(0,1));
+   $("#savings3").val($amount6.toString().substr(1,1));
+   $("#savings4").val($amount6.toString().substr(2,1));
+   $("#savings5").val($amount6.toString().substr(3,1));
+   $("#savings6").val($amount6.toString().substr(4,1));
+ }
+ if ($amount6.toString().length === 6){
+   $("#savings1").val($amount6.toString().substr(0,1));
+   $("#savings2").val($amount6.toString().substr(1,1));
+   $("#savings3").val($amount6.toString().substr(2,1));
+   $("#savings4").val($amount6.toString().substr(3,1));
+   $("#savings5").val($amount6.toString().substr(4,1));
+   $("#savings6").val($amount6.toString().substr(5,1));
+ }
+
 
  calculateProprietorshipTax($amount1, $amount2);
  console.log("incorporation tax" + calculateIncorporationTax($amount1, $amount2, $amount3));

@@ -245,6 +245,21 @@ p {
 }
 
 /* ---- page 1 ----- */
+.background-savings{
+  background-image: url("./images/scrollnum.png");
+  height: 120px;
+  width: 90px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.slider-top-value {
+  width: 5.25rem;
+  font-size: 4em;
+  text-align: center;
+  border: 0px;
+  color: $teal;
+  background: none;
+}
 .slider-num {
   width: 5.25rem;
   font-size: 110%;
@@ -323,8 +338,8 @@ p {
   .overflow {
     height: 200px;
   }
-  .ui-icon-triangle-1-s { 
-    background-position: -65px -16px; 
+  .ui-icon-triangle-1-s {
+    background-position: -65px -16px;
   }
   .info{
     color: $teal;
