@@ -10,9 +10,11 @@ let indexer = require('file-loader?name=../dist/index.html!./index.html');
 let app = new App();
 app.init();
 let slider = new Slider();
-//let zinput = new Zinput();
 
 $( document ).ready(function() {
   console.log("on ready");
 });
+
+
+ 
 

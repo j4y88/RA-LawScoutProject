@@ -12,6 +12,7 @@
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="zinput.js"></script>
+
 </head>
 
 <body id='body' class="flex flex-col flex-center-a">
@@ -46,24 +47,41 @@
 
           <div class="margin25v">
             <div class="padding25b">
-              <h4>What’s the total annual revenue for your business?</h4>
-              <div class="flex line-hor flex-space-between flex-center-a padding15v padding-slider">
+              <div class="line-hor">
+                <h4>What’s the total annual revenue for your business?</h4>
+              <div class="flex  flex-space-between flex-center-a padding15v">
                 <div id="slider1" class="width100"></div>
-                <input id="amount1" type="text" readonly class="slider-num" />
+                <input id="amount1" type="text" readonly class="slider-num" />  
+              </div>
+              <div id="slider1-error" name="slider1-error" class="Error padding-slider">
+                Total Annual revenue is required
               </div>
             </div>
+          </div>
+
             <div class="padding25b">
-              <h4>What are your estimated annual business expenses?</h4>
-              <div class="flex line-hor flex-space-between flex-center-a padding15v padding-slider">
-                <div id="slider2" class="width100"></div>
-                <input id="amount2" type="text" readonly class="slider-num" />
+              <div class="line-hor">
+                <h4>What are your estimated annual business expenses?</h4>
+                <div class="flex flex-space-between flex-center-a padding15v">
+                  <div id="slider2" class="width100"></div>
+                  <input id="amount2" type="text" readonly class="slider-num" />
+                </div>
+                <div id="slider2-error" name="slider1-error" class="Error padding-slider">
+                  Total Annual business expenses is required
+                </div>
               </div>
             </div>
+
             <div class="padding25b">
-              <h4>What are your estimated monthly living expenses?</h4>
-              <div class="flex line-hor flex-space-between flex-center-a padding15v padding-slider">
-                <div id="slider3" class="width100"></div>
-                <input id="amount3" type="text" readonly class="slider-num" />
+              <div class="line-hor">
+                <h4>What are your estimated monthly living expenses?</h4>
+                <div class="flex flex-space-between flex-center-a padding15v">
+                  <div id="slider3" class="width100"></div>
+                  <input id="amount3" type="text" readonly class="slider-num" />
+                </div>
+                <div id="slider3-error" name="slider1-error" class="Error padding-slider">
+                  Total estimate monthly living expenses is required
+                </div>
               </div>
             </div>
           </div>
@@ -102,7 +120,7 @@
           <div class="demo vertical-line margin5v padding5v">
               <label for="industry"><h3>What's your industry?</h3></label>
               <select name="industry" id="industry" class="padding5v">
-                <option selected="selected" disabled="disabled">Select one</option>
+                <option value="">Choose</option>
                 <option>Arts and Entertainment</option>
                 <option>Construction</option>
                 <option>Educational Services</option>
@@ -115,6 +133,9 @@
                 <option>Retail</option>
                 <option>Technology</option>
               </select>
+          </div>
+          <div id="IndustryError" name="IndustryError" class="Error">
+           Industy is required
           </div>
           <div id="demo">
             <div class="flex flex-col line-hor padding5v">
@@ -207,7 +228,19 @@
               <h2>Where should we send your report?</h2>
               <p>In addition to your liability rating and a closer look at your post-incorporation tax-savings, you'll receive tips on successfully navigating the incorporation process and advice on how to get started.</p>
               <input class="email-form" type="text" id="emailName" name="emailName" placeholder="Name">
-              <input class="email-form" type="text" id="emailAddress" name="emailAddress" placeholder="Email">
+               <div name="email-name-required" id="email-name-required" class="Error">
+                Name is required
+              </div>
+              <div name="EmailNameError" id="EmailNameError" class="Error">
+                Name is invalid (A-Z characters only, minimum of 3 letters)
+              </div>
+              <input class="email-form" type="email" id="emailAddress" name="emailAddress" placeholder="Email">
+              <div name="EmailAddressError" id="EmailAddressError" class="Error">
+                Email Address is invalid
+              </div>
+              <div name="EmailAddressRequired" id="EmailAddressRequired" class="Error">
+                Email Address is required
+              </div>
             </div>
           </div>
           <div class="button-row flex flex-col flex-align-items-center margin25v">

@@ -169,7 +169,7 @@ p {
   padding-bottom: 50px;
 }
 .padding-slider {
-  padding-bottom: 30px;
+  padding-bottom: 15px;
 }
 .margin5v {
     margin: 5px 0px;
@@ -237,6 +237,11 @@ p {
 /* ---- button-row ---- */
 .button-row {
   text-align: center;
+}
+
+.Error {
+  color: red;
+  display: none;
 }
 
 /* ---- page 1 ----- */
