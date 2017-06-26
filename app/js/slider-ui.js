@@ -1,7 +1,7 @@
 export default function ui() {
 $( document ).ready(function() {
     $("#slider1").slider({
-      value: 0,
+      value: 100000,
         min: 0,
         max: 1000000,
         step: 5000,
@@ -21,10 +21,10 @@ $( document ).ready(function() {
         }
     });
     $("#slider3").slider({
-      value: 0,
+      value: 3000,
         min: 0,
-        max: 500000,
-        step: 1000,
+        max: 20000,
+        step: 500,
         range: "min",
         slide: function(event, ui) {
             update();
@@ -49,14 +49,17 @@ $( document ).ready(function() {
 	 let $amount2 = $("#slider2").slider("values", 0);
 	 let $amount3 = $("#slider3").slider("values", 0);
 	 let $amount4 = calculateProprietorshipTax($amount1, $amount2).toFixed(2);
+   let $amount5 = calculateIncorporationTax($amount1, $amount2, $amount3).toFixed(2);
+
 
 	 $("#amount1").val("$"+$amount1);
 	 $("#amount2").val("$"+$amount2);
 	 $("#amount3").val("$"+$amount3);
 	 $("#amount4").val("$"+$amount4);
-	 $("#amount5").val("$"+$amount4);
+	 $("#amount5").val("$"+$amount5);
 
    calculateProprietorshipTax($amount1, $amount2);
+   console.log("incorporation tax" + calculateIncorporationTax($amount1, $amount2, $amount3));
 	}
 
 
@@ -89,7 +92,7 @@ $( document ).ready(function() {
         }else if (taxableIncome > 142353) {
           payableTaxes = cPP +  43313.61 + (taxableIncome-142353)*.4641;
         }else if (taxableIncome > 91831) {
-          payableTaxes = cPP + 21832 + (taxableIncome-91831)*.4341;
+          payableTaxes = cPP + 21382 + (taxableIncome-91831)*.4341;
         }else if (taxableIncome > 87559) {
           payableTaxes = cPP + 19763.32 + (taxableIncome-87559)*.3791;
         }else if (taxableIncome > 84404) {
@@ -112,7 +115,7 @@ $( document ).ready(function() {
     return payableTaxes;
   }
 
-    function calculateIncorporationTax(aRev, aExp ,monthlyExpense){
+    function calculateIncorporationTax(aRev, aExp, monthlyExpense){
       let ai = aRev - aExp;
       let afterTaxSalary = monthlyExpense * 12;
       let preTaxSalary = 0;
@@ -126,32 +129,32 @@ $( document ).ready(function() {
       }else if (afterTaxSalary < 33739.70) {
         preTaxSalary = afterTaxSalary / (1 - 0.2005);
       }else if (afterTaxSalary < 36556.77 ) {
-        preTaxSalary =  42201.00 + (afterTaxSalary / (1 - 0.2415));
+        preTaxSalary =  42201.00 + ((afterTaxSalary - 33739.70) / (1 - 0.2415));
       }else if (afterTaxSalary < 56533.35) {
-        preTaxSalary =  45913.68 + (afterTaxSalary / (1 - 0.2965));
+        preTaxSalary =  45913.68 + ((afterTaxSalary - 36556.77)/ (1 - 0.2965));
       }else if (afterTaxSalary < 63447.02) {
-        preTaxSalary =  74308.25 + (afterTaxSalary / (1 - 0.3148));
+        preTaxSalary =  74308.25 + ((afterTaxSalary - 56533.35)/ (1 - 0.3148));
       }else if (afterTaxSalary < 65532.13) {
-        preTaxSalary =  84396.80 + (afterTaxSalary / (1 - 0.3389));
+        preTaxSalary =  84396.80 + ((afterTaxSalary - 63447.02 )/ (1 - 0.3389));
       }else if (afterTaxSalary < 68184.00) {
-        preTaxSalary =  87549.28 + (afterTaxSalary / (1 - 0.3791));
+        preTaxSalary =  87549.28 + ((afterTaxSalary - 65532.13 )/ (1 - 0.3791));
       }else if (afterTaxSalary < 96773.83) {
-        preTaxSalary =  91818.68458 + (afterTaxSalary / (1 - 0.4341));
+        preTaxSalary =  91818.68458 + ((afterTaxSalary - 68184.00 )/ (1 - 0.4341));
       }else if (afterTaxSalary < 100871.32) {
-        preTaxSalary =  142337.91 + (afterTaxSalary / (1 - 0.4641));
+        preTaxSalary =  142337.91 + ((afterTaxSalary - 96773.83 )/ (1 - 0.4641));
       }else if (afterTaxSalary < 128342.64) {
-        preTaxSalary =  149982.04 + (afterTaxSalary / (1 - 0.4797));
+        preTaxSalary =  149982.04 + ((afterTaxSalary  - 100871.32)/ (1 - 0.4797));
       }else if (afterTaxSalary < 136603.32) {
-        preTaxSalary =  202779.12 + (afterTaxSalary / (1 - 0.5191));
+        preTaxSalary =  202779.12 + ((afterTaxSalary  - 128342.64)/ (1 - 0.5191));
       } else if (afterTaxSalary > 136604.33) {
-        preTaxSalary =  219976 + (afterTaxSalary / (1 - 0.5353));
+        preTaxSalary =  219976 + ((afterTaxSalary  - 136603.32)/ (1 - 0.5353));
       }
       if (preTaxSalary < 51300 ){
         ei = preTaxSalary * 0.0163
       } else if (preTaxSalary > 51300) {
         ei = 836.19
       }
-      if (preTaxSalary - 3500 < 55300) {
+      if (preTaxSalary - 3500 < 55300 && preTaxSalary - 3500 > 0) {
         cPP = (preTaxSalary - 3500) * .0495
       } else if (preTaxSalary-3500 > 55300) {
         cPP = 2564.10
@@ -159,7 +162,7 @@ $( document ).ready(function() {
 
       let federalDeduction = (11635 + ei + cPP + 1178) * .15;
 
-      let ontarioDeduction = (10171 + ei + cPP + 1178) *.0505;
+      let ontarioDeduction = (10171 + ei + cPP) *.0505;
 
       if(preTaxSalary < 51300){
         empEI = preTaxSalary * .02282;
@@ -169,17 +172,29 @@ $( document ).ready(function() {
 
       let finalPreTaxSalary = preTaxSalary - federalDeduction - ontarioDeduction;
 
-      let corporateTaxableIncome = ai - finalPreTaxSalary - (cPP * 2) - ei - empEI;
+      let corporateTaxableIncome = ai - finalPreTaxSalary - (cPP * 2) - empEI;
 
 
       if(corporateTaxableIncome < 500000){
-        corporateTaxes = corporateTaxableIncome * .015;
+        corporateTaxes = corporateTaxableIncome * 0.15;
       } else if (corporateTaxableIncome > 500000) {
         corporateTaxes = (500000 * 0.15) + ((corporateTaxableIncome - 500000) * .265)
       }
 
-      let totalTaxes = corporateTaxes + [finalPreTaxSalary - afterTaxSalary] + ei + empEI + (cPP*2);
+      if(preTaxSalary > ai) {
+        return "You do not make enough income to satisfy your monthly living expenses"
+      }
+      console.log("corporateTaxes:" + corporateTaxes)
+      let totalTaxes = corporateTaxes + (finalPreTaxSalary - afterTaxSalary) + ei + empEI + (cPP*2);
 
+      if(totalTaxes < 0){
+        totalTaxes = 0
+      }
+
+      console.log("Pre-taxSalary: " + preTaxSalary + "ei: " + ei + "CPP: "+ cPP + "empEI: "+empEI  + "FD: " + federalDeduction + "OD: " + ontarioDeduction);
+      console.log("finalPreTaxSalary: " + finalPreTaxSalary);
+      console.log("corporateTaxableIncome" + corporateTaxableIncome);
+      return totalTaxes;
 
     }
 };
