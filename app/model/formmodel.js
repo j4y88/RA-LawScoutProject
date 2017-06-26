@@ -1,9 +1,10 @@
 export default class FormModel{
     constructor(){
-      // revenue, businessExpense, livingExpense, industry, holdsProperty, holdsInformation, operatesProperty, hasSubcontractors, hasEmployees, consumerProducts
         this.revenue = "";
         this.businessExpense = "";
         this.livingExpense = "";
+        this.proprietorship = "";
+        this.incorporation = "";
         this.industry = "";
         this.holdsProperty = "";
         this.holdsInformation = "";
@@ -11,5 +12,8 @@ export default class FormModel{
         this.hasSubcontractors = "";
         this.hasEmployees = "";
         this.consumerProducts = "";
+        this.name = "";
+        this.email = "";
+        this.liabilityScore = 0;
       }
 }

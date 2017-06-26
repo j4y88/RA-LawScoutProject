@@ -52,7 +52,7 @@ export default class Storage {
         }
 
         //for email stuff:
-        let emailInfo = document.querySelectorAll("#email-name, #email-address");
+        let emailInfo = document.querySelectorAll("#emailName, #emailAddress");
         for (let i = 0, field; field = emailInfo[i++];) {
           field.addEventListener("change", this.updateStorageValueEmail(field.id, field.value));
           if(this.ss.length <= 0){

@@ -86,6 +86,9 @@ export default class CarouselView{
     let doneButton = document.querySelector('.button--done');
     doneButton.addEventListener( 'click', function(event) {
       event.preventDefault();
+      //input validation
+      //then collate form info, make AJAX, then either go to final success page,
+      //or show error
       flkty.next();
       $('html, body').animate({
           scrollTop: $("#success-page").offset().top
