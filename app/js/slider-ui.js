@@ -112,13 +112,73 @@ $( document ).ready(function() {
     return payableTaxes;
   }
 
-    function calculateIncorporationTax(monthlyExpense){
+    function calculateIncorporationTax(aRev, aExp ,monthlyExpense){
+      let ai = aRev - aExp;
       let afterTaxSalary = monthlyExpense * 12;
       let preTaxSalary = 0;
+      let cPP = 0
+      let ei = 0
+      let empEI = 0;
+      let corporateTaxes = 0;
 
       if (afterTaxSalary < 11636) {
         preTaxSalary = afterTaxSalary;
+      }else if (afterTaxSalary < 33739.70) {
+        preTaxSalary = afterTaxSalary / (1 - 0.2005);
+      }else if (afterTaxSalary < 36556.77 ) {
+        preTaxSalary =  42201.00 + (afterTaxSalary / (1 - 0.2415));
+      }else if (afterTaxSalary < 56533.35) {
+        preTaxSalary =  45913.68 + (afterTaxSalary / (1 - 0.2965));
+      }else if (afterTaxSalary < 63447.02) {
+        preTaxSalary =  74308.25 + (afterTaxSalary / (1 - 0.3148));
+      }else if (afterTaxSalary < 65532.13) {
+        preTaxSalary =  84396.80 + (afterTaxSalary / (1 - 0.3389));
+      }else if (afterTaxSalary < 68184.00) {
+        preTaxSalary =  87549.28 + (afterTaxSalary / (1 - 0.3791));
+      }else if (afterTaxSalary < 96773.83) {
+        preTaxSalary =  91818.68458 + (afterTaxSalary / (1 - 0.4341));
+      }else if (afterTaxSalary < 100871.32) {
+        preTaxSalary =  142337.91 + (afterTaxSalary / (1 - 0.4641));
+      }else if (afterTaxSalary < 128342.64) {
+        preTaxSalary =  149982.04 + (afterTaxSalary / (1 - 0.4797));
+      }else if (afterTaxSalary < 136603.32) {
+        preTaxSalary =  202779.12 + (afterTaxSalary / (1 - 0.5191));
+      } else if (afterTaxSalary > 136604.33) {
+        preTaxSalary =  219976 + (afterTaxSalary / (1 - 0.5353));
       }
+      if (preTaxSalary < 51300 ){
+        ei = preTaxSalary * 0.0163
+      } else if (preTaxSalary > 51300) {
+        ei = 836.19
+      }
+      if (preTaxSalary - 3500 < 55300) {
+        cPP = (preTaxSalary - 3500) * .0495
+      } else if (preTaxSalary-3500 > 55300) {
+        cPP = 2564.10
+      }
+
+      let federalDeduction = (11635 + ei + cPP + 1178) * .15;
+
+      let ontarioDeduction = (10171 + ei + cPP + 1178) *.0505;
+
+      if(preTaxSalary < 51300){
+        empEI = preTaxSalary * .02282;
+      } else if (preTaxSalary > 51300) {
+        empEI = 1170.67
+      }
+
+      let finalPreTaxSalary = preTaxSalary - federalDeduction - ontarioDeduction;
+
+      let corporateTaxableIncome = ai - finalPreTaxSalary - (cPP * 2) - ei - empEI;
+
+
+      if(corporateTaxableIncome < 500000){
+        corporateTaxes = corporateTaxableIncome * .015;
+      } else if (corporateTaxableIncome > 500000) {
+        corporateTaxes = (500000 * 0.15) + ((corporateTaxableIncome - 500000) * .265)
+      }
+
+      let totalTaxes = corporateTaxes + [finalPreTaxSalary - afterTaxSalary] + ei + empEI + (cPP*2);
 
 
     }
