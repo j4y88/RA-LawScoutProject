@@ -183,11 +183,11 @@ function calculateIncorporationTax(aRev, aExp, monthlyExpense){
     corporateTaxes = (500000 * 0.15) + ((corporateTaxableIncome - 500000) * .265)
   }
 
-  if(preTaxSalary > ai) {
-    return "You do not make enough income to satisfy your monthly living expenses"
-  }
-  console.log("corporateTaxes:" + corporateTaxes)
-  let totalTaxes = corporateTaxes + (finalPreTaxSalary - afterTaxSalary) + ei + empEI + (cPP*2);
+      if(preTaxSalary > ai) {
+        return 0;
+      }
+      console.log("corporateTaxes:" + corporateTaxes)
+      let totalTaxes = corporateTaxes + (finalPreTaxSalary - afterTaxSalary) + ei + empEI + (cPP*2);
 
   if(totalTaxes < 0){
     totalTaxes = 0
