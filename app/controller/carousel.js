@@ -1,9 +1,12 @@
 import CarouselView from '../view/carouselView';
 
 export default class Carousel{
-  constructor(){
+  constructor(app, storage, service){
     console.log('creating Carousel controller');
-    this.cv = new CarouselView();
+    this.app = app;
+    this.storage = storage;
+    this.service = service;
+    this.cv = new CarouselView(this.app, this.storage, this.service);
     this.createCarousel();
   }
   createCarousel(){
@@ -15,7 +18,7 @@ export default class Carousel{
       draggable: false,
       // adaptiveHeight: true
     });
-    this.cv.getButtons(flkty);
+    this.cv.getButtons(flkty, this.storage, this.service);
 
   }
 }
