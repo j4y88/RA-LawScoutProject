@@ -182,7 +182,7 @@ $( document ).ready(function() {
       }
 
       if(preTaxSalary > ai) {
-        return "You do not make enough income to satisfy your monthly living expenses"
+        return 0;
       }
       console.log("corporateTaxes:" + corporateTaxes)
       let totalTaxes = corporateTaxes + (finalPreTaxSalary - afterTaxSalary) + ei + empEI + (cPP*2);
