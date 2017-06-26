@@ -11,7 +11,7 @@ export default class Storage {
 
       createDefaultStorage(){
 
-        console.log("inside storage creation");
+        //console.log("inside storage creation");
         //for prop and incorp numbers:
         let taxes = document.querySelectorAll(".slider-total-num");
         for (let i = 0, tax; tax= taxes[i++];) {
@@ -23,7 +23,7 @@ export default class Storage {
         for (let i = 0, element; element = elements[i++];) {
           // if(this.ss.length <= 0){
           this.ss.setItem(element.id, 0);
-          console.log(element);
+          //console.log(element);
         // }
           element.addEventListener("change", this.updateStorageValueSlider(element.id, element.value));
         }
@@ -34,7 +34,7 @@ export default class Storage {
           let ss = this.ss;
           let id = element.id;
           let parentDiv = $('#'+id+'').closest('div').click({ss: this.ss, id:id}, this.updateStorageValueRadio);
-            console.log(element);
+            //console.log(element);
             if ($('#'+id+'').parents().hasClass('zSelected')) {
               ss.setItem(id, "selected");
             }else{
@@ -78,30 +78,30 @@ export default class Storage {
 
       updateStorageValueSelect(key, value){
         this.ss.setItem(key, value);
-        console.log(this.ss);
+        //console.log(this.ss);
       }
 
       updateStorageValueRadio(e){
         let ss = e.data.ss;
         let id = e.data.id;
-        // console.log(ss);
+        // //console.log(ss);
         if ($('#'+id+'').parents().hasClass('zSelected')) {
           ss.setItem(id, "selected");
-          console.log(id);
-          console.log(id.length);
+          //console.log(id);
+          //console.log(id.length);
           if(id.length == 8){
             let idRoot = id.substring(0,6);
             let idToggle = idRoot.concat("Yes");
             ss.setItem(idToggle, "");
-            console.log(ss);
+            //console.log(ss);
           }
           else if(id.length == 9){
             let idRoot = id.substring(0,6);
-            console.log(idRoot);
+            //console.log(idRoot);
             let idToggle = idRoot.concat("No");
-            console.log(idToggle);
+            //console.log(idToggle);
             ss.setItem(idToggle, "");
-            console.log(ss);
+            //console.log(ss);
           }
         }
       }

@@ -1,7 +1,7 @@
 
 export default class CarouselView{
   constructor(app, storage, service){
-    console.log("carousel view constructor");
+    //console.log("carousel view constructor");
     this.app = app;
     this.storage = storage;
     this.service = service;
@@ -25,7 +25,7 @@ export default class CarouselView{
         $('#logo').fadeIn( function (){
           $('#logo-animate').switchClass("logo-base", "logo-clicked", 2000, "linear", function(){
              $('#logo').fadeOut( function (){
-               console.log("remove listener");
+               //console.log("remove listener");
                let logo = document.querySelector('#logo-animate');
                //this remove listener isn't working. On click, animation path logo shows
                logo.removeEventListener( 'click', this.addClickToExpandLogo);
@@ -38,12 +38,12 @@ export default class CarouselView{
 
 
   addClickToShrinkLogo(){
-    console.log("shrinking");
+    //console.log("shrinking");
     //reverse the addClickToExpandLogo steps to return logo to initial views
   }
 
   getButtons(flkty, storage, service){
-    console.log("getting buttons");
+    //console.log("getting buttons");
     let previousButton1 = document.querySelector('.back1');
     previousButton1.addEventListener( 'click', function(event) {
       event.preventDefault();

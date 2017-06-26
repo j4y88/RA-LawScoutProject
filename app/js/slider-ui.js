@@ -62,13 +62,13 @@ function update() {
  $("#amount5").val("$"+$amount5);
 
  calculateProprietorshipTax($amount1, $amount2);
- console.log("incorporation tax" + calculateIncorporationTax($amount1, $amount2, $amount3));
+ //console.log("incorporation tax" + calculateIncorporationTax($amount1, $amount2, $amount3));
 }
 
 
 function calculateProprietorshipTax(aRev, aExp){
   let aIncome = aRev - aExp;
-  console.log(aIncome);
+  //console.log(aIncome);
   let cPP = 0;
   let payableTaxes = 0;
 
@@ -113,7 +113,7 @@ function calculateProprietorshipTax(aRev, aExp){
         payableTaxes = 0 + (taxableIncome - 11635)*.15;
       }
 
-  console.log("aIncome: "+ aIncome + " cPP: "+ cPP +" taxableIncome:"+ taxableIncome +" payableTaxes: "+payableTaxes);
+  //console.log("aIncome: "+ aIncome + " cPP: "+ cPP +" taxableIncome:"+ taxableIncome +" payableTaxes: "+payableTaxes);
   return payableTaxes;
 }
 
@@ -186,16 +186,16 @@ function calculateIncorporationTax(aRev, aExp, monthlyExpense){
       if(preTaxSalary > ai) {
         return 0;
       }
-      console.log("corporateTaxes:" + corporateTaxes)
+      //console.log("corporateTaxes:" + corporateTaxes)
       let totalTaxes = corporateTaxes + (finalPreTaxSalary - afterTaxSalary) + ei + empEI + (cPP*2);
 
   if(totalTaxes < 0){
     totalTaxes = 0
   }
 
-  console.log("Pre-taxSalary: " + preTaxSalary + "ei: " + ei + "CPP: "+ cPP + "empEI: "+empEI  + "FD: " + federalDeduction + "OD: " + ontarioDeduction);
-  console.log("finalPreTaxSalary: " + finalPreTaxSalary);
-  console.log("corporateTaxableIncome" + corporateTaxableIncome);
+  //console.log("Pre-taxSalary: " + preTaxSalary + "ei: " + ei + "CPP: "+ cPP + "empEI: "+empEI  + "FD: " + federalDeduction + "OD: " + ontarioDeduction);
+  //console.log("finalPreTaxSalary: " + finalPreTaxSalary);
+  //console.log("corporateTaxableIncome" + corporateTaxableIncome);
   return totalTaxes;
 
   }
