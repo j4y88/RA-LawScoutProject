@@ -8,7 +8,8 @@ $( document ).ready(function() {
         range: "min",
         slide: function(event, ui) {
             update();
-        }
+        },
+        change: function (event, ui) { update(); }
     });
     $("#slider2").slider({
       value: 0,
@@ -18,7 +19,8 @@ $( document ).ready(function() {
         range: "min",
         slide: function(event, ui) {
             update();
-        }
+        },
+         change: function (event, ui) { update(); }
     });
     $("#slider3").slider({
       value: 0,
@@ -28,7 +30,8 @@ $( document ).ready(function() {
         range: "min",
         slide: function(event, ui) {
             update();
-        }
+        },
+         change: function (event, ui) { update(); }
     });
     update();
 });

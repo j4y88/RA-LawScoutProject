@@ -38,6 +38,9 @@ export default class CarouselView{
     //reverse the addClickToExpandLogo steps to return logo to initial views
   }
 
+
+
+
   getButtons(flkty){
     console.log("getting buttons");
     let previousButton1 = document.querySelector('.back1');
@@ -51,6 +54,7 @@ export default class CarouselView{
 
     let previousButton2 = document.querySelector('.back2');
     previousButton2.addEventListener( 'click', function(event) {
+       //alert('clicked previous2');
       event.preventDefault();
       flkty.previous();
       $('html, body').animate({
@@ -58,11 +62,27 @@ export default class CarouselView{
       }, 400);
     });
 
-    // next
-
     let nextButton = document.querySelector('.button--next');
     nextButton.addEventListener( 'click', function(event) {
       event.preventDefault();
+      $(".Error").hide();
+      var isValid = true;
+      if ($("#amount1").val() == "$0") {
+        $("#slider1-error").show();
+        isValid = false;
+      }
+      if ($("#amount2").val() == "$0") {
+        $("#slider2-error").show();
+        isValid =  false;
+      }
+      if ($("#amount3").val() == "$0") {
+        $("#slider3-error").show();
+        isValid =  false;
+      }
+      if (!isValid) {
+        return false;
+      }
+
       flkty.next();
       $('html, body').animate({
           scrollTop: $("#page2").offset().top
@@ -71,17 +91,48 @@ export default class CarouselView{
 
     let getReportButton = document.querySelector('.button--report');
     getReportButton.addEventListener( 'click', function(event) {
+      $(".Error").hide();
       event.preventDefault();
+      if ($("#industry").val() == "") {  
+        $("#IndustryError").show();
+        return false;
+      }
+
       flkty.next();
       $('html, body').animate({
           scrollTop: $("#page3").offset().top
       }, 400);
-
     });
 
     let doneButton = document.querySelector('.button--done');
     doneButton.addEventListener( 'click', function(event) {
+        $(".Error").hide();
       event.preventDefault();
+      var isValid = true;
+      var emailValidateRegEx = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+      var sName = $('#email-name').val();
+        if ($.trim(sName).length == 0) {
+          $("#email-name-required").show();
+          isValid = false;
+        }  else if ($.trim(sName).length <= 2) {
+          $("#EmailNameError").show();
+          isValid = false;
+        }  else if ( sName.match('^[a-zA-Z]{3,16}$') ) {
+          $("#EmailNameError").show();
+          isValid = false;
+        }
+        if ($("#email-address").val() == "") {
+          $("#EmailAddressRequired").show();
+          isValid = false;
+        } else if (!emailValidateRegEx.test($("#email-address").val())) {
+        $("#EmailAddressError").show();
+        isValid = false;
+      }
+
+      if (!isValid) {
+        return false;
+      }
+
       flkty.next();
       $('html, body').animate({
           scrollTop: $("#success-page").offset().top
