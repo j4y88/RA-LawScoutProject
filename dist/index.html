@@ -24,11 +24,12 @@
 
   <main>
     <div id="logo-animate" class="showFirstLogo logo-base flex">
+
       <!-- <img id="logo-start" class="margin-auto" src="public/images/White_logo.png" height="120" width="120"> -->
       <svg id="logo" class="logo" width="69" height="84" viewBox="0 0 457 558" xmlns="http://www.w3.org/2000/svg">
         <path class="path" d="M114 145h249c80 0 78-111 0-111H204c-42 0-60 28-60 52-.5 25 0 105 0 123.5.5 22.5 23.5 48.5 61 48.5h65c77 0 77 109 0 110h-60.5c-26 0-65.5 6.5-65.5 60v38c0 77-110 77-110 0V209.5C34 171 56.5 145 91 145z" stroke="#ffffff" stroke-width="60" fill="none"></path>
       </svg>
-      <!-- <img id="poweredBy" class="founded-active" src="public/images/ic_Founded_active.png"> -->
+      <img id="poweredBy" class="founded-active" src="public/images/ic_Founded_active.png">
     </div>
 
   <form id="form1" action="/" method="get">
@@ -120,8 +121,10 @@
               <div class="flex flex-center-a flex-space-between ">
                 <span class="flex flex-center-a"><h3 class="flex-grow disp-inline">Do you hold onto your client's property?</h3><img id="info-hold-property-click" class="disp-inline info-img margin-5lr" src="./public/images/info.png"></span>
                 <div class="flex">
-                  <input type="radio" name="q1" title="YES" value="yes" required/>
-                  <input type="radio" name="q1" title="NO" value="no" checked="checked" required/>
+                  
+                  <input id="radio1Yes" type="radio" name="q1" title="YES" value="yes" required/>
+                  <input id="radio1No" type="radio" name="q1" title="NO" value="no" checked="checked" required/>
+
                 </div>
               </div>
               <p id="info-hold-property-show" class="info hideInfo">Client property can include physical property and money. Some professions require that property be held for clients for a certain time period, such as for deposits, repair of property, and other cases. </p>
@@ -130,8 +133,10 @@
               <div class="flex flex-center-a flex-space-between">
                 <span class="flex flex-center-a"><h3  class="flex-grow disp-inline">Do you hold sensitive client information?</h3><img id="info-sensitive-click" class="disp-inline info-img margin-5lr" src="./public/images/info.png"></span>
                 <div class="flex">
-                  <input type="radio" name="q2" title="YES" value="yes" required/>
-                  <input type="radio" name="q2" title="NO" value="no" checked="checked" required/>
+
+                  <input id="radio2Yes" type="radio" name="q2" title="YES" value="yes" required/>
+                  <input id="radio2No" type="radio" name="q2" title="NO" value="no" checked="checked" required/>
+
                 </div>
               </div>
               <p id="info-sensitive-show" class="info">Sensitive client information can include your client's banking details, health information, personally identifiable information and financial information. </p>
@@ -140,8 +145,10 @@
               <div class="flex flex-center-a flex-space-between">
                 <span class="flex flex-center-a"><h3  class="flex-grow disp-inline">Do you operate on the property of others?</h3><img id="info-operate-property-click" class="disp-inline info-img margin-5lr" src="./public/images/info.png"></span>
                 <div class="flex">
-                  <input type="radio" name="q3" title="YES" value="yes" required/>
-                  <input type="radio" name="q3" title="NO" value="no" checked="checked" required/>
+
+                  <input id="radio3Yes" type="radio" name="q3" title="YES" value="yes" required/>
+                  <input id="radio3No" type="radio" name="q3" title="NO" value="no" checked="checked" required/>
+
                 </div>
               </div>
               <p id="info-operate-property-show" class="info">When you conduct work for your clients, do you operate on their property? If so, check 'Yes'.</p>
@@ -150,8 +157,10 @@
               <div class="flex flex-center-a flex-space-between">
                 <span class="flex flex-center-a"><h3  class="flex-grow disp-inline">Do you rely on sub-contractors?</h3><img id="info-subcontractors-click" class="disp-inline info-img margin-5lr" src="./public/images/info.png"></span>
                 <div class="flex">
-                  <input type="radio" name="q4" title="YES" value="yes" required/>
-                  <input type="radio" name="q4" title="NO" value="no" checked="checked" required/>
+
+                  <input id="radio4Yes" type="radio" name="q4" title="YES" value="yes" required/>
+                  <input id="radio4No" type="radio" name="q4" title="NO" value="no" checked="checked" required/>
+
                 </div>
               </div>
               <p id="info-subcontractors-show" class="info">Sub-Contractors include anyone that you may hire to assist work that you do for a client. This does not include employees.</p>
@@ -159,23 +168,23 @@
             <div class="flex flex-center-a flex-space-between line-hor padding5v">
               <h3  class="flex-grow">Do you have employees?</h3>
               <div class="flex">
-                <input type="radio" name="q5" title="YES" value="yes" required/>
-                <input type="radio" name="q5" title="NO" value="no" checked="checked" required/>
+
+                <input id="radio5Yes" type="radio" name="q5" title="YES" value="yes" required/>
+                <input id="radio5No" type="radio" name="q5" title="NO" value="no" checked="checked" required/>
+
               </div>
             </div>
             <div class="flex flex-center-a flex-space-between padding15v">
               <h3  class="">Do you manufacture products that are used or consumed by others?</h3>
               <div class="flex">
-                <input type="radio" name="q6" title="YES" value="yes" required/>
-                <input type="radio" name="q6" title="NO" value="no" checked="checked" required/>
+
+                <input id="radio6Yes" type="radio" name="q6" title="YES" value="yes" required/>
+                <input id="radio6No" type="radio" name="q6" title="NO" value="no" checked="checked" required/>
               </div>
             </div>
-            <a href='#' id='check_var'>Check values</a>
             <script>
-              $('a#check_var').click(function() {
-              alert($("input:radio[name='q1']:checked").val() + ' ' + $("input:radio[name='q2']:checked").val() + ' ' + $("input:radio[name='q3']:checked").val() + ' ' + $("input:radio[name='q4']:checked").val() + ' ' + $("input:radio[name='q5']:checked").val() + ' ' + $("input:radio[name='q6']:checked").val());
-              });
               $("#demo").zInput();
+              
               $( function() {
                   $( "#industry" ).selectmenu();
               } );
@@ -197,7 +206,7 @@
             <div class="">
               <h2>Where should we send your report?</h2>
               <p>In addition to your liability rating and a closer look at your post-incorporation tax-savings, you'll receive tips on successfully navigating the incorporation process and advice on how to get started.</p>
-              <input class="email-form" type="text" id="email-name" name="email-name" placeholder="Name">
+              <input class="email-form" type="text" id="emailName" name="emailName" placeholder="Name">
               <input class="email-form" type="text" id="email-address" name="email-address" placeholder="Email">
             </div>
           </div>
