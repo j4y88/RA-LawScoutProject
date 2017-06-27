@@ -11,32 +11,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
- 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
   <script src="zinput.js"></script>
-  <script>
-  // $.validator.setDefaults({
-  // submitHandler: function() { 
-  // console.log('validate triggered');  // Look in console for this message
-  // }
-  // });
-
-  // $().ready(function() {
-  //     // validate the comment form when it is submitted
-  //     $("#form1").validate();
-  //   });
-       function validateEmail(sEmail) {
-    console.log ("validate Email called");
-    var filter = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
-    if (filter.test(sEmail)) {
-      console.log ("validate Email valid");
-        return true;
-    }
-    else {
-      console.log ("validate Email invalid");
-        return false;
-    }
-}
-  </script>
 
 </head>
 
@@ -69,7 +45,30 @@
             <h2>Spend two minutes to discover your potential tax savings.</h1>
             <p>One of the biggest benefits of incorporating your small business is a lower corporate tax rate. Adjust the three sliders below to reveal your savings</p>
           </div>
-
+          <div id="savings" class=" margin25v width100 flex flex-grow flex-space-between">
+            <div id="savings-left" class="width50 flex flex-space-around">
+              <div class="background-savings flex flex-center-a flex-center-j">
+                <input id="savings1" type="text" readonly class="slider-top-value"/>
+              </div>
+            <div class="background-savings flex flex-center-a flex-center-j">
+              <input id="savings2" type="text" readonly class="slider-top-value"/>
+            </div>
+            <div class="background-savings flex flex-center-a flex-center-j">
+              <input id="savings3" type="text" readonly class="slider-top-value"/>
+            </div>
+          </div>
+            <div id="savings-right" class="width50 flex flex-grow flex-space-around">
+              <div class="background-savings flex flex-center-a flex-center-j">
+                <input id="savings4" type="text" readonly class="slider-top-value"/>
+              </div>
+              <div class="background-savings flex flex-center-a flex-center-j">
+                <input id="savings5" type="text" readonly class="slider-top-value"/>
+              </div>
+              <div class="background-savings flex flex-center-a flex-center-j">
+                <input id="savings6" type="text" readonly class="slider-top-value"/>
+              </div>
+            </div>
+          </div>
           <div class="margin25v">
             <div class="padding25b">
               <div class="line-hor">
@@ -130,7 +129,7 @@
           </div>
           <!--  paste this inside Jason's flickity div content -->
           <div class="button-row flex flex-col flex-align-items-center margin25v">
-            <button id="validate" class="button button--next" >Next Step</button>
+            <button class="button button--next" >Next Step</button>
           </div>
         </section>
       </div>
@@ -140,12 +139,12 @@
     <div class="carousel-cell" id="page2">
       <div class="flex flex-col flex-center-a">
         <div class="flex flex-col cell-width">
-          <h2 class="margin5">A few more questions to calculate your liablity rating</h2>
+          <h2 class="margin5">A few more questions to calculate your liability rating</h2>
           <p class="margin5">Incorporating limits the exposure to personal liability of the owners. Without incorporating, business owners can be personally responsible for business liabilities, including debts and legal judgments.</p>
           <div class="demo vertical-line margin5v padding5v">
               <label for="industry"><h3>What's your industry?</h3></label>
               <select name="industry" id="industry" class="padding5v">
-                <option selected="selected"  disabled="disabled" value="">Choose</option>
+                <option value="">Choose</option>
                 <option>Arts and Entertainment</option>
                 <option>Construction</option>
                 <option>Educational Services</option>
@@ -167,7 +166,7 @@
               <div class="flex flex-center-a flex-space-between ">
                 <span class="flex flex-center-a"><h3 class="flex-grow disp-inline">Do you hold onto your client's property?</h3><img id="info-hold-property-click" class="disp-inline info-img margin-5lr" src="./public/images/info.png"></span>
                 <div class="flex">
-                  
+
                   <input id="radio1Yes" type="radio" name="q1" title="YES" value="yes" required/>
                   <input id="radio1No" type="radio" name="q1" title="NO" value="no" checked="checked" required/>
 
@@ -230,7 +229,7 @@
             </div>
             <script>
               $("#demo").zInput();
-              
+
               $( function() {
                   $( "#industry" ).selectmenu();
               } );
@@ -252,25 +251,20 @@
             <div class="">
               <h2>Where should we send your report?</h2>
               <p>In addition to your liability rating and a closer look at your post-incorporation tax-savings, you'll receive tips on successfully navigating the incorporation process and advice on how to get started.</p>
-<<<<<<< HEAD
-              <input class="email-form" type="text" id="email-name" name="email-name" placeholder="Name">
+              <input class="email-form" type="text" id="emailName" name="emailName" placeholder="Name">
                <div name="email-name-required" id="email-name-required" class="Error">
                 Name is required
               </div>
               <div name="EmailNameError" id="EmailNameError" class="Error">
-                Name is invalid
+                Name is invalid (A-Z characters only, minimum of 3 letters)
               </div>
-              <input class="email-form" type="email" id="email-address" name="email-address" placeholder="Email">
+              <input class="email-form" type="email" id="emailAddress" name="emailAddress" placeholder="Email">
               <div name="EmailAddressError" id="EmailAddressError" class="Error">
                 Email Address is invalid
               </div>
               <div name="EmailAddressRequired" id="EmailAddressRequired" class="Error">
                 Email Address is required
               </div>
-=======
-              <input class="email-form" type="text" id="emailName" name="emailName" placeholder="Name">
-              <input class="email-form" type="text" id="email-address" name="email-address" placeholder="Email">
->>>>>>> jpila/master
             </div>
           </div>
           <div class="button-row flex flex-col flex-align-items-center margin25v">
