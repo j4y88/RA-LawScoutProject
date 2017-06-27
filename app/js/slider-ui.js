@@ -104,6 +104,48 @@ if ($amount6.toString().length === 6){
   $("#savings6").val($amount6.toString().substr(5,1));
 }
 
+ if ($amount6.toString().length <= 2){
+   $("#savings1").val("");
+   $("#savings2").val("");
+   $("#savings3").val("");
+   $("#savings4").val("");
+   $("#savings5").val("");
+   $("#savings6").val("");
+ }
+ if ($amount6.toString().length === 3){
+   $("#savings1").val("$");
+   $("#savings2").val("");
+   $("#savings3").val("");
+   $("#savings4").val($amount6.toString().substr(0,1));
+   $("#savings5").val($amount6.toString().substr(1,1));
+   $("#savings6").val($amount6.toString().substr(2,1));
+ }
+ if ($amount6.toString().length === 4){
+   $("#savings1").val("$");
+   $("#savings2").val("");
+   $("#savings3").val($amount6.toString().substr(0,1));
+   $("#savings4").val($amount6.toString().substr(1,1));
+   $("#savings5").val($amount6.toString().substr(2,1));
+   $("#savings6").val($amount6.toString().substr(3,1));
+ }
+ if ($amount6.toString().length === 5){
+   $("#savings1").val("$");
+   $("#savings2").val($amount6.toString().substr(0,1));
+   $("#savings3").val($amount6.toString().substr(1,1));
+   $("#savings4").val($amount6.toString().substr(2,1));
+   $("#savings5").val($amount6.toString().substr(3,1));
+   $("#savings6").val($amount6.toString().substr(4,1));
+ }
+ if ($amount6.toString().length === 6){
+   $("#savings1").val($amount6.toString().substr(0,1));
+   $("#savings2").val($amount6.toString().substr(1,1));
+   $("#savings3").val($amount6.toString().substr(2,1));
+   $("#savings4").val($amount6.toString().substr(3,1));
+   $("#savings5").val($amount6.toString().substr(4,1));
+   $("#savings6").val($amount6.toString().substr(5,1));
+ }
+
+
  calculateProprietorshipTax($amount1, $amount2);
  //console.log("incorporation tax" + calculateIncorporationTax($amount1, $amount2, $amount3));
 }
