@@ -77,8 +77,12 @@ p {
 .underline {
     text-decoration: underline;
 }
-.disp-inline{
+.disp-inline {
   display: inline;
+}
+.totalsavings {
+  display: none;
+  font-size: 0px;
 }
 
 
@@ -102,9 +106,6 @@ p {
   flex-grow: 1;
 }
 .flex-center-a {
-  align-items: center;
-}
-.flex-align-items-center{
   align-items: center;
 }
 .flex-center-j {
@@ -246,16 +247,35 @@ p {
 }
 
 /* ---- page 1 ----- */
+.background-savings{
+  background-image: url("./images/scrollnum.png");
+  height: 5.25rem;
+  width: 4.25rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+  line-height: 1;
+}
+.slider-top-value {
+  width: 4rem;
+  font-size: 3rem;
+  text-align: center;
+  border: 0px;
+  color: $teal;
+  background: none;
+}
+.top-value-width {
+  width: 100%;
+}
 .slider-num {
   width: 5.25rem;
-  font-size: 110%;
+  font-size: 1.1rem;
   text-align: right;
   border: 0px;
   color: $teal;
 }
 .slider-total-num{
   width: 100%;
-  font-size: 150%;
+  font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
   border: 0px;

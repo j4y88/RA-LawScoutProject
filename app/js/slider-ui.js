@@ -1,7 +1,7 @@
 export default function ui() {
 $( document ).ready(function() {
   $("#slider1").slider({
-    value: 100000,
+    value: 0,
       min: 0,
       max: 1000000,
       step: 5000,
@@ -12,7 +12,7 @@ $( document ).ready(function() {
       change: function (event, ui) { update(); }
   });
   $("#slider2").slider({
-    value: 5000,
+    value: 0,
       min: 0,
       max: 1000000,
       step: 5000,
@@ -23,10 +23,10 @@ $( document ).ready(function() {
        change: function (event, ui) { update(); }
   });
   $("#slider3").slider({
-    value: 3000,
+    value: 0,
       min: 0,
-      max: 20000,
-      step: 500,
+      max: 50000,
+      step: 1000,
       range: "min",
       slide: function(event, ui) {
           update();
@@ -53,6 +53,7 @@ function update() {
  let $amount3 = $("#slider3").slider("values", 0);
  let $amount4 = calculateProprietorshipTax($amount1, $amount2).toFixed(2);
  let $amount5 = calculateIncorporationTax($amount1, $amount2, $amount3).toFixed(2);
+ let $amount6 = ($amount4 - $amount5).toFixed(0);
 
 
  $("#amount1").val("$"+$amount1);
@@ -60,6 +61,48 @@ function update() {
  $("#amount3").val("$"+$amount3);
  $("#amount4").val("$"+$amount4);
  $("#amount5").val("$"+$amount5);
+ $("#amount6").val($amount6);
+
+if ($amount6.toString().length <= 2){
+  $("#savings1").val("");
+  $("#savings2").val("");
+  $("#savings3").val("");
+  $("#savings4").val("");
+  $("#savings5").val("");
+  $("#savings6").val("");
+}
+if ($amount6.toString().length === 3){
+  $("#savings1").val("$");
+  $("#savings2").val("");
+  $("#savings3").val("");
+  $("#savings4").val($amount6.toString().substr(0,1));
+  $("#savings5").val($amount6.toString().substr(1,1));
+  $("#savings6").val($amount6.toString().substr(2,1));
+}
+if ($amount6.toString().length === 4){
+  $("#savings1").val("$");
+  $("#savings2").val("");
+  $("#savings3").val($amount6.toString().substr(0,1));
+  $("#savings4").val($amount6.toString().substr(1,1));
+  $("#savings5").val($amount6.toString().substr(2,1));
+  $("#savings6").val($amount6.toString().substr(3,1));
+}
+if ($amount6.toString().length === 5){
+  $("#savings1").val("$");
+  $("#savings2").val($amount6.toString().substr(0,1));
+  $("#savings3").val($amount6.toString().substr(1,1));
+  $("#savings4").val($amount6.toString().substr(2,1));
+  $("#savings5").val($amount6.toString().substr(3,1));
+  $("#savings6").val($amount6.toString().substr(4,1));
+}
+if ($amount6.toString().length === 6){
+  $("#savings1").val($amount6.toString().substr(0,1));
+  $("#savings2").val($amount6.toString().substr(1,1));
+  $("#savings3").val($amount6.toString().substr(2,1));
+  $("#savings4").val($amount6.toString().substr(3,1));
+  $("#savings5").val($amount6.toString().substr(4,1));
+  $("#savings6").val($amount6.toString().substr(5,1));
+}
 
  calculateProprietorshipTax($amount1, $amount2);
  //console.log("incorporation tax" + calculateIncorporationTax($amount1, $amount2, $amount3));
