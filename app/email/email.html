@@ -2,72 +2,145 @@
 	<head>
 	<title>Law Scout Email Template</title>
 	<style>
-		h1 {}
-		h2 {}
-		h3 {}
-		h4 {}
-		h5 {}
-		.email-background {}
-		.email-header {}
-		.email-body {}
-		.icons {}
+		html {
+			font-size: 14px;
+			line-height: 1;
+			font-family: "open sans", arial, sans-serif;
+			padding: 0px;
+			margin: 0px;
+
+		}
+		h1 {
+			font-size: 3.8rem;
+			line-height: 1;
+		}
+		h2 {
+			font-size: 1.8rem;
+			line-height: 1;
+		}
+		h3 {
+			font-size: 1.2rem;
+			line-height: 1;
+		}
+		h4 {
+			font-size: 1rem;
+			line-height: 1;
+		}
+		p {
+			color:#264154
+		}
+		.opener {
+			width: 55%;
+			font-size: 1.8rem;
+			line-height: 1;
+		}
+		.savingtag {
+			width: 55%;
+			font-size: 1rem;
+			line-height: 1;
+		}
+		.white {
+			color: white;
+		}
+		.teal {
+			color: #05B3B7;
+		}
+		.email-background {
+			background-color: rgba(35,179,184,.1);
+		}
+		.email-header {
+			background: #4dbabf; /* For browsers that do not support gradients */
+			background: -webkit-linear-gradient(45deg, #4dbabf , #38a7e1); /* For Safari 5.1 to 6.0 */
+			background: -o-linear-gradient(45deg, #4dbabf , #38a7e1); /* For Opera 11.1 to 12.0 */
+			background: -moz-linear-gradient(45deg, #4dbabf , #38a7e1); /* For Firefox 3.6 to 15 */
+			background: linear-gradient((45deg, #4dbabf , #38a7e1); /* Standard syntax */
+			width: 100%;
+			margin: 0px auto;
+			text-align: center;
+			align-items: center;
+		}
+		.email-body {
+			font-size: 14px;
+			width: 70%;
+			margin: 0px auto;
+		}
+		.icons {
+
+		}
+		.footer-background {
+			background-color: #ECF0F1;
+			text-align: center;
+		}
+		.footer-text {
+			color: #7F8C8D;
+		}
 		
 	</style>
 	</head>
 
 	<div class="email-background">
 		<div class="email-header">
-			<h3>Hi {First Name}, you have taken the first step towards incorporation!</h3>
-			<h6>Your potential tax savings is</h6>{
-			<h1>{$Tax Savings}</h1>
+			<p class="opener white">Hi *|NAME|*, you have taken the first step towards incorporation!</p>
+			<p class="savingtag white">Your potential tax savings is</p>
+			<h1 class="white">*|SAVING|*</h1>
 		</div>
 
 		<div class="email-body">
 			<div>
 				<img src="" class="icons">
-				<h4>Estimated Tax Savings</h4>
-				<p>Your estimated tax savings of {$Tax Savings} are an estimate, taking into account annual revenue, annual business expenses, and a salary that is based on your monthly living expenses.</p>
+				<h3 class="teal">Estimated Tax Savings</h3>
+				<p>Your estimated tax savings of *|SAVING|* are an estimate, taking into account annual revenue, annual business expenses, and a salary that is based on your monthly living expenses.</p>
 			</div>
 			<div>
 				<img src="" class="icons">
-				<h4>Liability Rating</h4>
-				<p>After considering your industry and the answers to the questions, your business is at a {Low / Medium / High} risk.</p>
+				<h3 class="teal">Liability Rating</h3>
+				<p>After considering your industry and the answers to the questions, your business is at a 
+				*|IF:RISK <=20|* LOW 
+				*|ELSEIF:RISK <=40|* MEDIUM
+				*|ELSEIF:RISK >= 41|* HIGH 
+				*|END:IF|* 
+				risk.</p>
 			</div>
+			*|IF:SAVING >2000|*
 			<div>
 				<img src="" class="icons">
-				<h4>Recommended!</h4>
-				<p>It looks like you'd benefit from tax savings and the limited liability of an incorporation. To get started, simply click here {link to founded.io}.</p>
+				<h3 class="teal">Recommended!</h3>
+				<p>It looks like you'd benefit from tax savings and the limited liability of an incorporation. To get started, simply click <a href="https://www.founded.io/" class="teal">here</a>.</p>
 			</div>
+			*|ELSEIF:SAVING <=2000|*
 			<div>
 				<img src="" class="icons">
-				<h4>Sit Tight!</h4>
+				<h3 class="teal">Sit Tight!</h3>
 				<p>As you have minimal anticipated tax savings and operate in an industry with lower risks, the additional costs of incorporating may not immediately benefit your business. On the flip side, incorporating generally limits the exposure to personal liability of the owners.</p>
 			</div>
+			*|END:IF|*
 			<div>
 				<h4>Disclaimer:</h4>
 				<p>The tax calculations are only approximate and include the following (estimated) non-refundable tax credits: the basic personal tax amount, CPP contributions, EI premiums, and the Canada employment amount.</p>
 
 				<p>Although we do our best to provide an accurate tool to approximate tax savings and liability risks, we cannot guarantee any tax savings or an accurate risk assessment of your business. We recommend that you speak with an accountant, tax professional or lawyer to determine your actual tax savings and the risks in operating your business.</p>
 			</div>
-		</div>
-
-		<div>
-			<h2>What's Next?</h2>
-			<h5>Get Started with Incorporating</h5>
-			<p>Read our guide to learn even more about how Incorporating may be right for your business.</p>
-			<p>Book a Session to Answer any Additional Questions
-			Click here to book a session with one of our experienced business support team members.</p>
-		</div>
-
-		<div class="footer">
 			<div>
-				<img src="" class="social">
-				<img src="" class="social">
-				<img src="" class="social">
+				<h2 class="teal">What's Next?</h2>
+				<h4>Get Started with Incorporating</h4>
+				<p>Read our guide to learn even more about how Incorporating may be right for your business.</p>
+				<p>Book a Session to Answer any Additional Questions
+				Click here to book a session with one of our experienced business support team members.</p>
 			</div>
-			<div>
-				<p>(c) 2017 Founded Inc.</p>
-				<p>Suite 1002, 10th Floor, 10 Dundas St. E. M5B 2G9</p>
+		</div>
+
+
+		<div class="footer-background">
+			<div class="footer">
+				<div class="">
+					<img src="" class="social">
+					<img src="" class="social">
+					<img src="" class="social">
+				</div>
+				<div>
+					<h4>&copy 2017 Founded Inc.</h4>
+					<p class="footer-text">Suite 1002, 10th Floor, 10 Dundas St. E. M5B 2G9</p>
+				</div>
 			</div>
 		</div>
 	</div>
