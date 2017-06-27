@@ -2,7 +2,7 @@ import CarouselView from '../view/carouselView';
 
 export default class Carousel{
   constructor(app, storage, service){
-    console.log('creating Carousel controller');
+    //console.log('creating Carousel controller');
     this.app = app;
     this.storage = storage;
     this.service = service;
@@ -10,7 +10,7 @@ export default class Carousel{
     this.createCarousel();
   }
   createCarousel(){
-    console.log("createcarousel function");
+    //console.log("createcarousel function");
     let carousel = document.querySelector('.main-carousel');
     let flkty = new Flickity( carousel, {
       prevNextButtons: false,
