@@ -6,6 +6,7 @@
 			font-size: 14px;
 			line-height: 1;
 			font-family: "open sans", arial, sans-serif;
+			font-weight: 600;
 			padding: 0px;
 			margin: 0px;
 
@@ -13,30 +14,35 @@
 		h1 {
 			font-size: 3.8rem;
 			line-height: 1;
-			padding: 0.2rem 0rem;
+			font-weight: 700;
+			padding: 0rem 0rem;
 			margin: 0px;
 		}
 		h2 {
 			font-size: 1.8rem;
 			line-height: 1;
+			font-weight: 700;
 			padding: 0.2rem 0rem;
 			margin: 0px;
 		}
 		h3 {
 			font-size: 1.2rem;
 			line-height: 1;
+			font-weight: 600;
 			padding: 0.2rem 0rem;
 			margin: 0px;
 		}
 		h4 {
 			font-size: 1rem;
 			line-height: 1;
+			font-weight: 600;
 			padding: 0.2rem 0rem;
 			margin: 0px;
 		}
 		p {
 			color: #264154;
 			line-height: 1.4;
+			font-weight: 400;
 			padding: 1rem 0rem;
 			margin: 0px;
 		}
@@ -45,8 +51,36 @@
 			box-shadow: none;
 			align: center;
 		}
+		br {
+			line-height: 40%;
+		}
+		.footer-text {
+			color: #7F8C8D;
+			font-weight: 200;
+		}
+		.padding30t {
+			padding-top: 30px;
+		}
+		.padding20b {
+			padding-bottom: 20px;
+		}
+		.padding30b {
+			padding-bottom: 30px;
+		}
+		.padding20l {
+			padding-left: 20px;
+		}
 		.margin20t {
 			margin-top: 20px;
+		}
+		.margin40t {
+			margin-top: 40px;
+		}
+		.margin20b {
+			margin-bottom: 20px;
+		}
+		.margin40b {
+			margin-bottom: 40px;
 		}
 		.width70 {
 			width: 70%;
@@ -54,11 +88,14 @@
 		.opener {
 			width: 55%;
 			font-size: 1.8rem;
-			line-height: 1;
+			line-height: 1.6;
+			letter-spacing: 0.1rem;
 			text-align: center;
 		}
 		.savingtag {
-			font-size: 1rem;
+			font-size: 1.2rem;
+			font-weight: 500;
+			letter-spacing: 0.1rem;
 			line-height: 1;
 		}
 		.white {
@@ -68,7 +105,7 @@
 			color: #05B3B7;
 		}
 		.email-background {
-			background-color: rgba(35,179,184,.1);
+			background-color: white;
 			margin-bottom: 20px;
 		}
 		.email-header {
@@ -82,28 +119,38 @@
 			text-align: center;
 		}
 		.email-body {
-			font-size: 14px;
-			width: 70%;
+			font-size: 1rem;
+			width: 65%;
 			margin: 0px auto;
 		}
 		.icons {
-			height: 6rem;
-			width:	6rem;
-			object-fit: cover;
+			height: 4.8rem;
+			width:	4.8rem;
+			object-fit: contain;
 		}
 		.footer-background {
 			background-color: #ECF0F1;
 			text-align: center;
 		}
-		.footer-text {
-			color: #7F8C8D;
+		.logo {
+			height: 3rem;
+			width: 3rem;
+			object-fit: contain;
 		}
+		.social {
+			height: 1.8rem;
+			width: 1.8rem;
+			object-fit: contain;
+			margin: 0.5rem;
+		}
+
 	</style>
 	</head>
 
 	<div class="email-background">
 		<div class="email-header">
-			<table align="center">
+			<table align="center" class="padding30t padding20b">
+				<tr><td align="center"><img src="https://j4y88.github.io/RA-LawScoutProject/dist/public/images/LogoWhiteSolid.png" class="logo"></td></tr>
 				<tr><td align="center"><p class="opener white">Hi *|NAME|*, you have taken the first step towards incorporation!</p></td></tr>
 				<tr><td align="center"><p class="savingtag white">Your potential tax savings is</p></td></tr>
 				<tr><td align="center"><h1 class="white">*|SAVING|*</h1></td></tr>
@@ -111,15 +158,15 @@
 		</div>
 
 		<div class="email-body">
-			<table class="margin20t">
+			<table class="margin40t">
 				<tr>
-					<td>Row 1, Column 1<img src="https://j4y88.github.io/RA-LawScoutProject/public/images/saving.png" class="icons"></td>
-					<td><h3 class="teal">Estimated Tax Savings</h3>
+					<td valign="top"><img src="https://j4y88.github.io/RA-LawScoutProject/dist/public/images/saving.png" class="icons"></td>
+					<td class="padding20l padding20b"><h3 class="teal">Estimated Tax Savings</h3>
 				<p>Your estimated tax savings of *|SAVING|* are an estimate, taking into account annual revenue, annual business expenses, and a salary that is based on your monthly living expenses.</p></td>
 				</tr>
 				<tr>
-					<td>Row 2, Column 1<img src="https://j4y88.github.io/RA-LawScoutProject/public/images/risk.png" class="icons"></td>
-					<td><h3 class="teal">Liability Rating</h3>
+					<td valign="top"><img src="https://j4y88.github.io/RA-LawScoutProject/dist/public/images/risk.png" class="icons"></td>
+					<td class="padding20l padding20b"><h3 class="teal">Liability Rating</h3>
 					<p>After considering your industry and the answers to the questions, your business is at a 
 					*|IF:RISK <=20|* LOW 
 					*|ELSEIF:RISK <=40|* MEDIUM
@@ -128,8 +175,8 @@
 					risk.</p></td>
 					</tr>
 					<tr>
-					<td>Row 3, Column 1<img src="https://j4y88.github.io/RA-LawScoutProject/public/images/recommended.png" class="icons"></td>
-					<td>*|IF:SAVING >2000|*
+					<td valign="top"><img src="https://j4y88.github.io/RA-LawScoutProject/dist/public/images/recommend.png" class="icons"></td>
+					<td class="padding20l padding20b">*|IF:SAVING >2000|*
 					<div>
 						<h3 class="teal">Recommended!</h3>
 						<p>It looks like you'd benefit from tax savings and the limited liability of an incorporation. To get started, simply click <a href="https://www.founded.io/" class="teal">here</a>.</p>
@@ -143,32 +190,31 @@
 					</td>
 				</tr>
 			</table>
-			<div>
+			<div class="margin20t">
 				<h4>Disclaimer:</h4>
-				<p>The tax calculations are only approximate and include the following (estimated) non-refundable tax credits: the basic personal tax amount, CPP contributions, EI premiums, and the Canada employment amount.</p>
-
-				<p>Although we do our best to provide an accurate tool to approximate tax savings and liability risks, we cannot guarantee any tax savings or an accurate risk assessment of your business. We recommend that you speak with an accountant, tax professional or lawyer to determine your actual tax savings and the risks in operating your business.</p>
+				<p>The tax calculations are only approximate and include the following (estimated) non-refundable tax credits: the basic personal tax amount, CPP contributions, EI premiums, and the Canada employment amount.<br><br>Although we do our best to provide an accurate tool to approximate tax savings and liability risks, we cannot guarantee any tax savings or an accurate risk assessment of your business. We recommend that you speak with an accountant, tax professional or lawyer to determine your actual tax savings and the risks in operating your business.</p>
 			</div>
-			<div>
-				<h2 class="teal">What's Next?</h2>
+			<div class="margin40b">
+				<h2 class="teal margin20b margin40t">What's Next?</h2>
 				<h4>Get Started with Incorporating</h4>
-				<p>Read our guide to learn even more about how Incorporating may be right for your business.</p>
-				<p>Book a Session to Answer any Additional Questions
-				Click here to book a session with one of our experienced business support team members.</p>
+				<p>Read our guide to learn even more about how Incorporating may be right for your business.<br><br>Book a Session to Answer any Additional Questions Click here to book a session with one of our experienced business support team members.</p>
 			</div>
 		</div>
 
 		<div class="footer-background">
 			<div class="footer">
-				<div class="">
-					<img src="" class="social">
-					<img src="" class="social">
-					<img src="" class="social">
-				</div>
-				<div>
-					<h4>&#169 2017 Founded Inc.</h4>
-					<p class="footer-text">Suite 1002, 10th Floor, 10 Dundas St. E. M5B 2G9</p>
-				</div>
+				<table align="center" class="padding30t">
+					<tr>
+						<td><a href="https://www.facebook.com/lawscout/"><img src="https://j4y88.github.io/RA-LawScoutProject/dist/public/images/facebook.png" class="social"></a></td>
+						<td><a href="https://ca.linkedin.com/company/law-scout-inc-"><img src="https://j4y88.github.io/RA-LawScoutProject/dist/public/images/linkedin.png" class="social"></a></td>
+						<td><a href="https://twitter.com/myLawScout"><img src="https://j4y88.github.io/RA-LawScoutProject/dist/public/images/twitter.png" class="social"></a></td>
+					</tr>
+				</table>
+				<table align="center" class="margin20t padding30b">
+					<tr><td><h4>&#169 2017 Founded Inc.</h4></td></tr>
+					<tr><td><p class="footer-text">Suite 1002, 10th Floor, 10 Dundas St. E. M5B 2G9</p></td></tr>
+					<tr><td><img src="https://j4y88.github.io/RA-LawScoutProject/dist/public/images/LogoWhiteSolid.png" class="logo"></td></tr>
+				</table>
 			</div>
 		</div>
 	</div>
