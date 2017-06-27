@@ -94,19 +94,20 @@ export default class Service{
   }
 
   sendForm(form){
+    console.log(form);
     console.log("FORM SENT");
-    // $.ajax({
-    //   url: ,
-    //   method: 'POST',
-    // })
-    // .done(function() {
-    //
-    //   //go to next slide
-    //
-    // }).fail(function(err) {
-    //   //show user that there is an error
-    //   throw err;
-    // });
+    $.ajax({
+      url: "google.com",
+      method: 'POST',
+    })
+    .done(function() {
+
+      //go to next slide
+
+    }).fail(function(err) {
+      //show user that there is an error
+      throw err;
+    });
   }
 
 }
