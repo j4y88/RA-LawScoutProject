@@ -80,6 +80,14 @@ export default class CarouselView{
         $("#slider3-error").show();
         isValid =  false;
       }
+      if (($("#amount6").val() == 0) && ($("#amount2").val() != "$0")){
+        $("#slider2-error2").show();
+        isValid =  false;
+      }
+      if (($("#amount6").val() == 0) && ($("#amount3").val() != "$0")){
+        $("#slider3-error2").show();
+        isValid =  false;
+      }
       if (!isValid) {
         return false;
       }

@@ -56,4 +56,22 @@
 	.cell-width{
 	  width:70%;
 	}
+	.background-savings{
+		height: 5.25rem;
+		width: 4rem;
+	}
+	.slider-top-value {
+  		width: 4.5rem;
+  		font-size: 3.5rem;
+	}
+}
+@media only screen and (min-width: 1250px) {
+	.background-savings{
+		height: 6.25rem;
+		width: 5rem;
+	}
+	.slider-top-value {
+  		width: 5rem;
+  		font-size: 4rem;
+	}
 }
