@@ -74,6 +74,9 @@ p {
 .white {
   color: white;
 }
+.red {
+  color: red;
+}
 .underline {
     text-decoration: underline;
 }
@@ -255,19 +258,17 @@ p {
 /* ---- page 1 ----- */
 .background-savings{
   background-image: url("./images/scrollnum.png");
-  height: 5.40rem;
-  width: 16%;
+  height: 5rem;
+  width: 4rem;
   background-size: contain;
 
   background-repeat: no-repeat;
   line-height: 1;
 }
 .slider-top-value {
-  // width: 4rem;
-  // width: 100%;
-  width: auto;
-  font-size: 3rem;
+  width: 4rem;
   text-align: center;
+  font-size: 3rem;
   border: 0px;
   color: $teal;
   background: none;
@@ -276,10 +277,12 @@ p {
 .top-value-width {
   width: 100%;
 }
-
+.slider-length {
+  width: 70%;
+}
 .slider-num {
-  width: 5.25rem;
-  font-size: 1.1rem;
+  width: 5.5rem;
+  font-size: 1.05rem;
   text-align: right;
   border: 0px;
   color: $teal;
