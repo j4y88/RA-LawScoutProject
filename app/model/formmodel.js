@@ -5,6 +5,7 @@ export default class FormModel{
         this.livingExpense = "";
         this.proprietorship = "";
         this.incorporation = "";
+        this.savings = 0;
         this.industry = "";
         this.holdsProperty = "";
         this.holdsInformation = "";
