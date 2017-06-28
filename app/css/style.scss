@@ -188,6 +188,9 @@ p {
 .margin-5lr{
   margin: 0 5px;
 }
+.margin-auto{
+  margin: auto;
+}
 
 /* ---- carousel ---- */
 .cell-width{
@@ -249,15 +252,17 @@ p {
 /* ---- page 1 ----- */
 .background-savings{
   background-image: url("./images/scrollnum.png");
-
-  height: 5.25rem;
-  width: 4.25rem;
+  height: 5.40rem;
+  width: 16%;
   background-size: contain;
+
   background-repeat: no-repeat;
   line-height: 1;
 }
 .slider-top-value {
-  width: 4rem;
+  // width: 4rem;
+  // width: 100%;
+  width: auto;
   font-size: 3rem;
   text-align: center;
   border: 0px;
@@ -381,4 +386,13 @@ p {
   padding: 10px;
   margin: 10px 0;
   width: 100%;
+}
+
+/* ---- page 4 ---- */
+
+#social-media{
+  a:active, a:visited, a:hover, a{
+    color: $black;
+    text-decoration: none;
+  }
 }

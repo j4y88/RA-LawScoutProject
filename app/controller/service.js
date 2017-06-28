@@ -28,6 +28,7 @@ export default class Service{
     model.livingExpense = object.amount3;
     model.proprietorship = object.amount4;
     model.incorporation = object.amount5;
+    model.savings = model.proprietorship - model.incorporation;
     model.industry = object.industry;
     switch (model.industry){
       case "Construction": liabilityScore += 50; break;
@@ -94,19 +95,20 @@ export default class Service{
   }
 
   sendForm(form){
+    console.log(form);
     console.log("FORM SENT");
-    // $.ajax({
-    //   url: ,
-    //   method: 'POST',
-    // })
-    // .done(function() {
-    //
-    //   //go to next slide
-    //
-    // }).fail(function(err) {
-    //   //show user that there is an error
-    //   throw err;
-    // });
+    $.ajax({
+      url: "google.com",
+      method: 'POST',
+    })
+    .done(function() {
+
+      //go to next slide
+
+    }).fail(function(err) {
+      //show user that there is an error
+      throw err;
+    });
   }
 
 }
