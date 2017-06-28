@@ -1,10 +1,8 @@
 
 export default class CarouselView{
   constructor(app, storage){
-    //console.log("carousel view constructor");
     this.app = app;
     this.storage = storage;
-    // this.service = service;
     this.logoAnimate();
     this.infoHovers();
   }
@@ -43,7 +41,6 @@ export default class CarouselView{
   }
 
   getButtons(flkty, storage, service){
-    //console.log("getting buttons");
     let previousButton1 = document.querySelector('.back1');
     previousButton1.addEventListener( 'click', function(event) {
       event.preventDefault();
@@ -102,8 +99,8 @@ export default class CarouselView{
     getReportButton.addEventListener( 'click', function(event) {
       $(".Error").hide();
       event.preventDefault();
-      sessionStorage.setItem('industry', $("#industry").val());
-      if ($("#industry").val() == "") {  
+      storage.ss.setItem('industry', $("#industry").val());
+      if ($("#industry").val() == "") {
         $("#IndustryError").show();
         return false;
       }
@@ -123,9 +120,9 @@ export default class CarouselView{
       var emailValidateName = /^[A-Za-z\s]+$/;
       var sName = $('#emailName').val();
       var sEmail = $('#emailAddress').val();
-      sessionStorage.setItem('emailName', sName);
-      sessionStorage.setItem('emailAddress', sEmail);
-      
+      storage.ss.setItem('emailName', sName);
+      storage.ss.setItem('emailAddress', sEmail);
+
         if ($.trim(sName).length == 0) {
           $("#email-name-required").show();
           isValid = false;
@@ -147,10 +144,6 @@ export default class CarouselView{
       if (!isValid) {
         return false;
       }
-
-      //then collate form info, make AJAX, then either go to final success page,
-      //or show error
-
 
       flkty.next();
       $('html, body').animate({

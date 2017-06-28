@@ -11,6 +11,8 @@ export default class Service{
       }
     }
     this.makeObject(sessionArray);
+    //clear session:
+    session.clear();
   }
 
   makeObject(ssArray){
