@@ -11,6 +11,8 @@ export default class Service{
       }
     }
     this.makeObject(sessionArray);
+    //clear session:
+    session.clear();
   }
 
   makeObject(ssArray){
@@ -91,14 +93,18 @@ export default class Service{
     let myJsonString = {};
     myJsonString = JSON.stringify(model);
     //call function to send ajax/XHR:
-    this.sendForm(myJsonString);
+    this.sendForm(model);
   }
 
   sendForm(form){
     console.log(form);
     console.log("FORM SENT");
+    let baseurl ="https://facebook.us16.list-manage.com/subscribe/post?u=e6d0b1c96cefea3b6aa8267e2&amp;id=c1997644bd"
+    baseurl += "&NAME=" + form.name.replace(/\s+/g, '') + "&EMAIL=" + form.email + "&SAVINGS=" + form.savings.toFixed(0) +"&AEXPENSE=" + form.businessExpense + "&INDUSTRY=" + form.industry.replace(/\s+/g, '') + "&RISK=" + form.liabilityScore + "&AINCOME=" + form.revenue + "&MEXPENSE=" + form.livingExpense;
+    baseurl += "&Q1=" + form.holdsProperty  + "&Q2=" + form.holdsInformation + "&Q3=" + form.operatesProperty + "&Q4=" + form.hasSubcontractors + "&Q5=" + form.hasEmployees + "&Q6=" + form.consumerProducts
+    console.log(baseurl);
     $.ajax({
-      url: "google.com",
+      url: "https://facebook.us16.list-manage.com/subscribe/post?u=e6d0b1c96cefea3b6aa8267e2&amp;id=c1997644bd&AINCOME=555000&AEXPENSE=200000&MEXPENSE=15000&SAVINGS=40000&INDUSTRY=Farmer&RISK=50&NAME=JasonNg&EMAIL=j.pilapil@hotmail@hotmail.com&Q1=Yes&Q2=No&Q3=No&Q4=Yes&Q5=No&Q6=Yes",
       method: 'POST',
     })
     .done(function() {
