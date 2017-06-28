@@ -1,7 +1,6 @@
 export default function ui() {
 
 $( document ).ready(function() {
-  console.log(window.sessionStorage);
   $("#slider1").slider({
       value: 0,
       min: 0,

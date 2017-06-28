@@ -1,3 +1,23 @@
+@media only screen and (min-width: 325px) {
+	html{
+		font-size: 10px;
+	}
+	header{
+  		margin: 10% 20% 0% 20%;
+  	}
+	main {
+	  	width: 80%;
+	  	background-color: white;
+	  	z-index: 1;
+	  	position: relative;
+	  	height: auto;
+	  	top: 10%;
+	}
+	.cell-width{
+	  width:100%;
+	}
+}
+
 @media only screen and (min-width: 500px) {
 	html{
 		font-size: 12px;
