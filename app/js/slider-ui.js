@@ -49,7 +49,7 @@ function update() {
  let $amount3 = $("#slider3").slider("values", 0);
  let $amount4 = calculateProprietorshipTax($amount1, $amount2).toFixed(2);
  let $amount5 = calculateIncorporationTax($amount1, $amount2, $amount3).toFixed(2);
- let $amount6 = ($amount4 - $amount5).toFixed(0);
+ let $amount6 = Math.max (0, ($amount4 - $amount5).toFixed(0));
 
  sessionStorage.setItem('amount1', $amount1);
  sessionStorage.setItem('amount2', $amount2);
@@ -68,24 +68,24 @@ function update() {
  $("#amount6").val($amount6);
 
 if ($amount6.toString().length <= 2){
-  $("#savings1").val("");
-  $("#savings2").val("");
-  $("#savings3").val("");
-  $("#savings4").val("");
-  $("#savings5").val("");
-  $("#savings6").val("");
+  $("#savings1").val("0");
+  $("#savings2").val("0");
+  $("#savings3").val("0");
+  $("#savings4").val("0");
+  $("#savings5").val("0");
+  $("#savings6").val("0");
 }
 if ($amount6.toString().length === 3){
   $("#savings1").val("$");
-  $("#savings2").val("");
-  $("#savings3").val("");
+  $("#savings2").val("0");
+  $("#savings3").val("0");
   $("#savings4").val($amount6.toString().substr(0,1));
   $("#savings5").val($amount6.toString().substr(1,1));
   $("#savings6").val($amount6.toString().substr(2,1));
 }
 if ($amount6.toString().length === 4){
   $("#savings1").val("$");
-  $("#savings2").val("");
+  $("#savings2").val("0");
   $("#savings3").val($amount6.toString().substr(0,1));
   $("#savings4").val($amount6.toString().substr(1,1));
   $("#savings5").val($amount6.toString().substr(2,1));
@@ -109,24 +109,24 @@ if ($amount6.toString().length === 6){
 }
 
  if ($amount6.toString().length <= 2){
-   $("#savings1").val("");
-   $("#savings2").val("");
-   $("#savings3").val("");
-   $("#savings4").val("");
-   $("#savings5").val("");
-   $("#savings6").val("");
+   $("#savings1").val("0");
+   $("#savings2").val("0");
+   $("#savings3").val("0");
+   $("#savings4").val("0");
+   $("#savings5").val("0");
+   $("#savings6").val("0");
  }
  if ($amount6.toString().length === 3){
    $("#savings1").val("$");
-   $("#savings2").val("");
-   $("#savings3").val("");
+   $("#savings2").val("0");
+   $("#savings3").val("0");
    $("#savings4").val($amount6.toString().substr(0,1));
    $("#savings5").val($amount6.toString().substr(1,1));
    $("#savings6").val($amount6.toString().substr(2,1));
  }
  if ($amount6.toString().length === 4){
    $("#savings1").val("$");
-   $("#savings2").val("");
+   $("#savings2").val("0");
    $("#savings3").val($amount6.toString().substr(0,1));
    $("#savings4").val($amount6.toString().substr(1,1));
    $("#savings5").val($amount6.toString().substr(2,1));

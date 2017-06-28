@@ -20,19 +20,13 @@ export default class CarouselView{
 
   addClickToExpandLogo(){
       $('#logo-animate').removeClass("showFirstLogo", function(){
-        $('#logo').fadeIn( function (){
+        $('#poweredBy').fadeIn( function (){
           $('#logo-animate').switchClass("logo-base", "logo-clicked", 2000, "linear", function(){
-             $('#logo').fadeOut( function (){
-               //console.log("remove listener");
-               let logo = document.querySelector('#logo-animate');
-               //this remove listener isn't working. On click, animation path logo shows
-               logo.removeEventListener( 'click', this.addClickToExpandLogo);
-              //  logo.addEventListener( 'click', this.addClickToShrinkLogo, false);
             });
           });
         });
-      });
-    }
+      }
+
 
 
   addClickToShrinkLogo(){
@@ -47,7 +41,7 @@ export default class CarouselView{
       flkty.previous();
       $('html, body').animate({
         scrollTop: $("#page1").offset().top
-      }, 400);
+      }, 1000);
     });
 
     let previousButton2 = document.querySelector('.back2');
@@ -57,7 +51,7 @@ export default class CarouselView{
       flkty.previous();
       $('html, body').animate({
           scrollTop: $("#page2").offset().top
-      }, 400);
+      }, 1000);
     });
 
     let nextButton = document.querySelector('.button--next');
@@ -92,7 +86,7 @@ export default class CarouselView{
       flkty.next();
       $('html, body').animate({
           scrollTop: $("#page2").offset().top
-      }, 400);
+      }, 1000);
     });
 
     let getReportButton = document.querySelector('.button--report');
@@ -108,7 +102,7 @@ export default class CarouselView{
       flkty.next();
       $('html, body').animate({
           scrollTop: $("#page3").offset().top
-      }, 400);
+      }, 1000);
     });
 
     let doneButton = document.querySelector('.button--done');
@@ -148,7 +142,7 @@ export default class CarouselView{
       flkty.next();
       $('html, body').animate({
           scrollTop: $("#success-page").offset().top
-      }, 400);
+      }, 1000);
       service.compileData(storage);
    });
   }

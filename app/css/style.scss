@@ -366,6 +366,7 @@ p {
   .info-img{
     height: 2vh;
     min-height: 20px;
+    filter: grayscale(100%);
   }
   .hideInfo{
   display: none;
