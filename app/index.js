@@ -1,7 +1,6 @@
 // import main from './js/main.js';
 import Slider from './js/slider-ui.js';
 import App from './controller/App';
-//import Zinput from './js/zinput.js';
 
 require('./main.scss');
 
@@ -12,9 +11,7 @@ app.init();
 let slider = new Slider();
 
 $( document ).ready(function() {
-  console.log("on ready");
+  //console.log("on ready");
 });
 
-
- 
 

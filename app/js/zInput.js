@@ -21,9 +21,7 @@ $.each(inputNames, function(index,value){
   {
     $element.wrap(function(){ return '<div class="zInput zCheckbox"><span style="display:table;width: 100%;height: 100%;"><span style="display: table-cell;vertical-align:middle;">' + $(this).attr("title") + '</span></span></div>'});
   }
-
-  });
-
+});
 
 var $zRadio = $(".zInput").not(".zCheckbox");
 var $zCheckbox	= $(".zCheckbox");
@@ -36,7 +34,7 @@ $zRadio.click(function(){
   $theClickedButton.parent().children().removeClass("zSelected");
   $theClickedButton.addClass("zSelected");
   $theClickedButton.find(":radio").prop("checked", true).change();
-  });
+});
 
 $zCheckbox.click(function(){
   $theClickedButton = $(this);
@@ -46,14 +44,10 @@ $zCheckbox.click(function(){
   $theClickedButton.find(':checkbox').each(function () { this.checked = !this.checked; $(this).change()});
   });
 
-
   $.each($inputs,function(k,v){
     if($(v).attr('checked')){
-
       $(v).parent().click();
-
     }
-
   });
 
 }
