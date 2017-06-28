@@ -57,13 +57,18 @@ function update() {
  sessionStorage.setItem('amount5', $amount5);
  sessionStorage.setItem('amount6', $amount6);
 
+  function commaSeparateNumber(val){
+    while (/(\d+)(\d{3})/.test(val.toString())){
+      val = val.toString().replace(/(\d+)(\d{3})/, '$1'+','+'$2');
+    }
+    return val;
+  }
 
-
- $("#amount1").val("$"+$amount1);
- $("#amount2").val("$"+$amount2);
- $("#amount3").val("$"+$amount3);
- $("#amount4").val("$"+$amount4);
- $("#amount5").val("$"+$amount5);
+ $("#amount1").val("$"+commaSeparateNumber($amount1));
+ $("#amount2").val("$"+commaSeparateNumber($amount2));
+ $("#amount3").val("$"+commaSeparateNumber($amount3));
+ $("#amount4").val("$"+commaSeparateNumber($amount4));
+ $("#amount5").val("$"+commaSeparateNumber($amount5));
  $("#amount6").val($amount6);
 
 if ($amount6.toString().length <= 2){
