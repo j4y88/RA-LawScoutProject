@@ -1,15 +1,15 @@
 export default function ui() {
+
 $( document ).ready(function() {
+  console.log(window.sessionStorage);
   $("#slider1").slider({
-    value: 0,
+      value: 0,
       min: 0,
       max: 1000000,
       step: 5000,
       range: "min",
-      slide: function(event, ui) {
-          update();
-      },
-      change: function (event, ui) { update(); }
+      slide: function(event, ui) { update(); },
+      change: function (event, ui) { update();}
   });
   $("#slider2").slider({
     value: 0,
@@ -17,10 +17,8 @@ $( document ).ready(function() {
       max: 1000000,
       step: 5000,
       range: "min",
-      slide: function(event, ui) {
-          update();
-      },
-       change: function (event, ui) { update(); }
+      slide: function(event, ui) { update(); },
+      change: function (event, ui) { update(); }
   });
   $("#slider3").slider({
     value: 0,
@@ -28,10 +26,8 @@ $( document ).ready(function() {
       max: 50000,
       step: 1000,
       range: "min",
-      slide: function(event, ui) {
-          update();
-      },
-       change: function (event, ui) { update(); }
+      slide: function(event, ui) { update(); },
+      change: function (event, ui) { update(); }
   });
   update();
 });
@@ -54,6 +50,14 @@ function update() {
  let $amount4 = calculateProprietorshipTax($amount1, $amount2).toFixed(2);
  let $amount5 = calculateIncorporationTax($amount1, $amount2, $amount3).toFixed(2);
  let $amount6 = ($amount4 - $amount5).toFixed(0);
+
+ sessionStorage.setItem('amount1', $amount1);
+ sessionStorage.setItem('amount2', $amount2);
+ sessionStorage.setItem('amount3', $amount3);
+ sessionStorage.setItem('amount4', $amount4);
+ sessionStorage.setItem('amount5', $amount5);
+ sessionStorage.setItem('amount6', $amount6);
+
 
 
  $("#amount1").val("$"+$amount1);

@@ -102,6 +102,7 @@ export default class CarouselView{
     getReportButton.addEventListener( 'click', function(event) {
       $(".Error").hide();
       event.preventDefault();
+      sessionStorage.setItem('industry', $("#industry").val());
       if ($("#industry").val() == "") {  
         $("#IndustryError").show();
         return false;
@@ -122,6 +123,9 @@ export default class CarouselView{
       var emailValidateName = /^[A-Za-z\s]+$/;
       var sName = $('#emailName').val();
       var sEmail = $('#emailAddress').val();
+      sessionStorage.setItem('emailName', sName);
+      sessionStorage.setItem('emailAddress', sEmail);
+      
         if ($.trim(sName).length == 0) {
           $("#email-name-required").show();
           isValid = false;
