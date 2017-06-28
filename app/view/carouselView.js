@@ -1,10 +1,10 @@
 
 export default class CarouselView{
-  constructor(app, storage, service){
+  constructor(app, storage){
     //console.log("carousel view constructor");
     this.app = app;
     this.storage = storage;
-    this.service = service;
+    // this.service = service;
     this.logoAnimate();
     this.infoHovers();
   }
@@ -102,7 +102,7 @@ export default class CarouselView{
     getReportButton.addEventListener( 'click', function(event) {
       $(".Error").hide();
       event.preventDefault();
-      if ($("#industry").val() == "") {  
+      if ($("#industry").val() == "") {
         $("#IndustryError").show();
         return false;
       }

@@ -28,6 +28,7 @@ export default class Service{
     model.livingExpense = object.amount3;
     model.proprietorship = object.amount4;
     model.incorporation = object.amount5;
+    model.savings = model.proprietorship - model.incorporation;
     model.industry = object.industry;
     switch (model.industry){
       case "Construction": liabilityScore += 50; break;
