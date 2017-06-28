@@ -3,8 +3,8 @@ export default class CarouselView{
   constructor(app, storage){
     this.app = app;
     this.storage = storage;
-    this.logoAnimate();
-    this.infoHovers();
+    // this.logoAnimate();
+    // this.infoHovers();
   }
   infoHovers(){
     $('#info-hold-property-click').hover(function(){$('#info-hold-property-show').fadeIn()}, function(){ $('#info-hold-property-show').fadeOut()});
