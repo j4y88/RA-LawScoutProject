@@ -74,11 +74,11 @@
               <div class="line-hor">
                 <h4>What’s the total annual revenue for your business?</h4>
               <div class="flex  flex-space-between flex-center-a padding15v">
-                <div id="slider1" class="width100"></div>
+                <div id="slider1" class="slider-length"></div>
                 <input id="amount1" type="text" readonly class="slider-num" />
               </div>
               <div id="slider1-error" name="slider1-error" class="Error padding-slider">
-                Total Annual revenue is required
+                 <p class="red">Total Annual revenue is required</p>
               </div>
             </div>
           </div>
@@ -87,14 +87,14 @@
               <div class="line-hor">
                 <h4>What are your estimated annual business expenses?</h4>
                 <div class="flex flex-space-between flex-center-a padding15v">
-                  <div id="slider2" class="width100"></div>
+                  <div id="slider2" class="slider-length"></div>
                   <input id="amount2" type="text" readonly class="slider-num" />
                 </div>
                 <div id="slider2-error" name="slider2-error" class="Error padding-slider">
-                  Total Annual business expenses is required
+                  <p class="red">Total Annual business expenses is required</p>
                 </div>
                 <div id="slider2-error2" name="slider2-error2" class="Error padding-slider">
-                  Reduce Annual Business Expenses:<br>You do not make enough Income to satisfy your annual business expenses
+                  <p class="red">Reduce Annual Business Expenses: You do not make enough Income to satisfy your annual business expenses</p>
                 </div>
               </div>
             </div>
@@ -103,14 +103,14 @@
               <div class="line-hor">
                 <h4>What are your estimated monthly living expenses?</h4>
                 <div class="flex flex-space-between flex-center-a padding15v">
-                  <div id="slider3" class="width100"></div>
+                  <div id="slider3" class="slider-length"></div>
                   <input id="amount3" type="text" readonly class="slider-num" />
                 </div>
                 <div id="slider3-error" name="slider3-error" class="Error padding-slider">
-                  Total estimate monthly living expenses is required
+                   <p class="red">Total estimate monthly living expenses is required</p>
                 </div>
                 <div id="slider3-error2" name="slider3-error2" class="Error padding-slider">
-                  Reduce Monthly Living Expenses:<br>You do not make enough Income to satisfy your monthly living expenses
+                   <p class="red">Reduce Monthly Living Expenses: You do not make enough Income to satisfy your monthly living expenses</p>
                 </div>
               </div>
             </div>
@@ -151,6 +151,7 @@
               <label for="industry"><h3>What's your industry?</h3></label>
               <select name="industry" id="industry" class="padding5v">
                 <option value="">Choose</option>
+                <option>Agriculture</option>
                 <option>Arts and Entertainment</option>
                 <option>Construction</option>
                 <option>Educational Services</option>
@@ -289,14 +290,14 @@
           <div class="margin25v">
             <h2 class="text-center">Thank you!</h2>
             <div class="margin25v">
-              <p class="margin15v">Your incorporation assessment has been sent to your mailbox.</p>
+              <p class="margin15v">Your incorporation assessment has been processed. We will send you the assessment after you confirmed your email by accepting our confirmation email sent to your mailbox.</p>
               <p class="margin15v">Show your entrepreneurial spirit! Share this tool with fellow small business owners.</p>
               <p class="margin15v">Your information is safe and will not be shared.</p>
             </div>
-            <div id="social-media" class="width25 flex flex-space-between margin25v padding50b margin-auto">
-              <a href="https://www.facebook.com/lawscout/" class="fa fa-facebook-square fa-2x" aria-hidden="true"></a>
-              <a href="https://www.linkedin.com/company-beta/9506952/" class="fa fa-linkedin-square fa-2x" aria-hidden="true"></a>
-              <a href="https://twitter.com/myLawScout" class="fa fa-twitter-square fa-2x" aria-hidden="true"></a>
+            <div id="social-media" class="flex flex-center-a flex-center-j margin25v padding50b">
+              <a href="https://www.facebook.com/lawscout/" class="fa fa-facebook-square fa-2x margin5h" aria-hidden="true"></a>
+              <a href="https://www.linkedin.com/company-beta/9506952/" class="fa fa-linkedin-square fa-2x margin5h" aria-hidden="true"></a>
+              <a href="https://twitter.com/myLawScout" class="fa fa-twitter-square fa-2x margin5h" aria-hidden="true"></a>
             </div>
           </div>
         </section>

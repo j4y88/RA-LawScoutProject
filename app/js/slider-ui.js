@@ -1,11 +1,10 @@
 export default function ui() {
 
 $( document ).ready(function() {
-  console.log(window.sessionStorage);
   $("#slider1").slider({
       value: 0,
       min: 0,
-      max: 1000000,
+      max: 500000,
       step: 5000,
       range: "min",
       slide: function(event, ui) { update(); },
@@ -14,7 +13,7 @@ $( document ).ready(function() {
   $("#slider2").slider({
     value: 0,
       min: 0,
-      max: 1000000,
+      max: 500000,
       step: 5000,
       range: "min",
       slide: function(event, ui) { update(); },
@@ -23,7 +22,7 @@ $( document ).ready(function() {
   $("#slider3").slider({
     value: 0,
       min: 0,
-      max: 50000,
+      max: 25000,
       step: 1000,
       range: "min",
       slide: function(event, ui) { update(); },
@@ -47,8 +46,8 @@ function update() {
  let $amount1 = $("#slider1").slider("values", 0);
  let $amount2 = $("#slider2").slider("values", 0);
  let $amount3 = $("#slider3").slider("values", 0);
- let $amount4 = calculateProprietorshipTax($amount1, $amount2).toFixed(2);
- let $amount5 = calculateIncorporationTax($amount1, $amount2, $amount3).toFixed(2);
+ let $amount4 = calculateProprietorshipTax($amount1, $amount2).toFixed(0);
+ let $amount5 = calculateIncorporationTax($amount1, $amount2, $amount3).toFixed(0);
  let $amount6 = ($amount4 - $amount5).toFixed(0);
 
  sessionStorage.setItem('amount1', $amount1);

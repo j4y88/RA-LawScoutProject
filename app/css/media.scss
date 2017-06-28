@@ -1,3 +1,52 @@
+@media only screen and (min-width: 325px) {
+	html {
+		font-size: 10px;
+	}
+	header {
+  		margin: 10% 20% 0% 20%;
+  	}
+  	p { 
+  		font-size: 1.3rem;
+	}
+	main {
+	  	width: 100%;
+	  	background-color: white;
+	  	z-index: 1;
+	  	position: relative;
+	  	height: auto;
+	  	top: 10%;
+	}
+	.cell-width{
+	  width: 100%;
+	}
+}
+
+@media only screen and (min-width: 400px) {
+	html{
+		font-size: 11px;
+	}
+	header{
+  		margin: 10% 20% 0% 20%;
+  	}
+  	p { 
+  		font-size: 1.3rem;
+	}
+	main {
+	  	width: 95%;
+	  	background-color: white;
+	  	z-index: 1;
+	  	position: relative;
+	  	height: auto;
+	  	top: 10%;
+	}
+	.cell-width{
+	  width: 90%;
+	}
+	.slider-length {
+	  width: 75%;
+	}
+}
+
 @media only screen and (min-width: 500px) {
 	html{
 		font-size: 12px;
@@ -14,7 +63,32 @@
 	  	top: 10%;
 	}
 	.cell-width{
-	  width:70%;
+	  width: 90%;
+	}
+	.slider-length {
+	  width: 75%;
+	}
+}
+@media only screen and (min-width: 650px) {
+	html{
+		font-size: 13px;
+	}
+	header{
+  		margin: 10% 20% 0% 20%;
+  	}
+	main {
+	  	width: 80%;
+	  	background-color: white;
+	  	z-index: 1;
+	  	position: relative;
+	  	height: auto;
+	  	top: 10%;
+	}
+	.cell-width{
+	  width: 80%;
+	}
+	.slider-length {
+	  width: 75%;
 	}
 }
 
@@ -26,7 +100,7 @@
   		margin: 10% 19.5% 0% 19.5%;
   	}
 	main {
-	  	width: 75%;
+	  	width: 80%;
 	  	background-color: white;
 	  	z-index: 1;
 	  	position: relative;
@@ -35,6 +109,9 @@
 	}
 	.cell-width{
 	  width:70%;
+	}
+	.slider-length {
+	  width: 75%;
 	}
 }
 
