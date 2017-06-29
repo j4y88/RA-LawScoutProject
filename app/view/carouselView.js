@@ -155,11 +155,9 @@ export default class CarouselView{
         return false;
       }
 
-      flkty.next();
-      $('html, body').animate({
-          scrollTop: $("#success-page").offset().top
-      }, 1000);
-      service.compileData(storage);
+      //flkty.next();
+    
+      service.compileData(storage, flkty);
    });
   }
 
