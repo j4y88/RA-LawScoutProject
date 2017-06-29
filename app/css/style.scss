@@ -384,6 +384,9 @@ p {
   .showInfo{
   display: block;
   }
+  .text-right{
+    text-align: right;
+  }
 
   #info-hold-property-show, #info-sensitive-show, #info-operate-property-show, #info-subcontractors-show{
     display: none;
@@ -391,11 +394,11 @@ p {
     border: solid 1px #c3c3c3;
     color: #666;
     border-radius: 10px;
-    padding: 10px;
-    width: 80%;
-    // top: -5px;
+    padding: 20px;
+    width: 150%;
     z-index: 1000;
-    right: 20px;
+    // left: 20%;
+
   }
 
   /* ---- page 3 ----- */
