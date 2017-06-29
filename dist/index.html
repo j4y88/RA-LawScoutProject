@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Law Scout Incorperate Calculator</title>
 
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
@@ -25,13 +26,15 @@
   </header>
 
   <main>
+     <!-- <div>
+      <img src="public/images/Powered_FoundedWordmark (1).png" height="100px">
+    </div>  -->
     <div id="logo-animate" class="showFirstLogo logo-base flex">
-
       <!-- <img id="logo-start" class="margin-auto" src="public/images/White_logo.png" height="120" width="120"> -->
-      <svg id="logo" class="logo" width="69" height="84" viewBox="0 0 457 558" xmlns="http://www.w3.org/2000/svg">
+      <!-- <svg id="logo" class="logo" width="69" height="84" viewBox="0 0 457 558" xmlns="http://www.w3.org/2000/svg">
         <path class="path" d="M114 145h249c80 0 78-111 0-111H204c-42 0-60 28-60 52-.5 25 0 105 0 123.5.5 22.5 23.5 48.5 61 48.5h65c77 0 77 109 0 110h-60.5c-26 0-65.5 6.5-65.5 60v38c0 77-110 77-110 0V209.5C34 171 56.5 145 91 145z" stroke="#ffffff" stroke-width="60" fill="none"></path>
-      </svg>
-      <img id="poweredBy" class="founded-active" src="public/images/ic_Founded_active.png">
+      </svg> -->
+       <img id="poweredBy" class="founded-active" src="public/images/ic_Founded_active.png">
     </div>
 
   <form id="form1" action="/" method="get">
@@ -43,7 +46,7 @@
         <section class="flex flex-col flex-center-j cell-width">
           <div>
             <h2>Spend two minutes to discover your potential tax savings.</h1>
-            <p>One of the biggest benefits of incorporating your small business is a lower corporate tax rate. Adjust the three sliders below to reveal your savings</p>
+            <p>One of the biggest benefits of incorporating your small business is a lower corporate tax rate. Adjust the three sliders below to reveal your potential savings</p>
           </div>
           <div id="savings-total" class="flex flex-center-j flex-center-a">
             <div id="savings" class="margin25v top-value-width flex flex-space-between">
@@ -73,11 +76,11 @@
               <div class="line-hor">
                 <h4>What’s the total annual revenue for your business?</h4>
               <div class="flex  flex-space-between flex-center-a padding15v">
-                <div id="slider1" class="width100"></div>
+                <div id="slider1" class="slider-length"></div>
                 <input id="amount1" type="text" readonly class="slider-num" />
               </div>
               <div id="slider1-error" name="slider1-error" class="Error padding-slider">
-                Total Annual revenue is required
+                 <p class="red">Total Annual revenue is required</p>
               </div>
             </div>
           </div>
@@ -86,14 +89,14 @@
               <div class="line-hor">
                 <h4>What are your estimated annual business expenses?</h4>
                 <div class="flex flex-space-between flex-center-a padding15v">
-                  <div id="slider2" class="width100"></div>
+                  <div id="slider2" class="slider-length"></div>
                   <input id="amount2" type="text" readonly class="slider-num" />
                 </div>
                 <div id="slider2-error" name="slider2-error" class="Error padding-slider">
-                  Total Annual business expenses is required
+                  <p class="red">Total Annual business expenses is required</p>
                 </div>
                 <div id="slider2-error2" name="slider2-error2" class="Error padding-slider">
-                  Reduce Annual Business Expenses:<br>You do not make enough Income to satisfy your annual business expenses
+                  <p class="red">Reduce Annual Business Expenses: You do not make enough Income to satisfy your annual business expenses</p>
                 </div>
               </div>
             </div>
@@ -102,14 +105,14 @@
               <div class="line-hor">
                 <h4>What are your estimated monthly living expenses?</h4>
                 <div class="flex flex-space-between flex-center-a padding15v">
-                  <div id="slider3" class="width100"></div>
+                  <div id="slider3" class="slider-length"></div>
                   <input id="amount3" type="text" readonly class="slider-num" />
                 </div>
                 <div id="slider3-error" name="slider3-error" class="Error padding-slider">
-                  Total estimate monthly living expenses is required
+                   <p class="red">Total estimate monthly living expenses is required</p>
                 </div>
                 <div id="slider3-error2" name="slider3-error2" class="Error padding-slider">
-                  Reduce Monthly Living Expenses:<br>You do not make enough Income to satisfy your monthly living expenses
+                   <p class="red">Reduce Monthly Living Expenses: You do not make enough Income to satisfy your monthly living expenses</p>
                 </div>
               </div>
             </div>
@@ -132,7 +135,6 @@
               <input id="amount5" type="text" readonly class="slider-total-num"/>
             </div>
           </div>
-          <!--  paste this inside Jason's flickity div content -->
           <div class="button-row flex flex-col flex-center-a margin25v">
             <button class="button button--next" >Next Step</button>
           </div>
@@ -150,6 +152,7 @@
               <label for="industry"><h3>What's your industry?</h3></label>
               <select name="industry" id="industry" class="padding5v">
                 <option value="">Choose</option>
+                <option>Agriculture</option>
                 <option>Arts and Entertainment</option>
                 <option>Construction</option>
                 <option>Educational Services</option>
@@ -167,71 +170,71 @@
            Industy is required
           </div>
           <div id="demo">
-            <div class="flex line-hor padding5v">
-              <div class="flex flex-center-a flex-space-between">
-                <span class="flex flex-center-a flex-space-between">
+            <div class="flex flex-col line-hor padding5v width100 ">
+              <div class="flex flex-center-a flex-space-between width100 ">
+                <span class="flex flex-center-a flex-space-between width100 position-rel">
                   <h3 class="flex-grow disp-inline">Do you hold onto your client's property?</h3>
                   <img id="info-hold-property-click" class="disp-inline info-img margin-5lr" src="./public/images/info.png">
+                  <p id="info-hold-property-show" class="info position-abs">Client property can include physical property and money. Some professions require that property be held for clients for a certain time period, such as for deposits, repair of property, and other cases. </p>
+
                 </span>
                 <div class="flex">
                   <input id="radio1Yes" type="radio" name="q1" title="YES" value="yes" required/>
                   <input id="radio1No" type="radio" name="q1" title="NO" value="no" checked="checked" required/>
                 </div>
               </div>
-              <p id="info-hold-property-show" class="info hideInfo">Client property can include physical property and money. Some professions require that property be held for clients for a certain time period, such as for deposits, repair of property, and other cases. </p>
+
+              <!-- <p id="info-hold-property-show" class="info hideInfo">Client property can include physical property and money. Some professions require that property be held for clients for a certain time period, such as for deposits, repair of property, and other cases. </p> -->
             </div>
-            <div class="flex line-hor padding5v">
-              <div class="flex flex-center-a flex-space-between">
-                <span class="flex flex-center-a flex-space-between">
+            <div class="flex flex-col line-hor padding5v width100">
+              <div class="flex flex-center-a flex-space-between width100">
+                <span class="flex flex-center-a flex-space-between width100 position-rel">
                   <h3 class="flex-grow disp-inline">Do you hold sensitive client information?</h3>
                   <img id="info-sensitive-click" class="disp-inline info-img margin-5lr" src="./public/images/info.png">
+                  <p id="info-sensitive-show" class="info position-abs">Sensitive client information can include your client's banking details, health information, personally identifiable information and financial information. </p>
                 </span>
                 <div class="flex">
                   <input id="radio2Yes" type="radio" name="q2" title="YES" value="yes" required/>
                   <input id="radio2No" type="radio" name="q2" title="NO" value="no" checked="checked" required/>
                 </div>
               </div>
-              <p id="info-sensitive-show" class="info">Sensitive client information can include your client's banking details, health information, personally identifiable information and financial information. </p>
             </div>
-            <div class="flex line-hor padding5v">
-              <div class="flex flex-center-a flex-space-between">
-                <span class="flex flex-center-a flex-space-between">
+            <div class="flex line-hor padding5v flex-col width100">
+              <div class="flex flex-center-a flex-space-between width100">
+                <span class="flex flex-center-a flex-space-between width100 position-rel">
                   <h3 class="flex-grow disp-inline">Do you operate on the property of others?</h3>
                   <img id="info-operate-property-click" class="disp-inline info-img margin-5lr" src="./public/images/info.png">
+                  <p id="info-operate-property-show" class="info position-abs">When you conduct work for your clients, do you operate on their property? If so, check 'Yes'.</p>
                 </span>
                 <div class="flex">
                   <input id="radio3Yes" type="radio" name="q3" title="YES" value="yes" required/>
                   <input id="radio3No" type="radio" name="q3" title="NO" value="no" checked="checked" required/>
                 </div>
               </div>
-              <p id="info-operate-property-show" class="info">When you conduct work for your clients, do you operate on their property? If so, check 'Yes'.</p>
             </div>
-            <div class="flex line-hor padding5v">
-              <div class="flex flex-center-a flex-space-between">
-                <span class="flex flex-grow flex-center-a flex-space-between">
+            <div class="flex line-hor padding5v flex-col width100">
+              <div class="flex flex-center-a flex-space-between width100">
+                <span class="flex flex-grow flex-center-a flex-space-between width100 position-rel">
                   <h3 class="flex-grow disp-inline">Do you rely on sub-contractors?</h3>
                   <img id="info-subcontractors-click" class="disp-inline info-img margin-5lr" src="./public/images/info.png">
+                  <p id="info-subcontractors-show" class="info position-abs">Sub-Contractors include anyone that you may hire to assist work that you do for a client. This does not include employees.</p>
                 </span>
                 <div class="flex">
                   <input id="radio4Yes" type="radio" name="q4" title="YES" value="yes" required/>
                   <input id="radio4No" type="radio" name="q4" title="NO" value="no" checked="checked" required/>
                 </div>
               </div>
-              <p id="info-subcontractors-show" class="info">Sub-Contractors include anyone that you may hire to assist work that you do for a client. This does not include employees.</p>
             </div>
-            <div class="flex flex-center-a flex-space-between line-hor padding5v">
+            <div class="flex flex-center-a flex-space-between line-hor padding5v width100">
               <h3  class="flex-grow">Do you have employees?</h3>
               <div class="flex">
-
                 <input id="radio5Yes" type="radio" name="q5" title="YES" value="yes" required/>
                 <input id="radio5No" type="radio" name="q5" title="NO" value="no" checked="checked" required/>
-
               </div>
             </div>
-            <div class="flex flex-center-a flex-space-between padding15v">
+            <div class="flex flex-center-a flex-space-between padding15v width100">
               <h3  class="">Do you manufacture products that are used or consumed by others?</h3>
               <div class="flex">
-
                 <input id="radio6Yes" type="radio" name="q6" title="YES" value="yes" required/>
                 <input id="radio6No" type="radio" name="q6" title="NO" value="no" checked="checked" required/>
               </div>
@@ -289,11 +292,16 @@
       <div class="flex flex-center-j">
         <section class="flex flex-col flex-center-j cell-width">
           <div class="margin25v">
-            <div class="">
-              <h2 class="text-center">Thank you!</h2>
-              <p class="margin15v">Your incorporation assessment has been sent to your mailbox.</p>
+            <h2 class="text-center">Thank you!</h2>
+            <div class="margin25v">
+              <p class="margin15v">Your incorporation assessment has been processed. We will send you the assessment after you confirmed your email by accepting our confirmation email sent to your mailbox.</p>
               <p class="margin15v">Show your entrepreneurial spirit! Share this tool with fellow small business owners.</p>
               <p class="margin15v">Your information is safe and will not be shared.</p>
+            </div>
+            <div id="social-media" class="flex flex-center-a flex-center-j margin25v padding50b">
+              <a href="https://www.facebook.com/lawscout/" class="fa fa-facebook-square fa-2x margin5h" aria-hidden="true"></a>
+              <a href="https://www.linkedin.com/company-beta/9506952/" class="fa fa-linkedin-square fa-2x margin5h" aria-hidden="true"></a>
+              <a href="https://twitter.com/myLawScout" class="fa fa-twitter-square fa-2x margin5h" aria-hidden="true"></a>
             </div>
           </div>
         </section>
