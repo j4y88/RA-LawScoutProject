@@ -12,9 +12,7 @@ main {
   background-color: white;
   z-index: 1;
   position: relative;
-  min-height: 150vh;
-  height: 100%;
-
+  height: auto;
   top: 6%;
 }
 /* ---- text or fonts ---- */
@@ -400,6 +398,7 @@ p {
     width: 150%;
     z-index: 1000;
     // left: 20%;
+
   }
 
   /* ---- page 3 ----- */

@@ -113,6 +113,7 @@ export default class Service{
       url: baseurl,
       //  "https://facebook.us16.list-manage.com/subscribe/post?u=e6d0b1c96cefea3b6aa8267e2&amp;id=c1997644bd&AINCOME=555000&AEXPENSE=200000&MEXPENSE=15000&SAVINGS=40000&INDUSTRY=Farmer&RISK=50&NAME=JasonNg&EMAIL=j.pilapil@hotmail@hotmail.com&Q1=Yes&Q2=No&Q3=No&Q4=Yes&Q5=No&Q6=Yes",
       method: 'POST',
+      dataType: "jsonp"
     })
     .done(function() {
 
@@ -120,7 +121,7 @@ export default class Service{
 
     }).fail(function(err) {
       //show user that there is an error
-      throw err;
+      console.log(err);
     });
   }
 
