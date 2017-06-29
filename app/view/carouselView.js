@@ -3,7 +3,6 @@ export default class CarouselView{
   constructor(app, storage){
     this.app = app;
     this.storage = storage;
-    // this.logoAnimate();
     this.infoHovers();
   }
   infoHovers(){
@@ -23,7 +22,7 @@ export default class CarouselView{
       $("#info-subcontractors-show").hide();
       $("#info-sensitive-show").toggle();
       $("#info-sensitive-close").click(function() {
-          $("#info-sensitive-show").hide()
+          $("#info-sensitive-show").hide();
       });
     });
     $("#info-operate-property-click").click(function() {
@@ -41,34 +40,9 @@ export default class CarouselView{
       $("#info-operate-property-show").hide();
       $("#info-subcontractors-show").toggle();
       $("#info-subcontractors-close").click(function() {
-        $("#info-subcontractors-show").hide();
+        $("#info-subcontractors-show").hide()
       });
     });
-    // $('#info-hold-property-click').click(function(){$('#info-hold-property-show').fadeIn()}, function(){ $('#info-hold-property-show').fadeOut()});
-    // $('#info-sensitive-click').click(function(){$('#info-sensitive-show').fadeIn()}, function(){ $('#info-sensitive-show').fadeOut()});
-    // $('#info-operate-property-click').click(function(){$('#info-operate-property-show').fadeIn()}, function(){ $('#info-operate-property-show').fadeOut()});
-    // $('#info-subcontractors-click').click(function(){$('#info-subcontractors-show').fadeIn()}, function(){ $('#info-subcontractors-show').fadeOut()});
-  }
-
-  logoAnimate(){
-    let logo = document.querySelector('#logo-animate');
-    logo.addEventListener( 'click', this.addClickToExpandLogo, false);
-  }
-
-  addClickToExpandLogo(){
-      $('#logo-animate').removeClass("showFirstLogo", function(){
-        $('#poweredBy').fadeIn( function (){
-          $('#logo-animate').switchClass("logo-base", "logo-clicked", 2000, "linear", function(){
-            });
-          });
-        });
-      }
-
-
-
-  addClickToShrinkLogo(){
-    //console.log("shrinking");
-    //reverse the addClickToExpandLogo steps to return logo to initial views
   }
 
   getButtons(flkty, storage, service){
