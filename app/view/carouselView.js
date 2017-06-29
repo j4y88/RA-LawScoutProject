@@ -13,24 +13,36 @@ export default class CarouselView{
       $("#info-operate-property-show").hide();
       $("#info-subcontractors-show").hide();
       $("#info-hold-property-show").toggle();
+      $("#info-hold-property-close").click(function(){
+        $("#info-hold-property-show").hide();
+      });
     });
     $("#info-sensitive-click").click(function() {
       $("#info-hold-property-show").hide();
       $("#info-operate-property-show").hide();
       $("#info-subcontractors-show").hide();
       $("#info-sensitive-show").toggle();
+      $("#info-sensitive-close").click(function() {
+          $("#info-sensitive-show").hide()
+      });
     });
     $("#info-operate-property-click").click(function() {
       $("#info-hold-property-show").hide();
       $("#info-sensitive-show").hide();
       $("#info-subcontractors-show").hide();
       $("#info-operate-property-show").toggle();
+      $("#info-operate-property-close").click(function(){
+        $("#info-operate-property-show").hide();
+      });
     });
     $("#info-subcontractors-click").click(function() {
       $("#info-hold-property-show").hide();
       $("#info-sensitive-show").hide();
       $("#info-operate-property-show").hide();
       $("#info-subcontractors-show").toggle();
+      $("#info-subcontractors-close").click(function() {
+        $("#info-subcontractors-show").hide();
+      });
     });
     // $('#info-hold-property-click').click(function(){$('#info-hold-property-show').fadeIn()}, function(){ $('#info-hold-property-show').fadeOut()});
     // $('#info-sensitive-click').click(function(){$('#info-sensitive-show').fadeIn()}, function(){ $('#info-sensitive-show').fadeOut()});
