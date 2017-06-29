@@ -12,7 +12,7 @@ main {
   background-color: white;
   z-index: 1;
   position: relative;
-  min-height: 100vh;
+  // min-height: 100vh;
   height: auto;
   top: 6%;
 }
@@ -197,7 +197,12 @@ p {
 .margin-auto{
   margin: auto;
 }
-
+.position-abs{
+  position: absolute;
+}
+.position-rel{
+  position: relative;
+}
 /* ---- carousel ---- */
 .cell-width{
   width:100%;
@@ -361,12 +366,13 @@ p {
   .ui-icon-triangle-1-s {
     background-position: -65px -16px;
   }
+
   .info{
     color: $teal;
-    font-size: 0.8em;
+    font-size: 1em;
     margin: 10px;
     width: 80%;
-    line-height: 0.9em;
+    line-height: 1em;
     height: auto;
   }
   .info-img{
@@ -384,8 +390,15 @@ p {
   #info-hold-property-show, #info-sensitive-show, #info-operate-property-show, #info-subcontractors-show{
     display: none;
     background-color: white;
-    border: solid 1px grey;
-    
+    border: solid 1px #c3c3c3;
+    color: #666;
+    border-radius: 10px;
+    padding: 10px;
+    width: 80%;
+    // top: -5px;
+    z-index: 1000;
+    right: 20px;
+
 
   }
 
