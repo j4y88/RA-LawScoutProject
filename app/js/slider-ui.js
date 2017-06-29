@@ -48,7 +48,21 @@ function update() {
  let $amount3 = $("#slider3").slider("values", 0);
  let $amount4 = calculateProprietorshipTax($amount1, $amount2).toFixed(0);
  let $amount5 = calculateIncorporationTax($amount1, $amount2, $amount3).toFixed(0);
- let $amount6 = Math.max (0, ($amount4 - $amount5).toFixed(0));
+ let $amount6 = 0;
+
+// console.log("amount5:");
+// console.log($amount5);
+
+ if ($amount5 == 0){
+   $amount6 = 0;
+ }
+ else{
+
+   $amount6 = Math.max (0, ($amount4 - $amount5).toFixed(0));
+  //  console.log("amount 6:");
+  //  console.log($amount6);
+
+ }
 
  sessionStorage.setItem('amount1', $amount1);
  sessionStorage.setItem('amount2', $amount2);
@@ -113,13 +127,11 @@ function update() {
   }
 
  calculateProprietorshipTax($amount1, $amount2);
- //console.log("incorporation tax" + calculateIncorporationTax($amount1, $amount2, $amount3));
 }
 
 
 function calculateProprietorshipTax(aRev, aExp){
   let aIncome = aRev - aExp;
-  //console.log(aIncome);
   let cPP = 0;
   let payableTaxes = 0;
 
@@ -172,8 +184,8 @@ function calculateIncorporationTax(aRev, aExp, monthlyExpense){
   let ai = aRev - aExp;
   let afterTaxSalary = monthlyExpense * 12;
   let preTaxSalary = 0;
-  let cPP = 0
-  let ei = 0
+  let cPP = 0;
+  let ei = 0;
   let empEI = 0;
   let corporateTaxes = 0;
 
@@ -203,14 +215,14 @@ function calculateIncorporationTax(aRev, aExp, monthlyExpense){
     preTaxSalary =  219976 + ((afterTaxSalary  - 136603.32)/ (1 - 0.5353));
   }
   if (preTaxSalary < 51300 ){
-    ei = preTaxSalary * 0.0163
+    ei = preTaxSalary * 0.0163;
   } else if (preTaxSalary > 51300) {
-    ei = 836.19
+    ei = 836.19;
   }
   if (preTaxSalary - 3500 < 55300 && preTaxSalary - 3500 > 0) {
-    cPP = (preTaxSalary - 3500) * .0495
+    cPP = (preTaxSalary - 3500) * .0495;
   } else if (preTaxSalary-3500 > 55300) {
-    cPP = 2564.10
+    cPP = 2564.10;
   }
 
   let federalDeduction = (11635 + ei + cPP + 1178) * .15;
@@ -220,7 +232,7 @@ function calculateIncorporationTax(aRev, aExp, monthlyExpense){
   if(preTaxSalary < 51300){
     empEI = preTaxSalary * .02282;
   } else if (preTaxSalary > 51300) {
-    empEI = 1170.67
+    empEI = 1170.67;
   }
 
   let finalPreTaxSalary = preTaxSalary - federalDeduction - ontarioDeduction;
@@ -231,22 +243,20 @@ function calculateIncorporationTax(aRev, aExp, monthlyExpense){
   if(corporateTaxableIncome < 500000){
     corporateTaxes = corporateTaxableIncome * 0.15;
   } else if (corporateTaxableIncome > 500000) {
-    corporateTaxes = (500000 * 0.15) + ((corporateTaxableIncome - 500000) * .265)
+    corporateTaxes = (500000 * 0.15) + ((corporateTaxableIncome - 500000) * .265);
   }
 
       if(preTaxSalary > ai) {
+
+
         return 0;
       }
-      //console.log("corporateTaxes:" + corporateTaxes)
       let totalTaxes = corporateTaxes + (finalPreTaxSalary - afterTaxSalary) + ei + empEI + (cPP*2);
 
   if(totalTaxes < 0){
-    totalTaxes = 0
+    totalTaxes = 0;
   }
 
-  //console.log("Pre-taxSalary: " + preTaxSalary + "ei: " + ei + "CPP: "+ cPP + "empEI: "+empEI  + "FD: " + federalDeduction + "OD: " + ontarioDeduction);
-  //console.log("finalPreTaxSalary: " + finalPreTaxSalary);
-  //console.log("corporateTaxableIncome" + corporateTaxableIncome);
   return totalTaxes;
 
   }

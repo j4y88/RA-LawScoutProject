@@ -34,32 +34,11 @@ export default class Storage {
               ss.setItem(id, "not selected");
             }
         }
-        //for dropdown industry list:
-        let dropDown = document.querySelectorAll("#form1 select");
-        for (let i = 0, element; element = dropDown[i++];) {
-          this.ss.setItem(element.id, element.value);
-          element.addEventListener("change", this.updateStorageValueSelect(element.id, element.value));
-        }
-        //for email stuff:
-        let emailInfo = document.querySelectorAll("#emailName, #emailAddress");
-        for (let i = 0, field; field = emailInfo[i++];) {
-          this.ss.setItem(field.id, "");
-          field.addEventListener("change", this.updateStorageValueEmail(field.id, field.value));
-        }
       }
       updateStorageValueTaxSlider(key, value){
-        //on page load check session storage and apply ".checked" class
-        //to whichever switches were last selected in the session
-        //function should be called from view file where value is determined
         this.ss.setItem(key, value);
       }
       updateStorageValueSlider(key, value){
-        //on page load check session storage and apply ".checked" class
-        //to whichever switches were last selected in the session
-        //function should be called from view file where value is determined
-        this.ss.setItem(key, value);
-      }
-      updateStorageValueSelect(key, value){
         this.ss.setItem(key, value);
       }
       updateStorageValueRadio(e){
@@ -79,7 +58,5 @@ export default class Storage {
           }
         }
       }
-      updateStorageValueEmail(key, value){
-        this.ss.setItem(key, value);
-      }
+
 }
