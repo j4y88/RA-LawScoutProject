@@ -14,11 +14,6 @@ export default class Carousel{
       prevNextButtons: false,
       pageDots: false,
       draggable: false,
-
-      // if ( matchMedia('screen and (max-width: 500px)').matches ) {
-        // options.adaptiveHeight = true;
-      // }
-      // adaptiveHeight: true
     });
     this.cv.getButtons(flkty, this.storage, this.service);
 
