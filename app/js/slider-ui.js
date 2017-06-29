@@ -64,96 +64,6 @@ function update() {
     return val;
   }
 
-<<<<<<< HEAD
- $("#amount1").val("$"+$amount1);
- $("#amount2").val("$"+$amount2);
- $("#amount3").val("$"+$amount3);
- $("#amount4").val("$"+$amount4);
- $("#amount5").val("$"+$amount5);
- $("#amount6").val($amount6);
-
-if ($amount6.toString().length <= 2){
-  $("#savings1").val("0");
-  $("#savings2").val("0");
-  $("#savings3").val("0");
-  $("#savings4").val("0");
-  $("#savings5").val("0");
-  $("#savings6").val("0");
-}
-if ($amount6.toString().length === 3){
-  $("#savings1").val("$");
-  $("#savings2").val("0");
-  $("#savings3").val("0");
-  $("#savings4").val($amount6.toString().substr(0,1));
-  $("#savings5").val($amount6.toString().substr(1,1));
-  $("#savings6").val($amount6.toString().substr(2,1));
-}
-if ($amount6.toString().length === 4){
-  $("#savings1").val("$");
-  $("#savings2").val("0");
-  $("#savings3").val($amount6.toString().substr(0,1));
-  $("#savings4").val($amount6.toString().substr(1,1));
-  $("#savings5").val($amount6.toString().substr(2,1));
-  $("#savings6").val($amount6.toString().substr(3,1));
-}
-if ($amount6.toString().length === 5){
-  $("#savings1").val("$");
-  $("#savings2").val($amount6.toString().substr(0,1));
-  $("#savings3").val($amount6.toString().substr(1,1));
-  $("#savings4").val($amount6.toString().substr(2,1));
-  $("#savings5").val($amount6.toString().substr(3,1));
-  $("#savings6").val($amount6.toString().substr(4,1));
-}
-if ($amount6.toString().length === 6){
-  $("#savings1").val($amount6.toString().substr(0,1));
-  $("#savings2").val($amount6.toString().substr(1,1));
-  $("#savings3").val($amount6.toString().substr(2,1));
-  $("#savings4").val($amount6.toString().substr(3,1));
-  $("#savings5").val($amount6.toString().substr(4,1));
-  $("#savings6").val($amount6.toString().substr(5,1));
-}
-
- if ($amount6.toString().length <= 2){
-   $("#savings1").val("0");
-   $("#savings2").val("0");
-   $("#savings3").val("0");
-   $("#savings4").val("0");
-   $("#savings5").val("0");
-   $("#savings6").val("0");
- }
- if ($amount6.toString().length === 3){
-   $("#savings1").val("$");
-   $("#savings2").val("0");
-   $("#savings3").val("0");
-   $("#savings4").val($amount6.toString().substr(0,1));
-   $("#savings5").val($amount6.toString().substr(1,1));
-   $("#savings6").val($amount6.toString().substr(2,1));
- }
- if ($amount6.toString().length === 4){
-   $("#savings1").val("$");
-   $("#savings2").val("0");
-   $("#savings3").val($amount6.toString().substr(0,1));
-   $("#savings4").val($amount6.toString().substr(1,1));
-   $("#savings5").val($amount6.toString().substr(2,1));
-   $("#savings6").val($amount6.toString().substr(3,1));
- }
- if ($amount6.toString().length === 5){
-   $("#savings1").val("$");
-   $("#savings2").val($amount6.toString().substr(0,1));
-   $("#savings3").val($amount6.toString().substr(1,1));
-   $("#savings4").val($amount6.toString().substr(2,1));
-   $("#savings5").val($amount6.toString().substr(3,1));
-   $("#savings6").val($amount6.toString().substr(4,1));
- }
- if ($amount6.toString().length === 6){
-   $("#savings1").val($amount6.toString().substr(0,1));
-   $("#savings2").val($amount6.toString().substr(1,1));
-   $("#savings3").val($amount6.toString().substr(2,1));
-   $("#savings4").val($amount6.toString().substr(3,1));
-   $("#savings5").val($amount6.toString().substr(4,1));
-   $("#savings6").val($amount6.toString().substr(5,1));
- }
-=======
   $("#amount1").val("$"+commaSeparateNumber($amount1));
   $("#amount2").val("$"+commaSeparateNumber($amount2));
   $("#amount3").val("$"+commaSeparateNumber($amount3));
@@ -201,7 +111,6 @@ if ($amount6.toString().length === 6){
     $("#savings5").val($amount6.toString().substr(4,1));
     $("#savings6").val($amount6.toString().substr(5,1));
   }
->>>>>>> origin/master
 
  calculateProprietorshipTax($amount1, $amount2);
  //console.log("incorporation tax" + calculateIncorporationTax($amount1, $amount2, $amount3));
