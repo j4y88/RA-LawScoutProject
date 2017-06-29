@@ -8,12 +8,13 @@
   background-color: $body-bg-color;
 }
 main {
-  width: 95%;
+  width: 100%;
   background-color: white;
   z-index: 1;
   position: relative;
-  // min-height: 100vh;
-  height: auto;
+  min-height: 150vh;
+  height: 100%;
+
   top: 6%;
 }
 /* ---- text or fonts ---- */
@@ -271,7 +272,7 @@ p {
   line-height: 1;
 }
 .slider-top-value {
-  width: 4rem;
+  width: 3.5rem;
   text-align: center;
   font-size: 3rem;
   border: 0px;
@@ -286,7 +287,6 @@ p {
   width: 70%;
 }
 .slider-num {
-  width: 5.5rem;
   font-size: 1.05rem;
   text-align: right;
   border: 0px;
@@ -390,6 +390,7 @@ p {
   #info-hold-property-show, #info-sensitive-show, #info-operate-property-show, #info-subcontractors-show{
     display: none;
     background-color: white;
+
     border: solid 1px #c3c3c3;
     color: #666;
     border-radius: 10px;
