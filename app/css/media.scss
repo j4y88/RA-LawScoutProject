@@ -54,7 +54,7 @@
 	header{
   		margin: 10% 20% 0% 20%;
   	}
-  	p { 
+  	p {
   		font-size: 1rem;
 	}
 	main {
@@ -92,6 +92,17 @@
 	}
 	.slider-length {
 	  width: 75%;
+	}
+	#info-hold-property-show, #info-sensitive-show, #info-operate-property-show, #info-subcontractors-show{
+		display: none;
+		background-color: white;
+		border: solid 1px #c3c3c3;
+		color: #666;
+		border-radius: 10px;
+		padding: 10px;
+		width: 80%;
+		z-index: 1000;
+		right: 20px;
 	}
 }
 
