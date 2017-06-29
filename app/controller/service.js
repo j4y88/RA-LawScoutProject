@@ -2,7 +2,7 @@ import FormModel from '../model/formmodel';
 export default class Service{
   constructor(){}
 
-  compileData(storage){
+  compileData(storage, flkty){
     let session = storage.ss;
     let sessionArray = [];
     for (let key in window.sessionStorage){
@@ -10,19 +10,19 @@ export default class Service{
         sessionArray[key] = {name: key, value: session[key]};
       }
     }
-    this.makeObject(sessionArray);
+    this.makeObject(sessionArray, flkty);
     //clear session:
     session.clear();
   }
 
-  makeObject(ssArray){
+  makeObject(ssArray, flkty){
     let editedArrayObject = {};
     for (let key in ssArray){
         editedArrayObject[key] = ssArray[key].value;
     }
-    this.makeFormModel(editedArrayObject);
+    this.makeFormModel(editedArrayObject, flkty);
   }
-  makeFormModel(object){
+  makeFormModel(object, flkty){
     let liabilityScore = 0;
     let model = new FormModel();
     model.revenue = object.amount1;
@@ -86,17 +86,17 @@ export default class Service{
     model.name = object.emailName;
     model.email= object.emailAddress;
     model.liabilityScore= liabilityScore;
-    this.makeJSONObject(model);
+    this.makeJSONObject(model, flkty);
   }
 
-  makeJSONObject(model){
+  makeJSONObject(model, flkty){
     let myJsonString = {};
     myJsonString = JSON.stringify(model);
     //call function to send ajax/XHR:
-    this.sendForm(model);
+    this.sendForm(model, flkty);
   }
 
-  sendForm(form){
+  sendForm(form, flkty){
     console.log(form);
     console.log("FORM SENT");
     // let baseName = form.name.replace(/\s+/g, '').toLowerCase();
@@ -105,24 +105,47 @@ export default class Service{
     // let name = firstLetterName + restName;
     let savingsBase = form.savings.toFixed(0);
     // let industryBase = form.industry.replace(/\s+/g, '');
-    let baseurl ="https://facebook.us16.list-manage.com/subscribe/post?u=e6d0b1c96cefea3b6aa8267e2&amp;id=c1997644bd"
-    baseurl += "&NAME=" + form.name + "&EMAIL=" + form.email + "&SAVINGS=" + savingsBase +"&AEXPENSE=" + form.businessExpense + "&INDUSTRY=" + form.industry + "&RISK=" + form.liabilityScore + "&AINCOME=" + form.revenue + "&MEXPENSE=" + form.livingExpense;
+    let baseurl ="https://facebook.us16.list-manage.com/subscribe/post?u=e6d0b1c96cefea3b6aa8267e2&id=c1997644bd"
+    baseurl += "&NAME=" + form.name + "&EMAIL=" + form.email.replace('@', '%40') + "&SAVINGS=" + savingsBase +"&AEXPENSE=" + form.businessExpense + "&INDUSTRY=" + form.industry.replace(' ', '') + "&RISK=" + form.liabilityScore + "&AINCOME=" + form.revenue + "&MEXPENSE=" + form.livingExpense;
     baseurl += "&Q1=" + form.holdsProperty  + "&Q2=" + form.holdsInformation + "&Q3=" + form.operatesProperty + "&Q4=" + form.hasSubcontractors + "&Q5=" + form.hasEmployees + "&Q6=" + form.consumerProducts;
     console.log(baseurl);
-    $.ajax({
-      url: baseurl,
-      //  "https://facebook.us16.list-manage.com/subscribe/post?u=e6d0b1c96cefea3b6aa8267e2&amp;id=c1997644bd&AINCOME=555000&AEXPENSE=200000&MEXPENSE=15000&SAVINGS=40000&INDUSTRY=Farmer&RISK=50&NAME=JasonNg&EMAIL=j.pilapil@hotmail@hotmail.com&Q1=Yes&Q2=No&Q3=No&Q4=Yes&Q5=No&Q6=Yes",
-      method: 'POST',
-      dataType: "jsonp"
-    })
-    .done(function() {
+    var http = new XMLHttpRequest();
+var url = "get_data.php";
+var params = "lorem=ipsum&name=binny";
 
-      //go to next slide
+http.open("POST", baseurl, true);
 
-    }).fail(function(err) {
-      //show user that there is an error
-      console.log(err);
-    });
-  }
+//Send the proper header information along with the request
+http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
+http.onreadystatechange = function() {//Call a function when the state changes.
+    console.log(http.readyState);
+    console.log(http.status);
+    if(http.readyState == 4) {
+        flkty.next();
+    }
+}
+http.send();
+  //   $.ajax({
+  //     url: baseurl,
+  //     //  "https://facebook.us16.list-manage.com/subscribe/post?u=e6d0b1c96cefea3b6aa8267e2&amp;id=c1997644bd&AINCOME=555000&AEXPENSE=200000&MEXPENSE=15000&SAVINGS=40000&INDUSTRY=Farmer&RISK=50&NAME=JasonNg&EMAIL=j.pilapil@hotmail@hotmail.com&Q1=Yes&Q2=No&Q3=No&Q4=Yes&Q5=No&Q6=Yes",
+  //     method: 'POST',
+  //     dataType: "jsonp",
+  //     success: function(){
+  //        flkty.next();
+  //       $('html, body').animate({
+  //         scrollTop: $("#success-page").offset().top
+  //     }, 1000);
+  //     }
+  //   })
+  //   .done(function() {
+  //     //go to next slide
+
+  //   }).fail(function(err) {
+  //     //show user that there is an error
+  //     console.log(err);
+  //     alert("Failed to send Info to server");
+  //   });
+  // }
+}
 }
