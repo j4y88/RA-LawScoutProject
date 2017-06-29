@@ -4,13 +4,38 @@ export default class CarouselView{
     this.app = app;
     this.storage = storage;
     // this.logoAnimate();
-    // this.infoHovers();
+    this.infoHovers();
   }
   infoHovers(){
-    $('#info-hold-property-click').hover(function(){$('#info-hold-property-show').fadeIn()}, function(){ $('#info-hold-property-show').fadeOut()});
-    $('#info-sensitive-click').hover(function(){$('#info-sensitive-show').fadeIn()}, function(){ $('#info-sensitive-show').fadeOut()});
-    $('#info-operate-property-click').hover(function(){$('#info-operate-property-show').fadeIn()}, function(){ $('#info-operate-property-show').fadeOut()});
-    $('#info-subcontractors-click').hover(function(){$('#info-subcontractors-show').fadeIn()}, function(){ $('#info-subcontractors-show').fadeOut()});
+
+    $("#info-hold-property-click").click(function() {
+      $("#info-sensitive-show").hide();
+      $("#info-operate-property-show").hide();
+      $("#info-subcontractors-show").hide();
+      $("#info-hold-property-show").toggle();
+    });
+    $("#info-sensitive-click").click(function() {
+      $("#info-hold-property-show").hide();
+      $("#info-operate-property-show").hide();
+      $("#info-subcontractors-show").hide();
+      $("#info-sensitive-show").toggle();
+    });
+    $("#info-operate-property-click").click(function() {
+      $("#info-hold-property-show").hide();
+      $("#info-sensitive-show").hide();
+      $("#info-subcontractors-show").hide();
+      $("#info-operate-property-show").toggle();
+    });
+    $("#info-subcontractors-click").click(function() {
+      $("#info-hold-property-show").hide();
+      $("#info-sensitive-show").hide();
+      $("#info-operate-property-show").hide();
+      $("#info-subcontractors-show").toggle();
+    });
+    // $('#info-hold-property-click').click(function(){$('#info-hold-property-show').fadeIn()}, function(){ $('#info-hold-property-show').fadeOut()});
+    // $('#info-sensitive-click').click(function(){$('#info-sensitive-show').fadeIn()}, function(){ $('#info-sensitive-show').fadeOut()});
+    // $('#info-operate-property-click').click(function(){$('#info-operate-property-show').fadeIn()}, function(){ $('#info-operate-property-show').fadeOut()});
+    // $('#info-subcontractors-click').click(function(){$('#info-subcontractors-show').fadeIn()}, function(){ $('#info-subcontractors-show').fadeOut()});
   }
 
   logoAnimate(){
