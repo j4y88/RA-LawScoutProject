@@ -111,6 +111,7 @@ function update() {
     $("#savings5").val($amount6.toString().substr(4,1));
     $("#savings6").val($amount6.toString().substr(5,1));
   }
+
  calculateProprietorshipTax($amount1, $amount2);
  //console.log("incorporation tax" + calculateIncorporationTax($amount1, $amount2, $amount3));
 }
