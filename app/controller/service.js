@@ -110,42 +110,21 @@ export default class Service{
     baseurl += "&Q1=" + form.holdsProperty  + "&Q2=" + form.holdsInformation + "&Q3=" + form.operatesProperty + "&Q4=" + form.hasSubcontractors + "&Q5=" + form.hasEmployees + "&Q6=" + form.consumerProducts;
     console.log(baseurl);
     var http = new XMLHttpRequest();
-var url = "get_data.php";
-var params = "lorem=ipsum&name=binny";
+    var url = "get_data.php";
+    var params = "lorem=ipsum&name=binny";
 
-http.open("POST", baseurl, true);
+    http.open("POST", baseurl, true);
 
-//Send the proper header information along with the request
-http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    //Send the proper header information along with the request
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
-http.onreadystatechange = function() {//Call a function when the state changes.
+    http.onreadystatechange = function() {//Call a function when the state changes.
     console.log(http.readyState);
     console.log(http.status);
     if(http.readyState == 4) {
-        flkty.next();
+      flkty.next();
     }
-}
-http.send();
-  //   $.ajax({
-  //     url: baseurl,
-  //     //  "https://facebook.us16.list-manage.com/subscribe/post?u=e6d0b1c96cefea3b6aa8267e2&amp;id=c1997644bd&AINCOME=555000&AEXPENSE=200000&MEXPENSE=15000&SAVINGS=40000&INDUSTRY=Farmer&RISK=50&NAME=JasonNg&EMAIL=j.pilapil@hotmail@hotmail.com&Q1=Yes&Q2=No&Q3=No&Q4=Yes&Q5=No&Q6=Yes",
-  //     method: 'POST',
-  //     dataType: "jsonp",
-  //     success: function(){
-  //        flkty.next();
-  //       $('html, body').animate({
-  //         scrollTop: $("#success-page").offset().top
-  //     }, 1000);
-  //     }
-  //   })
-  //   .done(function() {
-  //     //go to next slide
-
-  //   }).fail(function(err) {
-  //     //show user that there is an error
-  //     console.log(err);
-  //     alert("Failed to send Info to server");
-  //   });
-  // }
-}
+  }
+  http.send();
+  }
 }
